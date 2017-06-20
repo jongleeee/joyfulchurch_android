@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/AWSMobileHelper/build/intermediates/res/merged/androidTest/debug/color-v23/abc_color_highlight_material.xml",
+        "source": "/Users/SUNGJIN/.android/build-cache/d8fdd14d8a9b4adccecaef01270308e8767828e9/output/res/color-v23/abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/AWSMobileHelper/build/intermediates/res/merged/androidTest/debug/color-v23/abc_tint_switch_thumb.xml",
+        "source": "/Users/SUNGJIN/.android/build-cache/d8fdd14d8a9b4adccecaef01270308e8767828e9/output/res/color-v23/abc_tint_switch_thumb.xml"
+    },
+    {
+        "merged": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/AWSMobileHelper/build/intermediates/res/merged/androidTest/debug/color-v23/abc_tint_edittext.xml",
+        "source": "/Users/SUNGJIN/.android/build-cache/d8fdd14d8a9b4adccecaef01270308e8767828e9/output/res/color-v23/abc_tint_edittext.xml"
+    },
+    {
+        "merged": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/AWSMobileHelper/build/intermediates/res/merged/androidTest/debug/color-v23/abc_btn_colored_borderless_text_material.xml",
+        "source": "/Users/SUNGJIN/.android/build-cache/d8fdd14d8a9b4adccecaef01270308e8767828e9/output/res/color-v23/abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/AWSMobileHelper/build/intermediates/res/merged/androidTest/debug/color-v23/abc_tint_seek_thumb.xml",
+        "source": "/Users/SUNGJIN/.android/build-cache/d8fdd14d8a9b4adccecaef01270308e8767828e9/output/res/color-v23/abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/AWSMobileHelper/build/intermediates/res/merged/androidTest/debug/color-v23/abc_tint_btn_checkable.xml",
+        "source": "/Users/SUNGJIN/.android/build-cache/d8fdd14d8a9b4adccecaef01270308e8767828e9/output/res/color-v23/abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/AWSMobileHelper/build/intermediates/res/merged/androidTest/debug/color-v23/abc_tint_switch_track.xml",
+        "source": "/Users/SUNGJIN/.android/build-cache/d8fdd14d8a9b4adccecaef01270308e8767828e9/output/res/color-v23/abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/AWSMobileHelper/build/intermediates/res/merged/androidTest/debug/color-v23/abc_tint_spinner.xml",
+        "source": "/Users/SUNGJIN/.android/build-cache/d8fdd14d8a9b4adccecaef01270308e8767828e9/output/res/color-v23/abc_tint_spinner.xml"
+    },
+    {
+        "merged": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/AWSMobileHelper/build/intermediates/res/merged/androidTest/debug/color-v23/abc_tint_default.xml",
+        "source": "/Users/SUNGJIN/.android/build-cache/d8fdd14d8a9b4adccecaef01270308e8767828e9/output/res/color-v23/abc_tint_default.xml"
+    }
+]

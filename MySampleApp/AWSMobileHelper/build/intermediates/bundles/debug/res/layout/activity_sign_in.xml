@@ -1,0 +1,10 @@
+
+<com.amazonaws.mobilehelper.auth.signin.ui.SignInView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:custom="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".auth.signin.ui.SignInActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+</com.amazonaws.mobilehelper.auth.signin.ui.SignInView>

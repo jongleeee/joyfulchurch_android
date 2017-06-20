@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center_horizontal"
+              android:layout_margin="10dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/cloud_logic_apis_endpoint"
+        android:id="@+id/cloudlogic_textView_endpoint_label"
+        android:textColor="@color/dark_content_text"
+        android:layout_marginTop="0dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/cloudlogic_textView_invoker_endpoint"
+        android:layout_marginTop="3dp"
+        />
+
+    <include layout="@layout/list_item_cloudlogic_method_chooser"
+        android:id="@+id/cloud_logic_item_method"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/cloud_logic_apis_querystring"
+        android:id="@+id/cloudlogic_textView_querystring_label"
+        android:textColor="@color/dark_content_text"
+        android:layout_marginTop="0dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:inputType="text|textNoSuggestions"
+        android:ems="10"
+        android:id="@+id/cloudlogic_editText_queryString"
+        android:background="@android:drawable/editbox_background_normal"
+        android:imeOptions="actionDone"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/cloud_logic_apis_requestbody"
+        android:id="@+id/cloudlogic_textView_requestbody_label"
+        android:textColor="@color/dark_content_text"
+        android:layout_marginTop="0dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine|textNoSuggestions"
+        android:ems="10"
+        android:id="@+id/cloudlogic_editText_request"
+        android:layout_gravity="center_horizontal"
+        android:lines="5"
+        android:text=""
+        android:background="@android:drawable/editbox_background_normal"
+        android:imeOptions="actionNone"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cloudlogic_button_invoke"
+            android:text="@string/cloud_logic_apis_invoke"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cloudlogic_button_reset"
+            android:text="@string/cloud_logic_apis_reset"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/cloud_logic_apis_responsebody"
+        android:id="@+id/cloudlogic_textView_responseBody_label"
+        android:textColor="@color/dark_content_text"
+        android:layout_marginTop="0dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="none"
+        android:focusable="false"
+        android:ems="10"
+        android:id="@+id/cloudlogic_editText_response"
+        android:layout_gravity="center_horizontal"
+        android:lines="6"
+        android:text=""
+        android:background="@android:drawable/editbox_background_normal"
+        android:imeOptions="actionNone"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/dark_content_text"
+            android:text="@string/cloud_logic_apis_invoker_status_label"/>
+
+        <TextView
+            android:id="@+id/cloudlogic_invoker_status_value"
+            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_weight="1"
+            android:layout_gravity="left|center_vertical"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/dark_content_text"
+            android:text="---"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/dark_content_text"
+            android:text="@string/cloud_logic_apis_invoker_latency_label"/>
+
+        <TextView
+            android:id="@+id/cloudlogic_invoker_latency_value"
+            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_weight="1"
+            android:layout_gravity="left|center_vertical"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/dark_content_text"
+            android:text="---"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

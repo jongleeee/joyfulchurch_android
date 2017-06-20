@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/settings_fragment_prompt"
+        android:id="@+id/salesforce_banner"/>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+        android:orientation="horizontal"
+        >
+
+        <ImageButton
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/settings_imageButton_theme1"
+            android:src="@drawable/selector_button_theme1"
+            android:scaleType="fitXY"
+            android:background="#00000000"/>
+
+        <ImageButton
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:id="@+id/settings_imageButton_theme2"
+            android:src="@drawable/selector_button_theme2"
+            android:scaleType="fitXY"
+            android:background="#00000000"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+        android:orientation="horizontal"
+        >
+
+        <ImageButton
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/settings_imageButton_theme3"
+            android:src="@drawable/selector_button_theme3"
+            android:scaleType="fitXY"
+            android:background="#00000000"/>
+
+        <ImageButton
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:id="@+id/settings_imageButton_theme4"
+            android:src="@drawable/selector_button_theme4"
+            android:scaleType="fitXY"
+            android:background="#00000000"/>
+
+    </LinearLayout>
+
+</LinearLayout>

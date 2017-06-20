@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size_small_medium">16sp</dimen>
+    <dimen name="demo_mobile_analytics_button_text_size">12sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+</resources>

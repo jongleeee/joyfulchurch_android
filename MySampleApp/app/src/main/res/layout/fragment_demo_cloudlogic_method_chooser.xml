@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center_horizontal"
+              android:layout_margin="10dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/cloud_logic_apis_endpoint"
+        android:id="@+id/cloudlogic_textView_endpoint_label"
+        android:textColor="@color/dark_content_text"
+        android:layout_marginTop="0dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/cloudlogic_textView_endpoint_value"
+        android:layout_marginTop="3dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/cloud_logic_apis_path"
+        android:id="@+id/cloudlogic_textView_path_label"
+        android:textColor="@color/dark_content_text"
+        android:layout_marginTop="5dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:inputType="text|textNoSuggestions"
+        android:ems="10"
+        android:id="@+id/cloudlogic_editText_path"
+        android:focusable="false"
+        android:background="@android:drawable/editbox_background_normal"
+        android:imeOptions="actionDone"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/cloud_logic_apis_method"
+        android:id="@+id/cloudlogic_textView_method_label"
+        android:textColor="@color/dark_content_text"
+        android:layout_marginTop="5dp"
+        />
+
+    <ListView
+        android:id="@+id/cloudlogic_method_chooser_list"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"/>
+
+</LinearLayout>

@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/AWSMobileHelper/build/intermediates/res/merged/androidTest/debug/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/Users/SUNGJIN/.android/build-cache/d8fdd14d8a9b4adccecaef01270308e8767828e9/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/AWSMobileHelper/build/intermediates/res/merged/androidTest/debug/anim/abc_slide_in_top.xml",
+        "source": "/Users/SUNGJIN/.android/build-cache/d8fdd14d8a9b4adccecaef01270308e8767828e9/output/res/anim/abc_slide_in_top.xml"
+    },
+    {
+        "merged": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/AWSMobileHelper/build/intermediates/res/merged/androidTest/debug/anim/abc_popup_enter.xml",
+        "source": "/Users/SUNGJIN/.android/build-cache/d8fdd14d8a9b4adccecaef01270308e8767828e9/output/res/anim/abc_popup_enter.xml"
+    },
+    {
+        "merged": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/AWSMobileHelper/build/intermediates/res/merged/androidTest/debug/anim/abc_slide_in_bottom.xml",
+        "source": "/Users/SUNGJIN/.android/build-cache/d8fdd14d8a9b4adccecaef01270308e8767828e9/output/res/anim/abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/AWSMobileHelper/build/intermediates/res/merged/androidTest/debug/anim/abc_fade_in.xml",
+        "source": "/Users/SUNGJIN/.android/build-cache/d8fdd14d8a9b4adccecaef01270308e8767828e9/output/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/AWSMobileHelper/build/intermediates/res/merged/androidTest/debug/anim/abc_slide_out_bottom.xml",
+        "source": "/Users/SUNGJIN/.android/build-cache/d8fdd14d8a9b4adccecaef01270308e8767828e9/output/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/AWSMobileHelper/build/intermediates/res/merged/androidTest/debug/anim/abc_fade_out.xml",
+        "source": "/Users/SUNGJIN/.android/build-cache/d8fdd14d8a9b4adccecaef01270308e8767828e9/output/res/anim/abc_fade_out.xml"
+    },
+    {
+        "merged": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/AWSMobileHelper/build/intermediates/res/merged/androidTest/debug/anim/abc_grow_fade_in_from_bottom.xml",
+        "source": "/Users/SUNGJIN/.android/build-cache/d8fdd14d8a9b4adccecaef01270308e8767828e9/output/res/anim/abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/AWSMobileHelper/build/intermediates/res/merged/androidTest/debug/anim/abc_slide_out_top.xml",
+        "source": "/Users/SUNGJIN/.android/build-cache/d8fdd14d8a9b4adccecaef01270308e8767828e9/output/res/anim/abc_slide_out_top.xml"
+    },
+    {
+        "merged": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/AWSMobileHelper/build/intermediates/res/merged/androidTest/debug/anim/abc_popup_exit.xml",
+        "source": "/Users/SUNGJIN/.android/build-cache/d8fdd14d8a9b4adccecaef01270308e8767828e9/output/res/anim/abc_popup_exit.xml"
+    }
+]

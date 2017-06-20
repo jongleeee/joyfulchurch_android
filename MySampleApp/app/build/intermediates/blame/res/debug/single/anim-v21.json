@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/res/merged/debug/anim-v21/design_appbar_state_list_animator.xml",
+        "source": "/Users/SUNGJIN/.android/build-cache/1c4faed392bdef47e8ecb6afb30fd81de17bbb3e/output/res/anim-v21/design_appbar_state_list_animator.xml"
+    },
+    {
+        "merged": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml",
+        "source": "/Users/SUNGJIN/.android/build-cache/1c4faed392bdef47e8ecb6afb30fd81de17bbb3e/output/res/anim-v21/design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml",
+        "source": "/Users/SUNGJIN/.android/build-cache/1c4faed392bdef47e8ecb6afb30fd81de17bbb3e/output/res/anim-v21/design_bottom_sheet_slide_in.xml"
+    }
+]

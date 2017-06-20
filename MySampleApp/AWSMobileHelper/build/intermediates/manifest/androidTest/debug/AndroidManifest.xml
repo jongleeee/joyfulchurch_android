@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.amazonaws.mobilehelper.test" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="24" />
+
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:functionalTest="false"
+        android:handleProfiling="false"
+        android:label="Tests for com.amazonaws.mobilehelper.test"
+        android:targetPackage="com.amazonaws.mobilehelper.test" />
+
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true" >
+        <uses-library android:name="android.test.runner" />
+
+        <activity
+            android:name="com.amazonaws.mobilehelper.auth.signin.ui.SignInActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_sign_in"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.amazonaws.mobilehelper.auth.signin.ui.userpools.ForgotPasswordActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_forgot_password"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.amazonaws.mobilehelper.auth.signin.ui.userpools.SignUpActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_sign_up"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.amazonaws.mobilehelper.auth.signin.ui.userpools.MFAActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_mfa"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.amazonaws.mobilehelper.auth.signin.ui.userpools.SignUpConfirmActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_sign_up_confirm"
+            android:screenOrientation="portrait" >
+        </activity>
+    </application>
+
+</manifest>

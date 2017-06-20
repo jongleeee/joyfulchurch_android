@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-ddb-mapper/2.4.2/4d313b77b144c5e57b7da55ffaf5857d73b93bc0/aws-android-sdk-ddb-mapper-2.4.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4d313b77b144c5e57b7da55ffaf5857d73b93bc0">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/aws-android-sdk-ddb-mapper-2.4.2_f939987fd7fd2ac03f9ae09482df2d720f7fb0a3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-apigateway-core/2.4.2/caf878b16d4b3d7e416f8eea09c3bd5333856c9d/aws-android-sdk-apigateway-core-2.4.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="caf878b16d4b3d7e416f8eea09c3bd5333856c9d">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/aws-android-sdk-apigateway-core-2.4.2_e9a2eaab6e87bbf6f70235bbbefa51ca31a7f124/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-s3/2.4.2/48c90942f154c2b84341a90ea07383314881e0ad/aws-android-sdk-s3-2.4.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="48c90942f154c2b84341a90ea07383314881e0ad">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/aws-android-sdk-s3-2.4.2_c03a92a7eb9f4f1e776b01514e689ed4ff5077be/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.android/build-cache/4b0aaa24cc4ab9aa8836a779367a7afd2d2fdeee/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8ade53351d7a481c8ee07a4d8982d4ebcdfb3338/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.android/build-cache/331cf28ddc87035c5c64c53803df3ff6f1ed8a77/output/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_bd9d48ff6da5925e9c6792c5f5073ddd9d4bd0e4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-cognito/2.4.2/487ff1ba87c27032fe6f80ce09c9a2a3dc5e3884/aws-android-sdk-cognito-2.4.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="487ff1ba87c27032fe6f80ce09c9a2a3dc5e3884">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/aws-android-sdk-cognito-2.4.2_d173a10ef30bc60953e10f3ce34859b5a6a29ed0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-kms/2.4.2/939fbde1af746ca406688dbf5f11e35bdc431243/aws-android-sdk-kms-2.4.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="939fbde1af746ca406688dbf5f11e35bdc431243">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/aws-android-sdk-kms-2.4.2_a2e90d90b0c1eb584410050b9a3cea0a3bf357f0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.android/build-cache/2de776b4c99a1e227ff493bac299cece72c51a23/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c3e9418bc41cc7033fb3ecb8b248e6415ce3af0a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.android/build-cache/8e0cd2c7798cec15dd2906923dfc0f515be1bd3e/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_15412781c490bda36116971ffbeb20d3a38bd47f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.android/build-cache/331cf28ddc87035c5c64c53803df3ff6f1ed8a77/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_fbd839976287c5e5c737f477f94db4195130aa6d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.android/build-cache/eeacede833b763cec0fd3e07565e88373ddf9b9a/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_83bbc30cdbb8b53421f42d92a02bd1ab033f76ac/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/AWSMobileHelper/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ea1aa615f7e89b28db2e6154b127ac39c5a40b99">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/4/classes_b141fa15341f6bdca7c79e6486b0f3d7fd483ea6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.android/build-cache/8b2e360f56c8bdb256b4b81180f3154035bce7bb/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0cf149670095d1ded1f4b466c410fad9914df504/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.android/build-cache/9f7aee771ebee031d28e967ced72fe4106556925/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6666dd525c3da197e7d07f4f23ef5fc7881a697b">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ced0888a51556d2a0176d340413d58fea772acf8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.android/build-cache/2de776b4c99a1e227ff493bac299cece72c51a23/output/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_1766740cb98ea27c43d1a02d19b0d412714b3f68/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.android/build-cache/aa537d2179f9fa3294aedde51db95de9630e97d9/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_40b7b31924da01af8de34781ae570adfb6dde5c6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.android/build-cache/287c2281fd2d273846151e0eb38d798b6780eb95/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4557ee74c63369e389ae692757bb9729bf4304e5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.android/build-cache/3658fea143d77a0593a3a24de1769d19d342e694/output/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_a99ba14f409bacbd9323a8ea1691650fb0f0616b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.android/build-cache/4478bc92d891c0b87c62a6218aee4073987758de/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2960c807ca2692156afcf2bd792de40987691193/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-core/2.4.2/3c144566ee18c4c725b4e5aef1793bfec4f9d022/aws-android-sdk-core-2.4.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3c144566ee18c4c725b4e5aef1793bfec4f9d022">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/aws-android-sdk-core-2.4.2_fd9889d51a124f8fb62dc3230a9dbf8061464087/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.android/build-cache/4b0aaa24cc4ab9aa8836a779367a7afd2d2fdeee/output/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_18d1c8df8e5725a42e5a6d842611e7a3cf5b2c6c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_36234f07842e698cb066819eb89c4d7699b7a772/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/Library/Android/sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.2_c7fca17c2ec505d77afa6c83a308ff8415c89f2f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.android/build-cache/3658fea143d77a0593a3a24de1769d19d342e694/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e7fc0727c47fe10e759de74a8b35bb1820a50d33/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.android/build-cache/eb8f58f5995f95e393662b3564b33b0ae79acf34/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c0a153abdc6e7741e44cef4be1427a259dd065b8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.android/build-cache/eb8f58f5995f95e393662b3564b33b0ae79acf34/output/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_0d73c85b878aa67a05df1963410b51481357e4e5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-cognitoidentityprovider/2.4.2/c29a56e6dcf8e33d2e81af86082be7ba0b200223/aws-android-sdk-cognitoidentityprovider-2.4.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c29a56e6dcf8e33d2e81af86082be7ba0b200223">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/aws-android-sdk-cognitoidentityprovider-2.4.2_9728f72c47ab3f899a8bcb9350a659330586e301/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-ddb/2.4.2/34b5bf11f900c9e9915d77b0db9ddde760cb3faa/aws-android-sdk-ddb-2.4.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="34b5bf11f900c9e9915d77b0db9ddde760cb3faa">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/aws-android-sdk-ddb-2.4.2_6bce35b2a3f98b7973c7a7c48ef90bbeddcb032f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.7_e771eef463b734eb1050f720f9b17efe398fee48/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/SUNGJIN/.android/build-cache/1c4faed392bdef47e8ecb6afb30fd81de17bbb3e/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_99196fee6d68bdb889db0641801ef6f34f94db2f/classes.dex" />
+    </item>
+
+</items>

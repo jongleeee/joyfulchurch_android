@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
+        "source": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/res/merged/debug/mipmap-mdpi/splash_icon.png",
+        "source": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/src/main/res/mipmap-mdpi/splash_icon.png"
+    }
+]

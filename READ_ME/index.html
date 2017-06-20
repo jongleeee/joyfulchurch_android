@@ -1,0 +1,1407 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>My Sample App - Developer Instructions</title>
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen, projection">
+        <script>var runOnLoad=function(c,o,d,e){function x(){for(e=1;c.length;)c.shift()()}o[d]?(document[d]('DOMContentLoaded',x,0),o[d]('load',x,0)):o.attachEvent('onload',x);return function(t){e?o.setTimeout(t,0):c.push(t)}}([],window,'addEventListener');</script>
+        <script type="text/javascript" src="js/CollapsibleLists.compressed.js">
+        </script>
+        <script type="text/javascript">
+            runOnLoad(function() { CollapsibleLists.apply(); });
+        </script>
+    </head>
+    <body>
+
+    <h3 class="align-center">
+        <img src="img/ic_launcher.png" width="128px"/><br/>
+My Sample App
+    </h3>
+<p>
+This download package contains an Android Studio project for a fully functioning Mobile App, which uses your configured AWS resources and identifiers, to demonstrate the project features you've selected. You can use this project as a starting point for your own product development, or you can follow the instructions below to copy and paste the required code into your own product.
+</p>
+<p>
+<strong> IMPORTANT: </strong>This package was custom generated for you, using your selected project options. It contains your own resource and account identifiers and should be kept private.<br/><br/>
+</p>
+
+        <div id="listContainer">
+            <ul class="collapsibleList">
+
+<!-- begin - heading = Setup -->
+
+  <li>
+Setup
+    <ul>
+
+<!-- begin - sub-heading = Setup -->
+
+      <li>
+Integrated Development Environment
+
+<!-- begin - steps list -->
+
+        <ul>
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+1. System Requirements</b></p><br/>
+
+Your system must include the following:</br>&nbsp;&nbsp;- Android Studio 1.4 or newer<br/>&nbsp;&nbsp;- Android SDK 4.4 (KitKat) API Level 19 or newer<br/>&nbsp;&nbsp;- Android SDK Build-tools 23.0.1<br/>&nbsp;&nbsp;- Android Device with Android OS 4.0.3 (IceCreamSandwich) API Level 15 or newer
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+2. Install Android Studio</b></p><br/>
+
+If you have not already installed the Android Studio IDE (Integrated Development Environment) on your host, you can download it from the following location:
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_blank" HREF="https://developer.android.com/sdk">https://developer.android.com/sdk</A></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+3. Install Android SDK (Software Development Kit)</b></p><br/>
+
+If you have not already installed the latest Android SDK, you can do so within Android Studio.<br/><br/>Go to...<br/><p><b>Tools -> Android -> SDK Manager -> Appearance & Behavior -> System Settings -> Android SDK</b></p><br/>Then, select the Android SDK Platform version you would like to use. The SDK Manager will download the appropriate Android SDK Platform version and apply any available updates.
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+4. Install AVD (Android Virtual Device)</b></p><br/>
+
+If you have not already installed an Android Virtual Device, you can do so within Android Studio.<br/><br/>Go to...<br/><p><b>Tools -> Android -> AVD Manager</b></p><br/>Then, click "+ Create Virtual Device" and select the device you would like to use in the Android emulator (e.g., Nexus 5). Select the appropriate image from the list (e.g., Lollipop API Level 22 x86 Android 5.1.1) and click the "Next" button. Name the AVD and click the "Finish" button.
+<br/>
+          </li>
+
+<!-- end - step -->
+
+        </ul>
+
+<!-- end - steps list -->
+
+
+<br/>
+      </li>
+
+<!-- end - sub-heading = Integrated Development Environment -->
+
+    </ul>
+  </li>
+
+<!-- end - heading = Setup -->
+
+
+<!-- begin - heading = Compile and Run -->
+
+  <li>
+Compile and Run
+    <ul>
+
+<!-- begin - sub-heading = Compile and Run -->
+
+      <li>
+Launch App
+
+<!-- begin - steps list -->
+
+        <ul>
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+5. Import MySampleApp Project into Android Studio</b></p><br/>
+
+Once you have downloaded and unzipped the sample app project files, please open Android Studio and choose...<br/><p><b>Import project (Eclipse ADT, Gradle, etc.)</b></p><br/>Find the folder where you extracted the zip file contents and select the "MySampleApp" sub-folder. Android Studio will import the project and build it using Gradle.<br/><br/> Note that the project may have several dependencies, which Gradle will automatically retrieve from online repositories. The first time you build the app, it may take longer than subsequent incremental builds.
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+6. Run MySampleApp in Debug Mode</b></p><br/>
+
+Once Gradle finishes building, you can click the "Debug app" icon to launch the app in the Android emulator.
+<br/>
+          </li>
+
+<!-- end - step -->
+
+        </ul>
+
+<!-- end - steps list -->
+
+
+<br/>
+      </li>
+
+<!-- end - sub-heading = Launch App -->
+
+
+<!-- begin - sub-heading = Compile and Run -->
+
+      <li>
+User Identity - Try It!
+
+<!-- begin - steps list -->
+
+        <ul>
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+7. Demonstrate User Identity</b></p><br/>
+
+Launch MySampleApp in the Android emulator. If you've selected to enable User Sign-in in your project, you should sign in to the app. Then, click on the "User Sign-In" demonstration section and then click the "Demo User Identity" button. You will see a unique identifier for the user. This identifies the user to AWS systems and provides the user temporary permissions to access your configured AWS resources.
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+8. Verify User Identity</b></p><br/>
+
+Go to the AWS Cognito console, and you should see the count of users in your Cognito Identity Pool is now greater than zero.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_blank" HREF="https://console.aws.amazon.com/cognito/">https://console.aws.amazon.com/cognito/</A></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+        </ul>
+
+<!-- end - steps list -->
+
+
+<br/>
+      </li>
+
+<!-- end - sub-heading = User Identity - Try It! -->
+
+
+<!-- begin - sub-heading = Compile and Run -->
+
+      <li>
+Push Notifications - Try It!
+
+<!-- begin - steps list -->
+
+        <ul>
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+9. Demonstrate Push Notifications</b></p><br/>
+
+Launch MySampleApp in the Android emulator and click on the "Push Notifications" demonstration section of the app. Click on the "Demo Push Notifications" button at the bottom of the screen, and you will see a checkbox "Receive Push Notifications", which lets you enable or disable push notifications feature on the app. Once enabled, the app will create an endpoint with the app's GCM device token with Amazon SNS. Then it will automatically subscribe the app to a default SNS topic ("ALLDEVICES"). You can toggle topic subscription by clicking on a topic in the list. In order to run this on a device, it must have Google API enabled.
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+10. Verify Push Notifications</b></p><br/>
+
+Go to the Amazon SNS console, click on "topics" in the left menu, and select a topic to which you want to publish a message. Compose in plain text (RAW) in the next screen and click "Publish". If the app enables "Receive Push Notifications" and is subscribed to the given topic, it will receive the message. If the app is running in the foreground, the message will be shown in a dialog box in the app.  In the app is not in the foreground, the message will be shown in the notification center.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_blank" HREF="https://console.aws.amazon.com/sns/">https://console.aws.amazon.com/sns/</A></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+        </ul>
+
+<!-- end - steps list -->
+
+
+<br/>
+      </li>
+
+<!-- end - sub-heading = Push Notifications - Try It! -->
+
+
+<!-- begin - sub-heading = Compile and Run -->
+
+      <li>
+User Profile Data - Try It!
+
+<!-- begin - steps list -->
+
+        <ul>
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+11. Demonstrate User Profile Data</b></p><br/>
+
+Launch MySampleApp in the Android emulator and click on the "User Data Storage" section of the app. Then click "Demo User Profile Data" button in the next page. Once the "User Profile Data" page is loaded, it loads the profile data for the current user and it updates the appearance with the user's theme. You will see four buttons which allow you to update the theme for the current user. Try changing the theme for the current user by tapping on one of the buttons.<br/>In order to sync user profile data across multiple devices, the user must sign in using an identity provider, such as Facebook or Google.
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+12. Verify User Profile Data</b></p><br/>
+
+Launch the sample app in the Android emulator, log-in to one of the identity providers, such as Facebook or Google. Go to the "User Profile Data" demonstration page and pick a different color theme. The color theme is saved to the user's profile data. Now to verify that it was saved correctly, install the "MySampleApp" on a different device or run it on a different Simulator than the one you previously used. Sign-in with the same user and you should see the color theme change to the one you previously selected.
+<br/>
+          </li>
+
+<!-- end - step -->
+
+        </ul>
+
+<!-- end - steps list -->
+
+
+<br/>
+      </li>
+
+<!-- end - sub-heading = User Profile Data - Try It! -->
+
+
+<!-- begin - sub-heading = Compile and Run -->
+
+      <li>
+User Files - Try It!
+
+<!-- begin - steps list -->
+
+        <ul>
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+13. Demonstrate User File Storage</b></p><br/>
+
+<p>Launch MySampleApp in the Android emulator and click on the "User Data Storage" section of the app and then click "Demo User Files" in the next page. You will see two folders "Public" and "Private". The first folder lets you see and manage files that are public to all app users. The second folder is only available to signed-in users and you will be promoted if you aren't. It allows you to manage files that are private where no other users have access to them. Both folders share the same user interface. Let's use Public files as an example.</p><p>After clicking on the folder, please wait for the app to load the list of files from the Amazon S3 bucket. The path at the top tells you where you are in the bucket.</p><p>The next section is the on-device cache summary. The columns, from left to right, are maximum size of disk space for local disk cache, how much is used for cache, how much is left, and the size of pinned content which is cached but doesn't count towards the cache limit you set. You can change the cache size or clear cache via the menu on the top right corner. The bottom part is a list of files in the Amazon S3 bucket, where items in black are downloadable objects with its size on the next line and those in blue are folders which you can navigate into. By clicking on a downloadable object, you can choose from "Open Remote URL", "Download", "Download & Pin", and "Delete Remote File". You will see download progress next to the object if you choose download, and you will have the option to open or delete it once download finishes. If the local cache is full, the oldest object in the cache will be deleted in order to make room for new downloads. You can prevent an object from being deleted by pinning it. To upload an image, click "Upload" from the menu. Upload will start once you choose a file. In order to group files, you can create folders using the "New Folder" from the menu.</p>
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+14. Verify User File Storage</b></p><br/>
+
+Go to Amazon S3 console. If you upload a new image file to S3, remove an existing file, or create a new folder inside the app, you will see it reflected in the S3 console as well. Likewise, any changes you make via the S3 console will be reflected in the app next time you load the "Demo User Files" section.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_blank" HREF="https://console.aws.amazon.com/s3">https://console.aws.amazon.com/s3</A></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+        </ul>
+
+<!-- end - steps list -->
+
+
+<br/>
+      </li>
+
+<!-- end - sub-heading = User Files - Try It! -->
+
+
+<!-- begin - sub-heading = Compile and Run -->
+
+      <li>
+NoSQL Database - Try It!
+
+<!-- begin - steps list -->
+
+        <ul>
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+15. Demonstrate NoSQL Database</b></p><br/>
+
+<p>Launch MySampleApp in the Android emulator and click on the "NoSQL Database" section of the app and then click "Demo NoSQL Database" at the bottom of the next screen. You will see a list of the DynamoDB tables that were added to your project. Tap on the table that you would like to use in the demo.</p><p>A list of example operations to view data in your table will now be shown. Tap the "Insert Sample Data" button in the bottom left of the screen to add random sample data to your table. Click on any of the list items to demonstrate running get, query, and scan operations on your table. When you are done, click on "Remove Sample Data" in the bottom right to remove the data that was inserted by the demo.</p>
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+16. Verify Data in DynamoDB Console</b></p><br/>
+
+Go to the Amazon DynamoDB console. You can click the table name in the "Resources" panel within Mobile Hub to navigate directly to your table in the Amazon DynamoDB console. Once you have inserted sample data into one of your tables, you will see it reflected in the DynamoDB console under the "items" tab for your table. Also, any entries you add to your table from the console will be reflected in the app when you use the Scan without Filter operation in the sample app.
+<br/>
+          </li>
+
+<!-- end - step -->
+
+        </ul>
+
+<!-- end - steps list -->
+
+
+<br/>
+      </li>
+
+<!-- end - sub-heading = NoSQL Database - Try It! -->
+
+    </ul>
+  </li>
+
+<!-- end - heading = Compile and Run -->
+
+
+<!-- begin - heading = Discover -->
+
+  <li>
+Discover
+    <ul>
+
+<!-- begin - sub-heading = Discover -->
+
+      <li>
+What's in here?
+
+<!-- begin - steps list -->
+
+        <ul>
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+17. Project Folders</b></p><br/>
+
+The project contains a number of folders under MySampleApp/app/src/main/java, which contain java packages. Here is a brief explanation of the groups of java packages.<br/><br/>&nbsp;&nbsp;- <B>com/mysampleapp/demo</B> - Demonstration features, you can clone and edit for your own app or discard.<br/>&nbsp;&nbsp;- <B>com/mysampleapp</B> - Example Application user interface and logic, you can clone and edit for your own app or discard.<br/>&nbsp;&nbsp;- <B>com/amazonaws/mobile</B> - Middle layer helper code, simplifies use of various SDKs and adds functionality.</B>
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+18. AWS Configuration - Identifiers and Constants</b></p><br/>
+
+This section simply provides information about the generated code in the MySampleApp project.<br/><br/>
+
+This file has been generated for you, based on your project configuration and on your AWS cloud resources. It contains your private identifiers, which the application will use to access AWS services.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/java/com/amazonaws/mobile/AWSConfiguration.java">MySampleApp/app/src/main/java/com/amazonaws/mobile/AWSConfiguration.java</A></SPAN><BR/><BR/><SPAN style="font-family: courier"><TABLE style="border:0; "><TR><TD><PRE>2</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>package com.amazonaws.mobile;</PRE></TD></TR><TR><TD><PRE>3</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE></PRE></TD></TR><TR><TD><PRE>4</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>import android.graphics.Color;</PRE></TD></TR><TR><TD><PRE>5</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE></PRE></TD></TR><TR><TD><PRE>6</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>import com.amazonaws.mobilehelper.config.AWSMobileHelperConfiguration;</PRE></TD></TR><TR><TD><PRE>7</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>import com.amazonaws.regions.Regions;</PRE></TD></TR><TR><TD><PRE>8</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>import com.mysampleapp.R;</PRE></TD></TR><TR><TD><PRE>9</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE></PRE></TD></TR><TR><TD><PRE>10</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>/**</PRE></TD></TR><TR><TD><PRE>11</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE> * This class defines constants for the developer's resource</PRE></TD></TR><TR><TD><PRE>12</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE> * identifiers and API keys. This configuration should not</PRE></TD></TR><TR><TD><PRE>13</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE> * be shared or posted to any public source code repository.</PRE></TD></TR><TR><TD><PRE>14</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE> */</PRE></TD></TR><TR><TD><PRE>15</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>public class AWSConfiguration {</PRE></TD></TR><TR><TD><PRE>16</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    // AWS MobileHub user agent string</PRE></TD></TR><TR><TD><PRE>17</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    public static final String AWS_MOBILEHUB_USER_AGENT =</PRE></TD></TR><TR><TD><PRE>18</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        "MobileHub 05e0cdda-2625-4fd6-906c-afc4a8132c91 aws-my-sample-app-android-v0.18";</PRE></TD></TR><TR><TD><PRE>19</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    // AMAZON COGNITO</PRE></TD></TR><TR><TD><PRE>20</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    public static final Regions AMAZON_COGNITO_REGION =</PRE></TD></TR><TR><TD><PRE>21</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>      Regions.fromName("us-west-2");</PRE></TD></TR><TR><TD><PRE>22</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    public static final String  AMAZON_COGNITO_IDENTITY_POOL_ID =</PRE></TD></TR><TR><TD><PRE>23</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        "us-west-2:791da0ce-1ecc-4c1d-a427-eafa0d6c4d6f";</PRE></TD></TR><TR><TD><PRE>24</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    // S3 BUCKET</PRE></TD></TR><TR><TD><PRE>25</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    public static final String AMAZON_S3_USER_FILES_BUCKET =</PRE></TD></TR><TR><TD><PRE>26</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        "joyfulchurch-userfiles-mobilehub-687604833";</PRE></TD></TR><TR><TD><PRE>27</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    // S3 BUCKET REGION</PRE></TD></TR><TR><TD><PRE>28</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    public static final Regions AMAZON_S3_USER_FILES_BUCKET_REGION =</PRE></TD></TR><TR><TD><PRE>29</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        Regions.fromName("us-west-1");</PRE></TD></TR><TR><TD><PRE>30</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    public static final Regions AMAZON_DYNAMODB_REGION =</PRE></TD></TR><TR><TD><PRE>31</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>       Regions.fromName("us-west-1");</PRE></TD></TR><TR><TD><PRE>32</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    public static final String AMAZON_COGNITO_USER_POOL_ID =</PRE></TD></TR><TR><TD><PRE>33</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        "us-west-2_SDOpd56WN";</PRE></TD></TR><TR><TD><PRE>34</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    public static final String AMAZON_COGNITO_USER_POOL_CLIENT_ID =</PRE></TD></TR><TR><TD><PRE>35</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        "4uvof73eivpevcsbdr4avbscn6";</PRE></TD></TR><TR><TD><PRE>36</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    public static final String AMAZON_COGNITO_USER_POOL_CLIENT_SECRET =</PRE></TD></TR><TR><TD><PRE>37</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        "1k2pfq9ce8dmpj3pf1b70fqih810dbtq9aqncc36absq0gps9k42";</PRE></TD></TR><TR><TD><PRE>38</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE></PRE></TD></TR><TR><TD><PRE>39</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    private static final AWSMobileHelperConfiguration helperConfiguration = new AWSMobileHelperConfiguration.Builder()</PRE></TD></TR><TR><TD><PRE>40</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        .withCognitoRegion(AMAZON_COGNITO_REGION)</PRE></TD></TR><TR><TD><PRE>41</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        .withCognitoIdentityPoolId(AMAZON_COGNITO_IDENTITY_POOL_ID)</PRE></TD></TR><TR><TD><PRE>42</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        .withCognitoUserPool(AMAZON_COGNITO_USER_POOL_ID,</PRE></TD></TR><TR><TD><PRE>43</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            AMAZON_COGNITO_USER_POOL_CLIENT_ID, AMAZON_COGNITO_USER_POOL_CLIENT_SECRET)</PRE></TD></TR><TR><TD><PRE>44</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        .build();</PRE></TD></TR><TR><TD><PRE>45</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    /**</PRE></TD></TR><TR><TD><PRE>46</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>     * @return the configuration for AWSKit.</PRE></TD></TR><TR><TD><PRE>47</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>     */</PRE></TD></TR><TR><TD><PRE>48</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    public static AWSMobileHelperConfiguration getAWSMobileHelperConfiguration() {</PRE></TD></TR><TR><TD><PRE>49</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        return helperConfiguration;</PRE></TD></TR><TR><TD><PRE>50</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    }</PRE></TD></TR><TR><TD><PRE>51</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>}</PRE></TD></TR></TABLE></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+19. AWS Mobile Client - Bootstraps the App</b></p><br/>
+
+This section simply provides information about the generated code in the MySampleApp project.<br/><br/>
+
+The AWS Mobile Client bootstraps the app. It creates an identity manager to establish the user identity with Amazon Cognito. It also enables whatever features you have selected for your project.  For example, it handles the push notification device tokens, and it tells the Amazon Mobile Analytics client when to pause and resume metrics collection for the user session.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/java/com/amazonaws/mobile/AWSMobileClient.java">MySampleApp/app/src/main/java/com/amazonaws/mobile/AWSMobileClient.java</A></SPAN>
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+20. Identity Manager - Identifies the User</b></p><br/>
+
+This section simply provides information about the generated code in the MySampleApp project.<br/><br/>
+
+The Identity Manager keeps track of the identity of the current app user by storing the user's Amazon Cognito Identity ID. It is partially responsible for signing the user in to the app if you have User Sign-in enabled in your project. It passes results of the sign-in operation back to the application's handler.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/java/com/amazonaws/mobile/user/IdentityManager.java">MySampleApp/app/src/main/java/com/amazonaws/mobile/user/IdentityManager.java</A></SPAN>
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+21. Sign-in Manager - Orchestrates Sign-in Providers</b></p><br/>
+
+This section simply provides information about the generated code in the MySampleApp project.<br/><br/>
+
+The Sign-in Manager is a singleton component, which creates the sign-in identity providers and orchestrates sign-in call flows. It is responsible for keeping track of the most recent provider, refreshing credentials and initializing sign-in buttons with the respective sign-in providers.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/java/com/amazonaws/mobile/user/signin/SignInManager.java">MySampleApp/app/src/main/java/com/amazonaws/mobile/user/signin/SignInManager.java</A></SPAN>
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+22. Cognito Sync Manager - Stores and Syncs User Profile Data</b></p><br/>
+
+This section simply provides information about the generated code in the MySampleApp project.<br/><br/>
+
+User Profile Data is part of the User Data Storage feature. It allows you to save key/value pairs in data sets for each user of your mobile app. This can be used to store things like game progress or user settings. For users who sign in to the app, the data sets will be synchronized across all of the user's devices. Amazon Cognito Sync is the service that provides this functionality and the Amazon Cognito Sync Manager is the application's interface to that service. It is initialized by the AWS Mobile Client.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/java/com/amazonaws/mobile/AWSMobileClient.java">MySampleApp/app/src/main/java/com/amazonaws/mobile/AWSMobileClient.java</A></SPAN><BR/><BR/><SPAN style="font-family: courier"><TABLE style="border:0; "><TR><TD><PRE>284</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    public CognitoSyncManager getSyncManager() {</PRE></TD></TR><TR><TD><PRE>285</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        return identityManager.getSyncManager();</PRE></TD></TR><TR><TD><PRE>286</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    }</PRE></TD></TR></TABLE></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+23. User File Manager - Transfers Public and Private Files</b></p><br/>
+
+This section simply provides information about the generated code in the MySampleApp project.<br/><br/>
+
+The User File Manager uploads and downloads files from Amazon S3. It caches downloaded files locally on the device in a size-limited cache. Downloaded files may be pinned to the cache, so that they are not automatically removed when the cache size limit is exceeded. The User File Manager provides access to two folders in the Amazon S3 bucket, one called "public/" for public files, which are accessible to any user of the app, and one called "private/" which contains a sub-folder for each Amazon Cognito identified user. Files in the user's private folder can only be accessed by that user. The User File Manager serves as the application's interface into the file-related functionality of the User Data Storage feature.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/java/com/amazonaws/mobile/content/UserFileManager.java">MySampleApp/app/src/main/java/com/amazonaws/mobile/content/UserFileManager.java</A></SPAN>
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+24. Amazon DynamoDB Object Mapper Client - Accesses DynamoDB Tables.</b></p><br/>
+
+This section simply provides information about the generated code in the MySampleApp project.<br/><br/>
+
+The NoSQL feature creates a bootstrapped instance of the DynamodDB Object Mapper in your mobile app.  This client component can be used to load, save, and query items in DynamoDB tables.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/java/com/amazonaws/mobile/AWSMobileClient.java">MySampleApp/app/src/main/java/com/amazonaws/mobile/AWSMobileClient.java</A></SPAN><BR/><BR/><SPAN style="font-family: courier"><TABLE style="border:0; "><TR><TD><PRE>371</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>    /**</PRE></TD></TR><TR><TD><PRE>372</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>     * Gets the Dynamo DB Object Mapper, which allows accessing DynamoDB tables using annotated</PRE></TD></TR><TR><TD><PRE>373</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>     * data object classes to represent your data using POJOs (Plain Old Java Objects).</PRE></TD></TR><TR><TD><PRE>374</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>     * @return the DynamoDB Object Mapper instance.</PRE></TD></TR><TR><TD><PRE>375</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>     */</PRE></TD></TR><TR><TD><PRE>376</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    public DynamoDBMapper getDynamoDBMapper() {</PRE></TD></TR><TR><TD><PRE>377</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        return dynamoDBMapper;</PRE></TD></TR><TR><TD><PRE>378</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    }</PRE></TD></TR></TABLE></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+25. NoSQL Demo Code - Demonstrate Amazon DynamoDB Table Operations</b></p><br/>
+
+This section simply provides information about the generated code in the MySampleApp project.<br/><br/>
+
+Your generated Sample App contains a demonstration of using the DynamoDB Mapper to perform queries and scans against the NoSQL tables you configured in your Mobile Hub project. The following folder contains all the code for the NoSQL Demo. The DemoNoSQLTable*.java files contain the example code to demonstrate insert, remove, query, and scan operations against your tables. The files named *DO.java are the data object classes for your configured tables. The DynamoDB object mapper uses these annotated POJO (plain old Java object) classes to provide convenient marshaling between your Android App and DynamoDB's JSON requests and responses.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/java/com/mysampleapp/demo/nosql">MySampleApp/app/src/main/java/com/mysampleapp/demo/nosql</A></SPAN>
+<br/>
+          </li>
+
+<!-- end - step -->
+
+        </ul>
+
+<!-- end - steps list -->
+
+
+<br/>
+      </li>
+
+<!-- end - sub-heading = What's in here? -->
+
+
+<!-- begin - sub-heading = Discover -->
+
+      <li>
+Where can I learn more?
+
+<!-- begin - steps list -->
+
+        <ul>
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+26. AWS Mobile SDK for Android</b></p><br/>
+
+All of the code in the sample app is built on top of the AWS Mobile SDKs. The SDKs that are included in your download depend on which features you've enabled in your project. You may want to use more advanced capabilities directly in the one of the AWS Mobile SDKs. To learn more, visit
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_blank" HREF="http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/">http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/</A></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+        </ul>
+
+<!-- end - steps list -->
+
+
+<br/>
+      </li>
+
+<!-- end - sub-heading = Where can I learn more? -->
+
+    </ul>
+  </li>
+
+<!-- end - heading = Discover -->
+
+
+<!-- begin - heading = Develop -->
+
+  <li>
+Develop
+    <ul>
+
+<!-- begin - sub-heading = Develop -->
+
+      <li>
+Development Methods
+
+<!-- begin - steps list -->
+
+        <ul>
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+27. Starter versus Example</b></p><br/>
+
+There are two convenient ways you can use what is provided in MySampleApp to enable your own app project with your configured features and cloud resources. You can use MySampleApp as a starter app, and build your own app on top of it. Alternatively, you can use MySampleApp as an example, and copy and paste the source code from MySampleApp into your own app project.
+<br/>
+          </li>
+
+<!-- end - step -->
+
+        </ul>
+
+<!-- end - steps list -->
+
+
+<br/>
+      </li>
+
+<!-- end - sub-heading = Development Methods -->
+
+
+<!-- begin - sub-heading = Develop -->
+
+      <li>
+Use as a Starter App
+
+<!-- begin - steps list -->
+
+        <ul>
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+28. Use MySampleApp as a Starter App</b></p><br/>
+
+When you use MySampleApp as a starter app for your own app project, it serves as a starting point for your own App development. Remove the "demo" features, replace the app name and package name, build in your own app logic and user interface, and you're done!
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+29. Set Unique App Package Name</b></p><br/>
+
+Please copy this segment of code from the MySampleApp project into your own project.<br/><br/>
+
+Android Apps must each have a unique package name, before they can be published to any app store. If you have not already, please make sure you replace "com.mysampleapp" with a unique package name for your app. Note that you may also have to change Activity class names in your AndroidManifest.xml file; Android will look for com.mysampleapp.MainActivity.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/AndroidManifest.xml">MySampleApp/app/src/main/AndroidManifest.xml</A></SPAN><BR/><BR/><SPAN style="font-family: courier"><TABLE style="border:0; "><TR><TD><PRE>9</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"</PRE></TD></TR><TR><TD><PRE>10</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    package="com.mysampleapp" ></PRE></TD></TR></TABLE></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+        </ul>
+
+<!-- end - steps list -->
+
+
+<br/>
+      </li>
+
+<!-- end - sub-heading = Use as a Starter App -->
+
+
+<!-- begin - sub-heading = Develop -->
+
+      <li>
+Use as an Example
+
+<!-- begin - steps list -->
+
+        <ul>
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+30. Use MySampleApp as an Example</b></p><br/>
+
+When you use MySampleApp as an example, you learn from what is demonstrated in MySampleApp and copy and paste the parts you need. This section explains the steps needed to copy and paste the MySampleApp functionality into your own app project.
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+31. Copy Customized Helper Code</b></p><br/>
+
+Please copy this folder and all of its sub-folders from the MySampleApp project into your project.<br/><br/>
+
+This folder contains a set of helper classes that have been custom generated for you. These were generated based on your project configuration and on the AWS cloud resources and identifiers that were created for you when you configured the project. These classes simplify the use of all the SDKs that are required to support your project. You should not need to modify these files, but they should be included in your project, in their entirety. Copy the contents of the "amazonaws" folder into the "java/com" folder of your own project.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/java/com/amazonaws">MySampleApp/app/src/main/java/com/amazonaws</A></SPAN>
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+32. Add AWS SDKs to Gradle Build</b></p><br/>
+
+Please copy this segment of code from the MySampleApp project into your own project.<br/><br/>
+
+Add the AWS SDKs to the Gradle build configuration, so they are retrieved from Maven Central at build-time.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/build.gradle">MySampleApp/app/build.gradle</A></SPAN><BR/><BR/><SPAN style="font-family: courier"><TABLE style="border:0; "><TR><TD><PRE>56</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    compile 'com.amazonaws:aws-android-sdk-core:2.4.2'</PRE></TD></TR><TR><TD><PRE>57</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    compile 'com.amazonaws:aws-android-sdk-cognito:2.4.2'</PRE></TD></TR></TABLE></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+33. Add AWS S3 SDKs to Gradle Build</b></p><br/>
+
+Please copy this segment of code from the MySampleApp project into your own project.<br/><br/>
+
+Add the AWS S3 SDK to the Gradle build configuration, so it is retrieved from Maven Central at build-time.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/build.gradle">MySampleApp/app/build.gradle</A></SPAN><BR/><BR/><SPAN style="font-family: courier"><TABLE style="border:0; "><TR><TD><PRE>62</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    compile 'com.amazonaws:aws-android-sdk-s3:2.4.2'</PRE></TD></TR></TABLE></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+34. Amazon DynamoDB Compile</b></p><br/>
+
+Please copy this segment of code from the MySampleApp project into your own project.<br/><br/>
+
+Amazon DynamodDB SDK and DynamoDB Mapper are required in compile statements.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/build.gradle">MySampleApp/app/build.gradle</A></SPAN><BR/><BR/><SPAN style="font-family: courier"><TABLE style="border:0; "><TR><TD><PRE>66</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    compile 'com.amazonaws:aws-android-sdk-ddb:2.4.2'</PRE></TD></TR><TR><TD><PRE>67</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    compile 'com.amazonaws:aws-android-sdk-ddb-mapper:2.4.2'</PRE></TD></TR></TABLE></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+35. Allow Network Access</b></p><br/>
+
+Please copy this segment of code from the MySampleApp project into your own project.<br/><br/>
+
+In order for your app to use AWS resources, it must enable access to the internet. This change enables network access in the app.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/AndroidManifest.xml">MySampleApp/app/src/main/AndroidManifest.xml</A></SPAN><BR/><BR/><SPAN style="font-family: courier"><TABLE style="border:0; "><TR><TD><PRE>13</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"</PRE></TD></TR><TR><TD><PRE>14</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>    package="com.mysampleapp" ></PRE></TD></TR><TR><TD><PRE>15</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE></PRE></TD></TR><TR><TD><PRE>16</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    &lt;uses-permission android:name="android.permission.INTERNET" /></PRE></TD></TR><TR><TD><PRE>17</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    &lt;uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /></PRE></TD></TR><TR><TD><PRE>18</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    &lt;uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /></PRE></TD></TR><TR><TD><PRE>19</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>    &lt;uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /></PRE></TD></TR></TABLE></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+36. Set Custom Application Class in Manifest</b></p><br/>
+
+This section simply provides information about the generated code in the MySampleApp project.<br/><br/>
+
+Set a custom Application class in the manifest. This class will be used to initialize common components for the application. Here, we use com.mysampleapp.Application as an example.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/AndroidManifest.xml">MySampleApp/app/src/main/AndroidManifest.xml</A></SPAN><BR/><BR/><SPAN style="font-family: courier"><TABLE style="border:0; "><TR><TD><PRE>40</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    &lt;application</PRE></TD></TR><TR><TD><PRE>41</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        android:allowBackup="true"</PRE></TD></TR><TR><TD><PRE>42</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        android:icon="@mipmap/ic_launcher"</PRE></TD></TR><TR><TD><PRE>43</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        android:label="@string/app_name"</PRE></TD></TR><TR><TD><PRE>44</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        android:theme="@style/AppTheme"</PRE></TD></TR><TR><TD><PRE>45</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        android:name="com.mysampleapp.Application"</PRE></TD></TR><TR><TD><PRE>46</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        ></PRE></TD></TR></TABLE></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+37. Add Custom Application Class</b></p><br/>
+
+Please copy this segment of code from the MySampleApp project into your own project.<br/><br/>
+
+Create a custom Application class. This class initializes common components for the application.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/java/com/mysampleapp/Application.java">MySampleApp/app/src/main/java/com/mysampleapp/Application.java</A></SPAN><BR/><BR/><SPAN style="font-family: courier"><TABLE style="border:0; "><TR><TD><PRE>2</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>package com.mysampleapp;</PRE></TD></TR><TR><TD><PRE>3</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE></PRE></TD></TR><TR><TD><PRE>4</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>import android.support.multidex.MultiDexApplication;</PRE></TD></TR><TR><TD><PRE>5</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>import android.util.Log;</PRE></TD></TR><TR><TD><PRE>6</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE></PRE></TD></TR><TR><TD><PRE>7</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>import com.amazonaws.mobile.AWSMobileClient;</PRE></TD></TR><TR><TD><PRE>8</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE></PRE></TD></TR><TR><TD><PRE>9</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>/**</PRE></TD></TR><TR><TD><PRE>10</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE> * Application class responsible for initializing singletons and other common components.</PRE></TD></TR><TR><TD><PRE>11</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE> */</PRE></TD></TR><TR><TD><PRE>12</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>public class Application extends MultiDexApplication {</PRE></TD></TR><TR><TD><PRE>13</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    private static final String LOG_TAG = Application.class.getSimpleName();</PRE></TD></TR><TR><TD><PRE>14</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE></PRE></TD></TR><TR><TD><PRE>15</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    @Override</PRE></TD></TR><TR><TD><PRE>16</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    public void onCreate() {</PRE></TD></TR><TR><TD><PRE>17</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        Log.d(LOG_TAG, "Application.onCreate - Initializing application...");</PRE></TD></TR><TR><TD><PRE>18</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        super.onCreate();</PRE></TD></TR><TR><TD><PRE>19</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        initializeApplication();</PRE></TD></TR><TR><TD><PRE>20</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        Log.d(LOG_TAG, "Application.onCreate - Application initialized OK");</PRE></TD></TR><TR><TD><PRE>21</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    }</PRE></TD></TR><TR><TD><PRE>22</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE></PRE></TD></TR><TR><TD><PRE>23</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    private void initializeApplication() {</PRE></TD></TR><TR><TD><PRE>24</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        AWSMobileClient.initializeMobileClientIfNecessary(getApplicationContext());</PRE></TD></TR><TR><TD><PRE>25</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE></PRE></TD></TR><TR><TD><PRE>26</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        // ...Put any application-specific initialization logic here...</PRE></TD></TR><TR><TD><PRE>27</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    }</PRE></TD></TR><TR><TD><PRE>28</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>}</PRE></TD></TR></TABLE></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+38. Initialize the AWS Mobile Client</b></p><br/>
+
+This section simply provides information about the generated code in the MySampleApp project.<br/><br/>
+
+Initialize the AWS Mobile Client class. This class bootstraps the application, so that it can make calls to AWS services. This call must be included somewhere in the application initialization logic, before any calls are made to AWS services. Here, we demonstrate initializing it in the Application onCreate lifecycle method.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/java/com/mysampleapp/Application.java">MySampleApp/app/src/main/java/com/mysampleapp/Application.java</A></SPAN><BR/><BR/><SPAN style="font-family: courier"><TABLE style="border:0; "><TR><TD><PRE>35</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>    private void initializeApplication() {</PRE></TD></TR><TR><TD><PRE>36</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        AWSMobileClient.initializeMobileClientIfNecessary(getApplicationContext());</PRE></TD></TR><TR><TD><PRE>37</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE></PRE></TD></TR></TABLE></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+39. Add Splash Activity to Manifest</b></p><br/>
+
+Please copy this segment of code from the MySampleApp project into your own project.<br/><br/>
+
+The Splash Activity is the first screen the user sees. It typically shows a logo or other image for the app while it initializes necessary components. If you do not have a Splash Activity, you can follow these instructions to add one. This segment adds the Splash Activity to the Android Manifest file.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/AndroidManifest.xml">MySampleApp/app/src/main/AndroidManifest.xml</A></SPAN><BR/><BR/><SPAN style="font-family: courier"><TABLE style="border:0; "><TR><TD><PRE>48</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>        android:icon="@mipmap/ic_launcher"</PRE></TD></TR><TR><TD><PRE>49</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>        android:label="@string/app_name"</PRE></TD></TR><TR><TD><PRE>50</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>        android:theme="@style/AppTheme"</PRE></TD></TR><TR><TD><PRE>51</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>        android:name="com.mysampleapp.Application"</PRE></TD></TR><TR><TD><PRE>52</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>        ></PRE></TD></TR><TR><TD><PRE>53</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        &lt;activity</PRE></TD></TR><TR><TD><PRE>54</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            android:name=".SplashActivity"</PRE></TD></TR><TR><TD><PRE>55</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            android:label="@string/app_name"</PRE></TD></TR><TR><TD><PRE>56</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"></PRE></TD></TR><TR><TD><PRE>57</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            &lt;intent-filter></PRE></TD></TR><TR><TD><PRE>58</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                &lt;action android:name="android.intent.action.MAIN" /></PRE></TD></TR><TR><TD><PRE>59</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                &lt;category android:name="android.intent.category.LAUNCHER" /></PRE></TD></TR><TR><TD><PRE>60</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            &lt;/intent-filter></PRE></TD></TR></TABLE></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+40. Add Splash Activity Layout</b></p><br/>
+
+Please copy this file from the MySampleApp project into your own project.<br/><br/>
+
+The Splash Activity is the first screen the user sees. It typically shows a logo or other image for the app while it initializes necessary components. This file specifies the layout for the Splash Activity.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/res/layout/activity_splash.xml">MySampleApp/app/src/main/res/layout/activity_splash.xml</A></SPAN>
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+41. Add Splash Activity Class</b></p><br/>
+
+Please copy this file from the MySampleApp project into your own project.<br/><br/>
+
+The Splash Activity is the first screen the user sees. It typically shows a logo or other image for the app, while it initializes necessary components. This file specifies the behavior of the Splash Activity. You can customize this activity to perform initialization operations for the application.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/java/com/mysampleapp/SplashActivity.java">MySampleApp/app/src/main/java/com/mysampleapp/SplashActivity.java</A></SPAN>
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+42. Add Main Activity to Manifest</b></p><br/>
+
+Please copy this segment of code from the MySampleApp project into your own project.<br/><br/>
+
+This segment adds the Main Activity to the Android Manifest file.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/AndroidManifest.xml">MySampleApp/app/src/main/AndroidManifest.xml</A></SPAN><BR/><BR/><SPAN style="font-family: courier"><TABLE style="border:0; "><TR><TD><PRE>58</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        &lt;activity</PRE></TD></TR><TR><TD><PRE>59</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            android:name=".MainActivity"</PRE></TD></TR><TR><TD><PRE>60</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            android:launchMode="singleInstance"</PRE></TD></TR><TR><TD><PRE>61</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            android:label="@string/title_activity_main"></PRE></TD></TR></TABLE></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+43. Add Main Activity Layout</b></p><br/>
+
+Please copy this file from the MySampleApp project into your own project.<br/><br/>
+
+The Main Activity is where your core application logic will reside. This file specifies the layout for the Main Activity. You can modify this file to customize the look of your main screen.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/res/layout/activity_main.xml">MySampleApp/app/src/main/res/layout/activity_main.xml</A></SPAN>
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+44. Add Main Activity Class</b></p><br/>
+
+Please copy this file from the MySampleApp project into your own project.<br/><br/>
+
+The Main Activity is where your core application logic will reside. This file specifies the behavior and business logic for the Main Activity. You can modify this file to customize your app's behavior.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/java/com/mysampleapp/MainActivity.java">MySampleApp/app/src/main/java/com/mysampleapp/MainActivity.java</A></SPAN>
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+45. Add Sign-in Activity Layout</b></p><br/>
+
+Please copy this file from the MySampleApp project into your own project.<br/><br/>
+
+The Sign-In Activity is the screen that shows all the available options for user to sign in. This file specifies the layout of the Sign-In Activity. You can modify this file to customize the look of your sign-in screen.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/AWSMobileHelper/src/main/res/layout/activity_sign_in.xml">MySampleApp/AWSMobileHelper/src/main/res/layout/activity_sign_in.xml</A></SPAN>
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+46. Integrate Amazon DynamoDB</b></p><br/>
+
+This section simply provides information about the generated code in the MySampleApp project.<br/><br/>
+
+Your generated Sample App contains a demonstration of using the DynamoDB Mapper to perform queries and scans against the NoSQL tables you configured in your Mobile Hub project. The following folder contains all the code for the NoSQL Demo.<p>The files named *DO.java are the data object classes for your configured tables. Copy these directly into your project. The DynamoDB object mapper uses these annotated POJO (plain old Java object) classes to provide convenient marshaling between your Android App and DynamoDB's JSON requests and responses.</p><p>The DemoNoSQLTable*.java files contain the example code to demonstrate insert, remove, query, and scan operations against your tables. You can copy segments of the example code in these files and adapt it for your mobile app's NoSQL Database needs.</p>
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/java/com/mysampleapp/demo/nosql">MySampleApp/app/src/main/java/com/mysampleapp/demo/nosql</A></SPAN>
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+47. Setup Content Manager in Manifest</b></p><br/>
+
+Please copy this segment of code from the MySampleApp project into your own project.<br/><br/>
+
+Content Manager requires TransferService from Amazon S3 TransferUtility, FileProvider from Android's V4 support library, and DownloadService and DownloadQueueProvider to be specified in the manifest file.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/AndroidManifest.xml">MySampleApp/app/src/main/AndroidManifest.xml</A></SPAN><BR/><BR/><SPAN style="font-family: courier"><TABLE style="border:0; "><TR><TD><PRE>159</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        &lt;service android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService" android:enabled="true" /></PRE></TD></TR><TR><TD><PRE>160</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE></PRE></TD></TR><TR><TD><PRE>161</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        &lt;service android:name="com.amazonaws.mobile.downloader.service.DownloadService" /></PRE></TD></TR><TR><TD><PRE>162</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE></PRE></TD></TR><TR><TD><PRE>163</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        &lt;receiver android:name="com.amazonaws.mobile.downloader.service.NetworkStateListener"</PRE></TD></TR><TR><TD><PRE>164</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                  android:exported="false"</PRE></TD></TR><TR><TD><PRE>165</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                  android:enabled="false"></PRE></TD></TR><TR><TD><PRE>166</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            &lt;intent-filter></PRE></TD></TR><TR><TD><PRE>167</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                &lt;action android:name="android.net.conn.CONNECTIVITY_CHANGE"/></PRE></TD></TR><TR><TD><PRE>168</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            &lt;/intent-filter></PRE></TD></TR><TR><TD><PRE>169</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        &lt;/receiver></PRE></TD></TR><TR><TD><PRE>170</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE></PRE></TD></TR><TR><TD><PRE>171</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        &lt;provider</PRE></TD></TR><TR><TD><PRE>172</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>	    android:name="com.amazonaws.mobile.downloader.query.DownloadQueueProvider"</PRE></TD></TR><TR><TD><PRE>173</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            android:authorities="@string/download_queue_provider_authority"</PRE></TD></TR><TR><TD><PRE>174</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            android:enabled="true"</PRE></TD></TR><TR><TD><PRE>175</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            android:exported="false"></PRE></TD></TR><TR><TD><PRE>176</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        &lt;/provider></PRE></TD></TR><TR><TD><PRE>177</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE></PRE></TD></TR><TR><TD><PRE>178</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        &lt;provider</PRE></TD></TR><TR><TD><PRE>179</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            android:name="android.support.v4.content.FileProvider"</PRE></TD></TR><TR><TD><PRE>180</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            android:authorities="@string/content_file_provider_authority"</PRE></TD></TR><TR><TD><PRE>181</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            android:exported="false"</PRE></TD></TR><TR><TD><PRE>182</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            android:grantUriPermissions="true"></PRE></TD></TR><TR><TD><PRE>183</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            &lt;meta-data</PRE></TD></TR><TR><TD><PRE>184</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                android:name="android.support.FILE_PROVIDER_PATHS"</PRE></TD></TR><TR><TD><PRE>185</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                android:resource="@xml/content_delivery_paths" /></PRE></TD></TR><TR><TD><PRE>186</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        &lt;/provider></PRE></TD></TR></TABLE></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+48. Setup Provider Authorities in strings.xml</b></p><br/>
+
+Please copy this segment of code from the MySampleApp project into your own project.<br/><br/>
+
+The download queue used by the HttpDownloadUtility and the file provider used for opening content in an external viewing app require unique provider authorities.  These strings are referenced in the Android Manifest from the previous step.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/res/values/strings.xml">MySampleApp/app/src/main/res/values/strings.xml</A></SPAN><BR/><BR/><SPAN style="font-family: courier"><TABLE style="border:0; "><TR><TD><PRE>7</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>  &lt;!-- Suffix after '-' must be the app package name as specified in the build.gradle file. This</PRE></TD></TR><TR><TD><PRE>8</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>       is used by the com.amazonaws.mobile.downloader.query.DownloadQueueProvider class. --></PRE></TD></TR><TR><TD><PRE>9</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>  &lt;string name="download_queue_provider_authority">com.amazonaws.mobile.downloader-com.amazon.mysampleapp&lt;/string></PRE></TD></TR><TR><TD><PRE>10</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>  &lt;!-- This can be anything, but it should be unique to the app. --></PRE></TD></TR><TR><TD><PRE>11</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>  &lt;string name="content_file_provider_authority">com.mysampleapp.fileprovider&lt;/string></PRE></TD></TR></TABLE></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+49. Setup File Provider Paths Resource</b></p><br/>
+
+Please copy this segment of code from the MySampleApp project into your own project.<br/><br/>
+
+The ContentHelper class in the com.mysampleapp.util package contains an openFileViewer helper method that depends on the FileProvider which is defined in your AndroidManifest.xml. The AndroidManifest.xml references this XML resource to define the paths that may be opened.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/res/xml/content_delivery_paths.xml">MySampleApp/app/src/main/res/xml/content_delivery_paths.xml</A></SPAN><BR/><BR/><SPAN style="font-family: courier"><TABLE style="border:0; "><TR><TD><PRE>2</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>&lt;paths xmlns:android="http://schemas.android.com/apk/res/android"></PRE></TD></TR><TR><TD><PRE>3</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    &lt;files-path name="." path="/"/></PRE></TD></TR><TR><TD><PRE>4</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>&lt;/paths></PRE></TD></TR></TABLE></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+50. Load User Profile Data</b></p><br/>
+
+Please copy this segment of code from the MySampleApp project into your own project.<br/><br/>
+
+This call is an example of how to retrieve a user's profile data. It synchronizes profile data with the Cognito Sync remote storage and loads it from Dataset into UserSettings.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/java/com/mysampleapp/demo/UserSettingsDemoFragment.java">MySampleApp/app/src/main/java/com/mysampleapp/demo/UserSettingsDemoFragment.java</A></SPAN><BR/><BR/><SPAN style="font-family: courier"><TABLE style="border:0; "><TR><TD><PRE>184</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>        final UserSettings userSettings = UserSettings.getInstance(getContext());</PRE></TD></TR><TR><TD><PRE>185</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>        final Dataset dataset = userSettings.getDataset();</PRE></TD></TR><TR><TD><PRE>186</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>        final ProgressDialog dialog = ProgressDialog.show(getActivity(),</PRE></TD></TR><TR><TD><PRE>187</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>                getString(R.string.settings_fragment_dialog_title),</PRE></TD></TR><TR><TD><PRE>188</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>                getString(R.string.settings_fragment_dialog_message));</PRE></TD></TR><TR><TD><PRE>189</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>        Log.d(LOG_TAG, "Loading user settings from remote");</PRE></TD></TR><TR><TD><PRE>190</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        dataset.synchronize(new DefaultSyncCallback() {</PRE></TD></TR><TR><TD><PRE>191</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            @Override</PRE></TD></TR><TR><TD><PRE>192</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            public void onSuccess(final Dataset dataset, final List&lt;Record> updatedRecords) {</PRE></TD></TR><TR><TD><PRE>193</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                super.onSuccess(dataset, updatedRecords);</PRE></TD></TR><TR><TD><PRE>194</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                userSettings.loadFromDataset();</PRE></TD></TR><TR><TD><PRE>195</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                updateUI(dialog);</PRE></TD></TR><TR><TD><PRE>196</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            }</PRE></TD></TR></TABLE></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+51. Save User Profile Data</b></p><br/>
+
+Please copy this segment of code from the MySampleApp project into your own project.<br/><br/>
+
+This method is an example of how to save the user's profile data. It first updates UserSettings object, and then saves it into a local Dataset. Finally, it calls synchronize() on the Dataset to write it to remote Cognito Sync storage. You can pass a SyncCallback into synchronize() to handle potential conflicts, dataset merges, or delete requests.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/java/com/mysampleapp/demo/UserSettingsDemoFragment.java">MySampleApp/app/src/main/java/com/mysampleapp/demo/UserSettingsDemoFragment.java</A></SPAN><BR/><BR/><SPAN style="font-family: courier"><TABLE style="border:0; "><TR><TD><PRE>123</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>    private void setThemeColors(final Theme theme) {</PRE></TD></TR><TR><TD><PRE>124</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        final UserSettings userSettings = UserSettings.getInstance(getContext());</PRE></TD></TR><TR><TD><PRE>125</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        userSettings.setTitleTextColor(theme.titleTextColor);</PRE></TD></TR><TR><TD><PRE>126</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        userSettings.setBackgroundColor(theme.backgroundColor);</PRE></TD></TR><TR><TD><PRE>127</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        userSettings.setTitleBarColor(theme.titleBarColor);</PRE></TD></TR><TR><TD><PRE>128</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE></PRE></TD></TR><TR><TD><PRE>129</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        new AsyncTask&lt;Void, Void, Void>() {</PRE></TD></TR><TR><TD><PRE>130</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            @Override</PRE></TD></TR><TR><TD><PRE>131</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            protected Void doInBackground(final Void... params) {</PRE></TD></TR><TR><TD><PRE>132</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                userSettings.saveToDataset();</PRE></TD></TR><TR><TD><PRE>133</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                return null;</PRE></TD></TR><TR><TD><PRE>134</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            }</PRE></TD></TR><TR><TD><PRE>135</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE></PRE></TD></TR><TR><TD><PRE>136</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            @Override</PRE></TD></TR><TR><TD><PRE>137</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            protected void onPostExecute(final Void aVoid) {</PRE></TD></TR><TR><TD><PRE>138</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE></PRE></TD></TR><TR><TD><PRE>139</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                // update color</PRE></TD></TR><TR><TD><PRE>140</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                ((MainActivity) getActivity()).updateColor();</PRE></TD></TR><TR><TD><PRE>141</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE></PRE></TD></TR><TR><TD><PRE>142</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                // save user settings to remote on background thread</PRE></TD></TR><TR><TD><PRE>143</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                userSettings.getDataset().synchronize(new Dataset.SyncCallback() {</PRE></TD></TR><TR><TD><PRE>144</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                    @Override</PRE></TD></TR><TR><TD><PRE>145</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                    public void onSuccess(Dataset dataset, List&lt;Record> updatedRecords) {</PRE></TD></TR><TR><TD><PRE>146</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                        Log.d(LOG_TAG, "onSuccess - dataset updated");</PRE></TD></TR><TR><TD><PRE>147</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                    }</PRE></TD></TR></TABLE></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+52. Initialize User File Manager</b></p><br/>
+
+Please copy this segment of code from the MySampleApp project into your own project.<br/><br/>
+
+This call is an example of how to initialize a User File Manager. An instance of UserFileManager is constructed via a builder inside the AWSMobileClient's createUserFileManager() method. The builder takes a handler, BuilderResultHandler, that notifies you when initialization is complete.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/java/com/mysampleapp/demo/UserFilesBrowserFragment.java">MySampleApp/app/src/main/java/com/mysampleapp/demo/UserFilesBrowserFragment.java</A></SPAN><BR/><BR/><SPAN style="font-family: courier"><TABLE style="border:0; "><TR><TD><PRE>218</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>                final String identityId = AWSMobileClient.defaultMobileClient()</PRE></TD></TR><TR><TD><PRE>219</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>                        .getIdentityManager()</PRE></TD></TR><TR><TD><PRE>220</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>                        .getCachedUserID();</PRE></TD></TR><TR><TD><PRE>221</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>                currentPath = identityId + "/";</PRE></TD></TR><TR><TD><PRE>222</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>            }</PRE></TD></TR><TR><TD><PRE>223</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>        }</PRE></TD></TR><TR><TD><PRE>224</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE></PRE></TD></TR><TR><TD><PRE>225</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE></PRE></TD></TR><TR><TD><PRE>226</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>        final ProgressDialog dialog = getProgressDialog(</PRE></TD></TR><TR><TD><PRE>227</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>                R.string.content_progress_dialog_message_load_local_content);</PRE></TD></TR><TR><TD><PRE>228</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE></PRE></TD></TR><TR><TD><PRE>229</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        AWSMobileClient.defaultMobileClient()</PRE></TD></TR><TR><TD><PRE>230</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            .createUserFileManager(this.getContext().getApplicationContext(), bucket, prefix, region,</PRE></TD></TR><TR><TD><PRE>231</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                new UserFileManager.BuilderResultHandler() {</PRE></TD></TR><TR><TD><PRE>232</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                    @Override</PRE></TD></TR><TR><TD><PRE>233</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                    public void onComplete(final UserFileManager userFileManager) {</PRE></TD></TR><TR><TD><PRE>234</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                        if (!isAdded()) {</PRE></TD></TR><TR><TD><PRE>235</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                            userFileManager.destroy();</PRE></TD></TR><TR><TD><PRE>236</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                            return;</PRE></TD></TR><TR><TD><PRE>237</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                        }</PRE></TD></TR><TR><TD><PRE>238</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE></PRE></TD></TR><TR><TD><PRE>239</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>                        UserFilesBrowserFragment.this.userFileManager = userFileManager;</PRE></TD></TR><TR><TD><PRE>240</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>                        createContentList(getView(), userFileManager);</PRE></TD></TR><TR><TD><PRE>241</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>                        userFileManager.setContentRemovedListener(contentListItems);</PRE></TD></TR><TR><TD><PRE>242</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>                        userFileManagerCreatingLatch.countDown();</PRE></TD></TR><TR><TD><PRE>243</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>                        dialog.dismiss();</PRE></TD></TR><TR><TD><PRE>244</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>                        refreshContent(currentPath);</PRE></TD></TR><TR><TD><PRE>245</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>                    }</PRE></TD></TR><TR><TD><PRE>246</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>                });</PRE></TD></TR></TABLE></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+53. Upload a File with User File Manager</b></p><br/>
+
+Please copy this segment of code from the MySampleApp project into your own project.<br/><br/>
+
+This call is an example of how to upload a file to S3 with User File Manager.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/java/com/mysampleapp/demo/UserFilesBrowserFragment.java">MySampleApp/app/src/main/java/com/mysampleapp/demo/UserFilesBrowserFragment.java</A></SPAN><BR/><BR/><SPAN style="font-family: courier"><TABLE style="border:0; "><TR><TD><PRE>620</PRE></TD><TD style="width:900px;background-color:#FFFFFF;color:#000000;"><PRE>                    final File file = new File(path);</PRE></TD></TR><TR><TD><PRE>621</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                    userFileManager.uploadContent(file, currentPath + file.getName(), new ContentProgressListener() {</PRE></TD></TR><TR><TD><PRE>622</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                        @Override</PRE></TD></TR><TR><TD><PRE>623</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                        public void onSuccess(final ContentItem contentItem) {</PRE></TD></TR><TR><TD><PRE>624</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                            contentListItems.add(new ContentListItem(contentItem));</PRE></TD></TR><TR><TD><PRE>625</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                            contentListItems.sort(ContentListItem.contentAlphebeticalComparator);</PRE></TD></TR><TR><TD><PRE>626</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                            contentListItems.notifyDataSetChanged();</PRE></TD></TR><TR><TD><PRE>627</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                            dialog.dismiss();</PRE></TD></TR><TR><TD><PRE>628</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                        }</PRE></TD></TR><TR><TD><PRE>629</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE></PRE></TD></TR><TR><TD><PRE>630</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                        @Override</PRE></TD></TR><TR><TD><PRE>631</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                        public void onProgressUpdate(final String fileName, final boolean isWaiting,</PRE></TD></TR><TR><TD><PRE>632</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                                                     final long bytesCurrent, final long bytesTotal) {</PRE></TD></TR><TR><TD><PRE>633</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                            dialog.setProgress((int) bytesCurrent);</PRE></TD></TR><TR><TD><PRE>634</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                        }</PRE></TD></TR><TR><TD><PRE>635</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE></PRE></TD></TR><TR><TD><PRE>636</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                        @Override</PRE></TD></TR><TR><TD><PRE>637</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                        public void onError(final String fileName, final Exception ex) {</PRE></TD></TR><TR><TD><PRE>638</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                            dialog.dismiss();</PRE></TD></TR><TR><TD><PRE>639</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                            showError(R.string.user_files_browser_error_message_upload_file,</PRE></TD></TR><TR><TD><PRE>640</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                                ex.getMessage());</PRE></TD></TR><TR><TD><PRE>641</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                        }</PRE></TD></TR><TR><TD><PRE>642</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                    });</PRE></TD></TR></TABLE></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+54. Delete a File with User File Manager</b></p><br/>
+
+Please copy this segment of code from the MySampleApp project into your own project.<br/><br/>
+
+This call is an example of how to delete a file from S3 with User File Manager.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/java/com/mysampleapp/demo/UserFilesBrowserFragment.java">MySampleApp/app/src/main/java/com/mysampleapp/demo/UserFilesBrowserFragment.java</A></SPAN><BR/><BR/><SPAN style="font-family: courier"><TABLE style="border:0; "><TR><TD><PRE>555</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        userFileManager.deleteRemoteContent(content.getFilePath(), new UserFileManager.ResponseHandler() {</PRE></TD></TR><TR><TD><PRE>556</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            @Override</PRE></TD></TR><TR><TD><PRE>557</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            public void onSuccess() {</PRE></TD></TR><TR><TD><PRE>558</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                dialog.dismiss();</PRE></TD></TR><TR><TD><PRE>559</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                // Remove from the list if not cached locally.</PRE></TD></TR><TR><TD><PRE>560</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                if (!ContentState.isCached(content.getContentState())) {</PRE></TD></TR><TR><TD><PRE>561</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                    contentListItems.remove(listItem);</PRE></TD></TR><TR><TD><PRE>562</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                    contentListItems.notifyDataSetChanged();</PRE></TD></TR><TR><TD><PRE>563</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                } else {</PRE></TD></TR><TR><TD><PRE>564</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                    content.setContentState(ContentState.CACHED);</PRE></TD></TR><TR><TD><PRE>565</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                }</PRE></TD></TR><TR><TD><PRE>566</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            }</PRE></TD></TR><TR><TD><PRE>567</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE></PRE></TD></TR><TR><TD><PRE>568</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            @Override</PRE></TD></TR><TR><TD><PRE>569</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            public void onError(final AmazonClientException ex) {</PRE></TD></TR><TR><TD><PRE>570</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                dialog.dismiss();</PRE></TD></TR><TR><TD><PRE>571</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                showError(R.string.user_files_browser_error_message_delete_item, ex.getMessage());</PRE></TD></TR><TR><TD><PRE>572</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            }</PRE></TD></TR><TR><TD><PRE>573</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        });</PRE></TD></TR></TABLE></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+55. Create a Folder with User File Manager</b></p><br/>
+
+Please copy this segment of code from the MySampleApp project into your own project.<br/><br/>
+
+This call is an example of how to create a new folder in S3 with User File Manager.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/java/com/mysampleapp/demo/UserFilesBrowserFragment.java">MySampleApp/app/src/main/java/com/mysampleapp/demo/UserFilesBrowserFragment.java</A></SPAN><BR/><BR/><SPAN style="font-family: courier"><TABLE style="border:0; "><TR><TD><PRE>530</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        userFileManager.createFolder(folderKey, new UserFileManager.ResponseHandler() {</PRE></TD></TR><TR><TD><PRE>531</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            @Override</PRE></TD></TR><TR><TD><PRE>532</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            public void onSuccess() {</PRE></TD></TR><TR><TD><PRE>533</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                dialog.dismiss();</PRE></TD></TR><TR><TD><PRE>534</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                contentListItems.add(new ContentListItem(new S3ContentSummary(folderKey)));</PRE></TD></TR><TR><TD><PRE>535</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                contentListItems.sort(ContentListItem.contentAlphebeticalComparator);</PRE></TD></TR><TR><TD><PRE>536</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                contentListItems.notifyDataSetChanged();</PRE></TD></TR><TR><TD><PRE>537</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            }</PRE></TD></TR><TR><TD><PRE>538</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE></PRE></TD></TR><TR><TD><PRE>539</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            @Override</PRE></TD></TR><TR><TD><PRE>540</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            public void onError(final AmazonClientException ace) {</PRE></TD></TR><TR><TD><PRE>541</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                dialog.dismiss();</PRE></TD></TR><TR><TD><PRE>542</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                Log.e(LOG_TAG, "Failed to create folder " + folderKey, ace);</PRE></TD></TR><TR><TD><PRE>543</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>                showError(R.string.user_files_browser_error_message_create_folder, ace.getMessage());</PRE></TD></TR><TR><TD><PRE>544</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>            }</PRE></TD></TR><TR><TD><PRE>545</PRE></TD><TD style="width:900px;background-color:#DDDDDD;color:#0000FF;"><PRE>        });</PRE></TD></TR></TABLE></SPAN>
+<br/>
+
+<br/>
+          </li>
+
+<!-- end - step -->
+
+        </ul>
+
+<!-- end - steps list -->
+
+
+<br/>
+      </li>
+
+<!-- end - sub-heading = Use as an Example -->
+
+
+<!-- begin - sub-heading = Develop -->
+
+      <li>
+Update a Sample-based App
+
+<!-- begin - steps list -->
+
+        <ul>
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+56. Update an existing App</b></p><br/>
+
+If you have already used either the Example or Starter method to enable AWS resources in your project, then you can use these steps to upgrade to the latest generated code. This will allow you to upgrade SDKs and pick up other improvements and bug fixes.
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+57. Replace Customized Helper Code</b></p><br/>
+
+Please copy this folder and all of its sub-folders from the MySampleApp project into your project.<br/><br/>
+
+This folder contains the latest set of helper classes that have been custom generated for you. These were generated based on your project configuration and on the AWS cloud resources and identifiers that were created for you when you configured the project. These classes simplify the use of the SDKs required to support your project. You should be able to replace your previously generated project's "java/com/amazonaws" folder with the one from your recently generated download.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/java/com/amazonaws">MySampleApp/app/src/main/java/com/amazonaws</A></SPAN>
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+58. Update Gradle Build</b></p><br/>
+
+Please merge this file from the MySampleApp project into your own project.<br/><br/>
+
+Examine the differences between the newly generated build.gradle file and your existing project's build.gradle file. Merge the updates into your existing project.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/build.gradle">MySampleApp/app/build.gradle</A></SPAN>
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+59. Update Application and Demo Code</b></p><br/>
+
+Please merge this folder and all of its sub-folders from the MySampleApp project into your project.<br/><br/>
+
+Update your application code to build with the new helper code. Resolve any compile errors due to SDK version changes.
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../MySampleApp/app/src/main/java/com/mysampleapp">MySampleApp/app/src/main/java/com/mysampleapp</A></SPAN>
+<br/>
+          </li>
+
+<!-- end - step -->
+
+        </ul>
+
+<!-- end - steps list -->
+
+
+<br/>
+      </li>
+
+<!-- end - sub-heading = Update a Sample-based App -->
+
+
+<!-- begin - sub-heading = Develop -->
+
+      <li>
+Software License
+
+<!-- begin - steps list -->
+
+        <ul>
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+60. Software License</b></p><br/>
+
+This section simply provides information about the generated code in the MySampleApp project.<br/><br/>
+
+Please refer to the following file for details about the license associated with the sample download project and the included software development kits (SDKs).
+<br/>
+<SPAN style="font-family: courier"><A TARGET="_BLANK" HREF="file:../LICENSE.txt">LICENSE.txt</A></SPAN>
+<br/>
+          </li>
+
+<!-- end - step -->
+
+        </ul>
+
+<!-- end - steps list -->
+
+
+<br/>
+      </li>
+
+<!-- end - sub-heading = Software License -->
+
+    </ul>
+  </li>
+
+<!-- end - heading = Develop -->
+
+
+<!-- begin - heading = Troubleshoot -->
+
+  <li>
+Troubleshoot
+    <ul>
+
+<!-- begin - sub-heading = Troubleshoot -->
+
+      <li>
+Development Environment Issues
+
+<!-- begin - steps list -->
+
+        <ul>
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+61. Android Studio Version</b></p><br/>
+
+Many problems can be resolved by simply upgrading an older version of Android Studio. When you first open Android Studio, the version shows in the bottom of the "Welcome to Android Studio" window. You should be on version 1.3.2 or newer. If your version is older, you should click the link next to the version to "Check for updates now."
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+62. Android Studio Import</b></p><br/>
+
+The My Sample App project is a gradle project, so it must be imported into Android Studio, using the "Import project (Eclipse ADT, Gradle, etc.)" option on the "Welcome to Android Studio" window. If you accidentally open the project in another way, simply close it and open it again, using the import option.
+<br/>
+          </li>
+
+<!-- end - step -->
+
+
+<!-- begin - step -->
+
+          <li class="lastLevel">
+<br/><p><b>
+63. Android Studio project looks empty?</b></p><br/>
+
+When you import the project into Android Studio, if you do not use the correct import option or you do not select the correct folder in the download package, then Android Studio may show the project as empty. Make sure you follow the instructions in this file under "Compile and Run" - "Launch App" when you import the project.
+<br/>
+          </li>
+
+<!-- end - step -->
+
+        </ul>
+
+<!-- end - steps list -->
+
+
+<br/>
+      </li>
+
+<!-- end - sub-heading = Development Environment Issues -->
+
+    </ul>
+  </li>
+
+<!-- end - heading = Troubleshoot -->
+
+            </ul>
+        </div>
+    </body>
+</html>

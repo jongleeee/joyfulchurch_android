@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_weight="0.5">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_weight="0.5">
+
+            <Button
+                android:id="@+id/button_userFiles_public"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:drawableTop="@drawable/selector_button_folder"
+                android:textAllCaps="false"
+                android:text="@string/user_files_demo_button_public"
+                android:gravity="center"
+                style="?android:attr/borderlessButtonStyle"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_weight="0.5">
+
+            <Button
+                android:id="@+id/button_userFiles_private"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:drawableTop="@drawable/selector_button_folder"
+                android:textAllCaps="false"
+                android:text="@string/user_files_demo_button_private"
+                style="?android:attr/borderlessButtonStyle"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="0.5"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_weight="0.5">
+
+            <Button
+                android:id="@+id/button_userFiles_protected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:drawableTop="@drawable/selector_button_folder"
+                android:textAllCaps="false"
+                android:text="@string/user_files_demo_button_protected"
+                style="?android:attr/borderlessButtonStyle"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_weight="0.5">
+
+            <Button
+                android:id="@+id/button_userFiles_upload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:drawableTop="@drawable/selector_button_folder"
+                android:textAllCaps="false"
+                android:text="@string/user_files_demo_button_uploads"
+                style="?android:attr/borderlessButtonStyle"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
