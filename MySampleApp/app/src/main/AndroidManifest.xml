@@ -34,7 +34,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
@@ -85,7 +84,8 @@
         <activity android:name=".HomeActivity" />
         <activity android:name=".SermonActivity" />
         <activity android:name=".InformationActivity" />
-        <activity android:name=".AnnouncementActivity"></activity>
+        <activity android:name=".AnnouncementActivity" />
+        <activity android:name=".AddSermonActivity"></activity>
     </application>
 
 </manifest>
