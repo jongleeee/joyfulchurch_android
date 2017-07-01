@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/AWSMobileHelper/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
+        "outputFile": "/Users/minjungkim/Desktop/karisma/joyfulchurch_android/MySampleApp/AWSMobileHelper/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 117
                 },
                 "from": {
-                    "file": "/Users/SUNGJIN/.android/build-cache/d8fdd14d8a9b4adccecaef01270308e8767828e9/output/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "file": "/Users/minjungkim/.android/build-cache/d28ea4225a5b8ae3d2eb4b5123f326da34ee708a/output/res/values-h720dp-v13/values-h720dp-v13.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

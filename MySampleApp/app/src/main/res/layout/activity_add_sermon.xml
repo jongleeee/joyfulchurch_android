@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context="com.mysampleapp.AddSermonActivity">
+
+    <EditText
+        android:id="@+id/add_sermon_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/sermon_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/add_sermon_series"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/sermon_series"
+        android:layout_below="@id/add_sermon_title"
+        />
+    <EditText
+        android:id="@+id/add_sermon_verse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/sermon_verse"
+        android:layout_below="@id/add_sermon_series"
+        />
+    <EditText
+        android:id="@+id/add_sermon_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/sermon_url"
+        android:layout_below="@id/add_sermon_verse"
+        />
+
+    <CalendarView
+        android:id="@+id/add_sermon_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_sermon_url"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/add_sermon_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:elevation="22dp"
+        android:text="@string/save" />
+
+
+</RelativeLayout>

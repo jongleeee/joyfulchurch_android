@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/SUNGJIN/Desktop/Joyful/joyfulchurch_android-master/MySampleApp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
+        "outputFile": "/Users/minjungkim/Desktop/karisma/joyfulchurch_android/MySampleApp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 117
                 },
                 "from": {
-                    "file": "/Users/SUNGJIN/.android/build-cache/8e0cd2c7798cec15dd2906923dfc0f515be1bd3e/output/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "file": "/Users/minjungkim/.android/build-cache/537993a8f51d6481489bc00ae7f821ff9a456d5c/output/res/values-h720dp-v13/values-h720dp-v13.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

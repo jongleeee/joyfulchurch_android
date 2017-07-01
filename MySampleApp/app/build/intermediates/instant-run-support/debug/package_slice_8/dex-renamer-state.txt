@@ -1,0 +1,4 @@
+#Mon Jun 26 21:08:43 PDT 2017
+base.0=/Users/minjungkim/Desktop/karisma/joyfulchurch_android/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8
+renamed.0=classes.dex
+file.0=/Users/minjungkim/Desktop/karisma/joyfulchurch_android/MySampleApp/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex

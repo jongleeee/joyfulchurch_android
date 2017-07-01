@@ -94,6 +94,7 @@
         <activity android:name="com.mysampleapp.SermonActivity" />
         <activity android:name="com.mysampleapp.InformationActivity" />
         <activity android:name="com.mysampleapp.AnnouncementActivity" />
+        <activity android:name="com.mysampleapp.AddSermonActivity" />
         <activity
             android:name="com.amazonaws.mobilehelper.auth.signin.ui.SignInActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"

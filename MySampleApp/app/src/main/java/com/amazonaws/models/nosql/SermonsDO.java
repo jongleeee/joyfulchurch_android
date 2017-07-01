@@ -21,6 +21,7 @@ public class SermonsDO {
     private String _sermonId;
     private String _title;
     private String _verse;
+    private String _series;
 
     @DynamoDBHashKey(attributeName = "userId")
     @DynamoDBAttribute(attributeName = "userId")
@@ -80,5 +81,12 @@ public class SermonsDO {
     public void setVerse(final String _verse) {
         this._verse = _verse;
     }
+    @DynamoDBAttribute(attributeName = "title")
+    public String getSeries() {
+        return _series;
+    }
 
+    public void setSeries(final String _series) {
+        this._series = _series;
+    }
 }
