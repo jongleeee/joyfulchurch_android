@@ -17,6 +17,8 @@
     <string name="Title">Title</string>
     <string name="Verse">Verse</string>
 
+    <string name="correct_password">승인되었습니다.</string>
+
     <!-- Suffix after '-' must be the app package name as specified in the build.gradle file. This
        is used by the com.amazonaws.mobile.downloader.query.DownloadQueueProvider class. -->
     <string name="download_queue_provider_authority">com.amazonaws.mobile.downloader-com.amazon.mysampleapp</string>
