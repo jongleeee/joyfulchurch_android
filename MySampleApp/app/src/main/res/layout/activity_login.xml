@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mysampleapp.LoginActivity">
+
+    <EditText
+        android:id="@+id/myPassword"
+        android:layout_width="395dp"
+        android:layout_height="38dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="204dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/sign_in_password"
+        android:includeFontPadding="false"
+        android:inputType="text"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <Button
+        android:id="@+id/enter"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/button_text_sign_in"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintLeft_toLeftOf="@+id/myPassword"
+        app:layout_constraintRight_toRightOf="@+id/myPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/myPassword" />
+</android.support.constraint.ConstraintLayout>
