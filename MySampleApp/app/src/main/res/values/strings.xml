@@ -236,6 +236,11 @@
     <string name="nosql_dialog_title_confirm_delete_item_text">Confirm Delete</string>
     <string name="nosql_dialog_message_confirm_delete_item_text">Are you sure you want to delete the selected item?</string>
     <string name="title_activity_announcement">AnnouncementActivity</string>
+    <string name="sermon_title">title</string>
+    <string name="sermon_series">series</string>
+    <string name="sermon_verse">verse</string>
+    <string name="sermon_url">url</string>
+    <string name="save">save</string>
 
 
 </resources>
