@@ -2,21 +2,22 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mysampleapp.AnnouncementActivity">
+    tools:context="com.mysampleapp.SermonPlay">
+
     <android.support.design.widget.AppBarLayout
         android:layout_height="wrap_content"
         android:layout_width="0dp"
         android:theme="@style/AppTheme.AppBarOverlay"
         tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="8dp">
+        tools:layout_editor_absoluteX="8dp"
+        android:id="@+id/appBarLayout2">
 
 
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/my_announcement_toolbar"
+            android:id="@+id/play_toolbar"
             android:layout_width="415dp"
             android:layout_height="59dp"
             android:background="@drawable/background"
@@ -26,18 +27,20 @@
             tools:layout_editor_absoluteY="0dp"
             tools:layout_editor_absoluteX="0dp" />
 
-        <ListView
-            android:id="@+id/announcement_listview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/listview_item_announcement_row"
+    <ImageView
+        android:id="@+id/imageView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
+        app:srcCompat="@drawable/downarrow"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout2"
+        app:layout_constraintHorizontal_bias="0.522" />
 
 
 </android.support.constraint.ConstraintLayout>
