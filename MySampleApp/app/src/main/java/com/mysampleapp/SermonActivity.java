@@ -50,13 +50,13 @@ public class SermonActivity extends AppCompatActivity {
             SermonArrayAdapter adapter = new SermonArrayAdapter(this,
                     R.layout.listview_item_row, sermons);
             listView.setAdapter(adapter);
-//            listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
-//                @Override
-//                public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-//                    Intent myintent = new Intent(view.getContext(),SermonPlay.class);
-//                    startActivity(myintent);
-//                }
-//            });
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+                    Intent myintent = new Intent(view.getContext(),SermonPlay.class);
+                    startActivity(myintent);
+                }
+            });
         }
     }
 
@@ -75,7 +75,7 @@ public class SermonActivity extends AppCompatActivity {
         }
     }
 
-    /*
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -90,5 +90,4 @@ public class SermonActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-*/
 }

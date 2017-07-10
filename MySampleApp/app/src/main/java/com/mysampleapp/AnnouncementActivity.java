@@ -51,7 +51,6 @@ public class AnnouncementActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
     }
 
-    /*
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -66,7 +65,6 @@ public class AnnouncementActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-    */
 
     private class AsyncAnnouncementActivity extends AsyncTask<List<String>, Void, Void> {
         List<Announcement> announcements;

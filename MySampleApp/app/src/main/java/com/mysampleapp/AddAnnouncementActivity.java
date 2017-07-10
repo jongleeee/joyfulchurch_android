@@ -38,7 +38,7 @@ public class AddAnnouncementActivity extends AppCompatActivity {
                 String announcementTitle = title.getText().toString().trim();
                 String announcementCategory = category.getText().toString().trim();
                 String announcementContent = content.getText().toString().trim();
-                Date sermonDate = new Date(date.getDate());
+                Date sermonDate = new Date(date.getDate()/1000);
                 Announcement announcement = new Announcement(announcementTitle, announcementCategory, announcementContent, sermonDate);
 
                 new AsyncAddAnnouncementActivity().execute(announcement);
