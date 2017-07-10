@@ -75,6 +75,7 @@ public class SermonActivity extends AppCompatActivity {
         }
     }
 
+
     /*
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -91,4 +92,5 @@ public class SermonActivity extends AppCompatActivity {
         }
     }
 */
+
 }
