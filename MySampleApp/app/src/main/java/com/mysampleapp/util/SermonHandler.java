@@ -1,8 +1,5 @@
 package com.mysampleapp.util;
 
-
-import android.util.Log;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBScanExpression;
 
@@ -16,7 +13,6 @@ import com.amazonaws.models.nosql.SermonsDO;
 public class SermonHandler extends DatabaseHandler {
 
     public void save(Sermon sermon) throws AmazonClientException {
-
         final SermonsDO sermonItem = new SermonsDO();
         sermonItem.setUserId(AWSMobileClient.defaultMobileClient().getIdentityManager().getCachedUserID());
         sermonItem.setCreationDate((double) sermon.getDate().getTime());
@@ -33,20 +29,19 @@ public class SermonHandler extends DatabaseHandler {
     }
 
     public List<Sermon> getAllSermon() {
+        List<Sermon> sermonList = new LinkedList<>();
         try {
             Iterator<Object> sermons = super.scan(SermonsDO.class, new DynamoDBScanExpression());
-            List<Sermon> sermonLst = new LinkedList<>();
             if (sermons != null) {
                 while (sermons.hasNext()) {
                     SermonsDO sermon = (SermonsDO) sermons.next();
-                    sermonLst.add(new Sermon(sermon.getTitle(), sermon.getSeries(), sermon.getVerse(),
-                            new Date(sermon.getCreationDate().longValue()), sermon.getSermon()));
+                    sermonList.add(new Sermon(sermon.getTitle(), sermon.getSeries(), sermon.getVerse(),
+                            new Date(sermon.getCreationDate().longValue() * 1000), sermon.getSermon()));
                 }
-                return sermonLst;
             }
-        } catch (final Exception e) {
+        } catch (final AmazonClientException e) {
             throw e;
         }
-        return null;
+        return sermonList;
     }
 }

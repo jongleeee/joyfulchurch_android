@@ -240,6 +240,9 @@
     <string name="sermon_series">series</string>
     <string name="sermon_verse">verse</string>
     <string name="sermon_url">url</string>
+    <string name="announcement_title">title</string>
+    <string name="announcement_category">category</string>
+    <string name="announcement_content">content</string>
     <string name="save">save</string>
 
 

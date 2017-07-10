@@ -85,8 +85,9 @@
         <activity android:name=".SermonActivity" />
         <activity android:name=".InformationActivity" />
         <activity android:name=".AnnouncementActivity" />
-        <activity android:name=".AddSermonActivity"></activity>
-        <activity android:name=".SermonPlay"></activity>
+        <activity android:name=".AddSermonActivity" />
+        <activity android:name=".SermonPlay" />
+        <activity android:name=".AddAnnouncementActivity"></activity>
     </application>
 
 </manifest>

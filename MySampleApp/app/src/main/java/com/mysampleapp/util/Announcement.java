@@ -2,36 +2,36 @@ package com.mysampleapp.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.logging.SimpleFormatter;
 
 /**
- * Created by minjungkim on 6/26/17.
+ * Created by minjungkim on 7/9/17.
  */
 
-public class Sermon {
+public class Announcement {
     private String title;
-    private String series;
-    private String verse;
+    private String category;
+    private String content;
     private Date date;
-    private String url;
 
-    public Sermon(String title, String series, String verse, Date date, String url) {
+    public Announcement(String title, String category, String content, Date date) {
         this.title = title;
-        this.series = series;
-        this.verse = verse;
+        this.category = category;
+        this.content = content;
         this.date = date;
-        this.url = url;
     }
 
-    public String getSeries() {
-        return this.series;
-    }
     public String getTitle() {
         return this.title;
     }
-    public String getVerse() {
-        return this.verse;
+
+    public String getCategory() {
+        return this.category;
     }
+
+    public String getContent() {
+        return this.content;
+    }
+
     public Date getDate() {
         return this.date;
     }
@@ -48,9 +48,5 @@ public class Sermon {
     public String getYear() {
         SimpleDateFormat df = new SimpleDateFormat("yyyy");
         return df.format(getDate());
-    }
-
-    public String getSermonURL() {
-        return this.url;
     }
 }

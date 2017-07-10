@@ -19,7 +19,7 @@ public class AddSermonActivity extends AppCompatActivity {
     private EditText url;
     private CalendarView date;
     private Button save;
-    private SermonHandler sermonSave = new SermonHandler();
+    private SermonHandler sermonHandler = new SermonHandler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,7 @@ public class AddSermonActivity extends AppCompatActivity {
     private class AsyncAddSermonActivity extends AsyncTask<Sermon, Void, Void> {
         @Override
         protected Void doInBackground(Sermon... sermons) {
-            sermonSave.save(sermons[0]);
+            sermonHandler.save(sermons[0]);
             return null;
         }
     }

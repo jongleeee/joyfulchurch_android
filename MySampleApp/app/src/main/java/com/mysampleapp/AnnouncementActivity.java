@@ -2,6 +2,7 @@ package com.mysampleapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,12 +12,15 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.mysampleapp.util.Announcement;
+import com.mysampleapp.util.AnnouncementHandler;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class AnnouncementActivity extends AppCompatActivity {
-
     ListView listView;
+    AnnouncementHandler announcementHandler = new AnnouncementHandler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,26 +37,21 @@ public class AnnouncementActivity extends AppCompatActivity {
         // Enable the Up button
         ab.setDisplayHomeAsUpEnabled(true);
 
-
-
-        Announcement announcements_data[] = new Announcement[]
-                {
-                        new Announcement("카이로스 피크닉",  "M A Y", "14", "2 0 1 7"),
-                        new Announcement("카리스마 여름학기",  "M A Y", "14", "2 0 1 7"),
-                        new Announcement("목장 방학",  "M A Y", "07", "2 0 1 7"),
-                        new Announcement("중국선교 기도모임",  "M A Y", "07", "2 0 1 7"),
-
-                };
-
-        AnnouncementArrayAdapter adapter = new AnnouncementArrayAdapter(this,
-                R.layout.listview_item_announcement_row, announcements_data);
-
-
         listView = (ListView) findViewById(R.id.announcement_listview);
-        listView.setAdapter(adapter);
 
+        List<String> categories = new ArrayList<>();
+        categories.add("카리스마");
+        categories.add("카이로스");
+        new AsyncAnnouncementActivity().execute(categories);
     }
 
+    public void getAnnouncementInfo(List<Announcement> announcements) {
+        AnnouncementArrayAdapter adapter = new AnnouncementArrayAdapter(this,
+                R.layout.listview_item_announcement_row, announcements);
+        listView.setAdapter(adapter);
+    }
+
+    /*
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -67,5 +66,20 @@ public class AnnouncementActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+    */
 
+    private class AsyncAnnouncementActivity extends AsyncTask<List<String>, Void, Void> {
+        List<Announcement> announcements;
+
+        @Override
+        protected Void doInBackground(List<String>... categories) {
+            announcements = announcementHandler.getAnnouncementsWithChannels(categories[0]);
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            getAnnouncementInfo(announcements);
+        }
+    }
 }
