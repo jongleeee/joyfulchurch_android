@@ -7,13 +7,15 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.text.Html;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.mysampleapp.util.Announcement;
 import com.mysampleapp.util.AnnouncementHandler;
+import com.mysampleapp.util.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,20 +30,21 @@ public class AnnouncementActivity extends AppCompatActivity {
         setContentView(R.layout.activity_announcement);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_announcement_toolbar);
+        myToolbar.setTitle("교회 소식");
         setSupportActionBar(myToolbar);
 
         // Get a support ActionBar corresponding to this toolbar
         ActionBar ab = getSupportActionBar();
-        ab.setTitle(Html.fromHtml("<font color='#FFFFFF'>교회 소식</font>"));
+//        ab.setTitle(Html.fromHtml("<font color='#FFFFFF'>교회 소식</font>"));
 
         // Enable the Up button
         ab.setDisplayHomeAsUpEnabled(true);
 
+
         listView = (ListView) findViewById(R.id.announcement_listview);
 
-        List<String> categories = new ArrayList<>();
-        categories.add("카리스마");
-        categories.add("카이로스");
+        List<String> categories = new User(getApplicationContext()).getSubscribedChannels();
+
         new AsyncAnnouncementActivity().execute(categories);
     }
 
@@ -53,15 +56,29 @@ public class AnnouncementActivity extends AppCompatActivity {
 
     /*
     @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.setting_button, menu);
+        return true;
+//        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
             case android.R.id.home:
                 // app icon in action bar clicked; go home
-                Intent intent = new Intent(this, HomeActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
+                Intent homeIntent = new Intent(this, HomeActivity.class);
+                homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(homeIntent);
                 return true;
+            case R.id.setting:
+                Intent settingIntent = new Intent(this, AnnouncementSettingActivity.class);
+                settingIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(settingIntent);
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }

@@ -244,6 +244,14 @@
     <string name="announcement_category">category</string>
     <string name="announcement_content">content</string>
     <string name="save">save</string>
-
-
+    <string name="play">play</string>
+    <string name="pause">pause</string>
+    <string name="edit">Edit</string>
+    <string-array name="channels">
+        <item>General</item>
+        <item>카리스마</item>
+        <item>카이로스</item>
+        <item>새벽예배</item>
+        <item>Mission</item>
+    </string-array>
 </resources>
