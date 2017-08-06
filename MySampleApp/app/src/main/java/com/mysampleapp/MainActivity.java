@@ -40,6 +40,8 @@ import android.support.v4.content.LocalBroadcastManager;
 
 import com.mysampleapp.navigation.NavigationDrawer;
 import com.mysampleapp.demo.UserSettings;
+import com.mysampleapp.util.LockScreenPlay;
+
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {

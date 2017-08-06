@@ -3,6 +3,8 @@ package com.mysampleapp.util;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBScanExpression;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -42,6 +44,12 @@ public class SermonHandler extends DatabaseHandler {
         } catch (final AmazonClientException e) {
             throw e;
         }
+        Collections.sort(sermonList, new Comparator<Sermon>() {
+            @Override
+            public int compare(Sermon sermon, Sermon t1) {
+                return -sermon.getDate().compareTo(t1.getDate());
+            }
+        });
         return sermonList;
     }
 }

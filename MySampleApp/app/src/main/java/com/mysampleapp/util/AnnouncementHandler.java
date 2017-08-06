@@ -6,6 +6,9 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBScanExpr
 import com.amazonaws.models.nosql.AnnouncementsDO;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -36,6 +39,10 @@ public class AnnouncementHandler extends DatabaseHandler {
     }
 
     public List<Announcement> getAnnouncementsWithChannels(List<String> channels) {
+        if (channels.isEmpty() || channels == null) {
+            return new ArrayList<>();
+        }
+
         List<Announcement> announcementList = new LinkedList<>();
 
         final Map<String, String> filterExpressionAttributeNames = new HashMap<>();
@@ -63,6 +70,12 @@ public class AnnouncementHandler extends DatabaseHandler {
         } catch (AmazonClientException e) {
             throw e;
         }
+        Collections.sort(announcementList, new Comparator<Announcement>() {
+            @Override
+            public int compare(Announcement announcement, Announcement t1) {
+                return -announcement.getDate().compareTo(t1.getDate());
+            }
+        });
         return announcementList;
     }
 }

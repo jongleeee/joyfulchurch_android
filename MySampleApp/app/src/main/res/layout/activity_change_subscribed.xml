@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/AppTheme.AppBarOverlay"
+    android:padding="0dp"
+    tools:context="com.mysampleapp.changeSubscribedActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:background="@drawable/sermon_green_gradient"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:layout_gravity="center_horizontal"
+        android:title="channels" />
+
+    <!--<ListView-->
+        <!--android:id="@+id/categories"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_below="@id/setting_toolbar"-->
+        <!--android:choiceMode="multipleChoice"-->
+        <!--android:divider="@color/nav_drawer_top_background"-->
+        <!--android:dividerHeight="1dp"-->
+        <!--android:footerDividersEnabled="true"-->
+        <!--android:minHeight="0dp"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--tools:layout_editor_absoluteY="49dp" />-->
+</android.support.design.widget.AppBarLayout>

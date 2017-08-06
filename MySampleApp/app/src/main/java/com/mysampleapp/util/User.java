@@ -16,18 +16,16 @@ public class User extends Activity{
 
     SharedPreferences myChannels;
     SharedPreferences authorizedUsers;
-    List<String> mySubscribedChannels;
+    List<String> mySubscribedChannels = new ArrayList<>();
 
     public User (Context context) {
         myChannels = context.getSharedPreferences("myChannels", context.MODE_PRIVATE);
         authorizedUsers = context.getSharedPreferences("authorizedUsers", context.MODE_PRIVATE);
     }
 
-
     //subscribed channels
     public List<String> getSubscribedChannels() {
-        if (mySubscribedChannels == null) {
-            mySubscribedChannels = new ArrayList<>();
+        if (mySubscribedChannels.isEmpty()) {
             Map<String, ?> keys = myChannels.getAll();
             if (!keys.isEmpty()) {
                 for (Map.Entry<String, ?> entry : keys.entrySet()) {
@@ -37,8 +35,6 @@ public class User extends Activity{
         }
         return mySubscribedChannels;
     }
-
-
 
     public void updateSubscribedChannels(List<String> subscribedChannels) {
         myChannels.edit().clear().commit();

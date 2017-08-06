@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    xmlns:balloonberry="http://schemas.android.com/apk/res-auto">
+    <!-- setting -->
+    <item
+        android:id="@+id/setting"
+        android:title="@string/edit"
+        balloonberry:showAsAction="always" />
+</menu>
