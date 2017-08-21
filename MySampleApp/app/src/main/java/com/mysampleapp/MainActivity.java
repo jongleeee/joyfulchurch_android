@@ -8,10 +8,13 @@
 //
 package com.mysampleapp;
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -37,12 +40,15 @@ import com.mysampleapp.demo.HomeDemoFragment;
 import android.content.IntentFilter;
 import android.content.BroadcastReceiver;
 import android.support.v4.content.LocalBroadcastManager;
+import android.widget.Toast;
 
 import com.mysampleapp.navigation.NavigationDrawer;
 import com.mysampleapp.demo.UserSettings;
-import com.mysampleapp.util.LockScreenPlay;
+//import com.mysampleapp.util.LockScreenPlay;
+import com.mysampleapp.util.LockScreenService;
 
 import java.util.List;
+import java.util.concurrent.locks.Lock;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     /** Class name for log messages. */
@@ -153,6 +159,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setupToolbar(savedInstanceState);
 
         setupNavigationMenu(savedInstanceState);
+
+//        loadAudio();
+////play the first audio in the ArrayList
+//        playAudio(audioList.get(0).getData());
     }
 
     @Override
