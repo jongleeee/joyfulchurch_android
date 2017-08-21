@@ -29,7 +29,7 @@ public class SermonActivity extends AppCompatActivity {
 
     ListView listView;
     SermonHandler sermonHandler = new SermonHandler();
-    MediaPlayer sermonPlay;
+//    MediaPlayer sermonPlay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +61,8 @@ public class SermonActivity extends AppCompatActivity {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id){
                     Intent myIntent = new Intent(view.getContext(),SermonPlay.class);
                     myIntent.putExtra("sermonURL", sermons.get(position).getSermonURL());
+                    myIntent.putExtra("sermonTitle", sermons.get(position).getTitle());
+                    myIntent.putExtra("sermonSeries", sermons.get(position).getSeries());
                     startActivity(myIntent);
                 }
             });

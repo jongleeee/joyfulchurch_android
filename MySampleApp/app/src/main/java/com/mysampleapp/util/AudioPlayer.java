@@ -1,7 +1,5 @@
 package com.mysampleapp.util;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 
 import java.io.IOException;
@@ -10,30 +8,23 @@ import java.io.IOException;
  * Created by minjungkim on 7/18/17.
  */
 
-public class AudioPlayer {
+public class AudioPlayer extends MediaPlayer {
     private String url;
-    private MediaPlayer player;
 
-    private AudioPlayer(String url) {
-        setUrl(url);
+    private AudioPlayer() {
+        super();
     }
 
     private static volatile AudioPlayer audioPlayer;
 
-    public static AudioPlayer INSTANCE(String url) {
+    public static AudioPlayer INSTANCE() {
         if  (audioPlayer == null) {
             synchronized (AudioPlayer.class) {
                 if (audioPlayer == null) {
-                    audioPlayer = new AudioPlayer(url);
+                    audioPlayer = new AudioPlayer();
                 }
             }
-        } else {
-            audioPlayer.setUrl(url);
         }
-        return audioPlayer;
-    }
-
-    public static AudioPlayer getsInstance() {
         return audioPlayer;
     }
 
@@ -41,18 +32,35 @@ public class AudioPlayer {
         return this.url;
     }
 
-    private void setUrl(String url) {
-        this.url = url;
-        player = new MediaPlayer();
-        try {
-            player.setDataSource("http://bitly.com/" + url);
-            player.prepare();
-        } catch (IOException e) {
-            e.printStackTrace();
+    public boolean setUrl(String url) {
+        if (this.url == null || !this.url.equals(url)) {
+            this.url = url;
+            stop();
+            try {
+                this.setDataSource("http://bitly.com/" + url);
+                this.prepareAsync();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return false;
         }
+        return true;
     }
 
-    public MediaPlayer getPlayer() {
-        return this.player;
+    public int getTotalTime() {
+        return this.getDuration();
+    }
+
+    public int getCurrentTime() {
+        return this.getCurrentPosition();
+    }
+
+    public void reset() {
+        this.seekTo(0);
+        pause();
+    }
+
+    public void changeTime(int time) {
+        this.seekTo(time);
     }
 }
