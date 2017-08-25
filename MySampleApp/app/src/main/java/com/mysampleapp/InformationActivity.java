@@ -1,19 +1,21 @@
 package com.mysampleapp;
 
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.NavUtils;
+import android.net.Uri;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
+import android.text.Html;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.Button;
 
 
-public class InformationActivity extends AppCompatActivity {
-
+public class InformationActivity extends AppCompatActivity implements View.OnClickListener{
+    Button button;
+    ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,12 +25,16 @@ public class InformationActivity extends AppCompatActivity {
 
         // Get a support ActionBar corresponding to this toolbar
         ActionBar ab = getSupportActionBar();
-        ab.setTitle("교회 소개");
+        ab.setTitle(Html.fromHtml("<font color='#FFFFFF'>교회 소개</font>"));
 
         // Enable the Up button
         ab.setDisplayHomeAsUpEnabled(true);
 
+        button = (Button) findViewById(R.id.button_map);
+        button.setOnClickListener(InformationActivity.this);
 
+        imageView = (ImageView) findViewById(R.id.imageView);
+        imageView.setOnClickListener(InformationActivity.this);
     }
 
 
@@ -46,4 +52,12 @@ public class InformationActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    @Override
+    public void onClick(View view) {
+        String uri = "http://maps.google.com/maps?saddr=" + "&daddr=" + 37.695989 + "," + -121.972717;
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+        startActivity(intent);
+    }
+
 }

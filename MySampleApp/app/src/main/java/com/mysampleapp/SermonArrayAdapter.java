@@ -1,39 +1,75 @@
 package com.mysampleapp;
 
+import android.app.Activity;
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.mysampleapp.util.Sermon;
+import java.util.List;
+
 /**
  * Created by Jong on 6/14/17.
  */
 
-public class SermonArrayAdapter extends ArrayAdapter<Object> {
+public class SermonArrayAdapter extends ArrayAdapter<Sermon> {
+    Context context;
+    int layoutResourceId;
+    List<Sermon> data = null;
 
-    private final Context context;
-    private final Object[] sermons;
-
-    public SermonArrayAdapter(Context context, Object[] sermons) {
-        super(context, -1, sermons);
+    public SermonArrayAdapter(Context context, int layoutResourceId, List<Sermon> data) {
+        super(context, layoutResourceId, data);
+        this.layoutResourceId = layoutResourceId;
         this.context = context;
-        this.sermons = sermons;
+        this.data = data;
     }
 
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) context
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.sermon_row_layout, parent, false);
+    public View getView(int position, View convertView, ViewGroup parent) {
+        View row = convertView;
+        SermonHolder holder = null;
 
-        // Sermon sermon = sermons[position];
-//        TextView textView = (TextView) rowView.findViewById(R.id.label);
-//        textView.setText(values[position]);
+        if(row == null) {
+            LayoutInflater inflater = ((Activity)context).getLayoutInflater();
+            row = inflater.inflate(layoutResourceId, parent, false);
 
-        return rowView;
+            holder = new SermonHolder();
+            //holder.imgIcon = (ImageView)row.findViewById(R.id.imgIcon);
+            holder.txtTitle = (TextView)row.findViewById(R.id.txtTitle);
+            holder.txtSeries = (TextView)row.findViewById(R.id.txtSeries);
+            holder.txtVerse = (TextView)row.findViewById(R.id.txtVerse);
+            holder.sermonMonth = (TextView)row.findViewById(R.id.sermonMonth);
+            holder.sermonDate = (TextView)row.findViewById(R.id.sermonDate);
+            holder.sermonYear = (TextView)row.findViewById(R.id.sermonYear);
+
+            row.setTag(holder);
+        }
+        else {
+            holder = (SermonHolder)row.getTag();
+        }
+
+        Sermon sermon = data.get(position);
+        holder.txtTitle.setText(sermon.getTitle());
+        //holder.imgIcon.setImageResource(weather.icon);
+        holder.txtSeries.setText(sermon.getSeries());
+        holder.txtVerse.setText(sermon.getVerse());
+        holder.sermonMonth.setText(sermon.getMonth());
+        holder.sermonDate.setText(sermon.getDay());
+        holder.sermonYear.setText(sermon.getYear());
+
+        return row;
+    }
+
+    static class SermonHolder {
+        //ImageView imgIcon;
+        TextView txtTitle;
+        TextView txtSeries;
+        TextView txtVerse;
+        TextView sermonMonth;
+        TextView sermonDate;
+        TextView sermonYear;
     }
 }

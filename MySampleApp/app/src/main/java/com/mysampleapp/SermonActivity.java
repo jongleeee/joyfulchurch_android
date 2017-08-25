@@ -1,38 +1,94 @@
 package com.mysampleapp;
 
 import android.content.Context;
+import android.os.AsyncTask;
+import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
+import android.support.v7.widget.Toolbar;
+import android.text.Html;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.mysampleapp.util.Sermon;
+import com.mysampleapp.util.SermonHandler;
+
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class SermonActivity extends AppCompatActivity {
 
     ListView listView;
+    SermonHandler sermonHandler = new SermonHandler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sermon);
 
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+
+        // Get a support ActionBar corresponding to this toolbar
+        ActionBar ab = getSupportActionBar();
+        ab.setTitle(Html.fromHtml("<font color='#FFFFFF'>설교 말씀</font>"));
+
+        // Enable the Up button
+        ab.setDisplayHomeAsUpEnabled(true);
+
         listView = (ListView) findViewById(R.id.SermonListView);
-
-        String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
-                "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
-                "Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
-                "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
-                "Android", "iPhone", "WindowsMobile" };
-
-        final ArrayList<String> list = new ArrayList<String>();
-        for (int i = 0; i < values.length; ++i) {
-            list.add(values[i]);
-        }
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, list);
-        listView.setAdapter(adapter);
+        //titles of sermons
+        new AsyncSermonActivity().execute();
     }
 
+    public void getSermonInfo(List<Sermon> sermons) {
+        if (sermons != null) {
+            SermonArrayAdapter adapter = new SermonArrayAdapter(this,
+                    R.layout.listview_item_row, sermons);
+            listView.setAdapter(adapter);
+//            listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+//                @Override
+//                public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+//                    Intent myintent = new Intent(view.getContext(),SermonPlay.class);
+//                    startActivity(myintent);
+//                }
+//            });
+        }
+    }
+
+    private class AsyncSermonActivity extends AsyncTask<Void, Void, Void> {
+        List<Sermon> sermons;
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            sermons = sermonHandler.getAllSermon();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            getSermonInfo(sermons);
+        }
+    }
+
+    /*
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // app icon in action bar clicked; go home
+                Intent intent = new Intent(this, HomeActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+*/
 }
