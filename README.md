@@ -21,10 +21,7 @@
 git status
 ```
 
-If you see list of files and do not want them, run this to clean up : 
-```
-git checkout .
-```
+* If you see list of files and do not want them, run this to clean up : `git checkout .`
 
 
 2. Go to master branch to bring all the changes from master
