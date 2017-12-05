@@ -40,7 +40,7 @@ public class AddSermonActivity extends AppCompatActivity {
                 String sermonVerse = verse.getText().toString().trim();
                 String sermonSeries = series.getText().toString().trim();
                 String sermonURL = url.getText().toString().trim();
-                Date sermonDate = new Date(date.getDate());
+                Date sermonDate = new Date(date.getDate()/1000);
                 Sermon sermonAdd = new Sermon(sermonTitle, sermonSeries, sermonVerse, sermonDate, sermonURL);
 
                 new AsyncAddSermonActivity().execute(sermonAdd);
