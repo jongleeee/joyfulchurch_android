@@ -1,43 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<!--<android.support.design.widget.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
 
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--tools:context="com.mysampleapp.AnnouncementActivity">-->
+
+    <!--<android.support.design.widget.AppBarLayout-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:theme="@style/AppTheme.AppBarOverlay"-->
+        <!--tools:layout_editor_absoluteY="0dp"-->
+        <!--tools:layout_editor_absoluteX="8dp">-->
+
+
+        <!--<android.support.v7.widget.Toolbar-->
+            <!--android:id="@+id/my_announcement_toolbar"-->
+            <!--android:layout_width="415dp"-->
+            <!--android:layout_height="59dp"-->
+            <!--android:background="@drawable/sermon_green_gradient"-->
+            <!--android:elevation="4dp"-->
+            <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+            <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
+            <!--tools:layout_editor_absoluteX="0dp"-->
+            <!--tools:layout_editor_absoluteY="0dp" />-->
+
+        <!--<ListView-->
+            <!--android:id="@+id/announcement_listview"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent" />-->
+
+    <!--</android.support.design.widget.AppBarLayout>-->
+
+
+<!--</android.support.design.widget.AppBarLayout>-->
+
+<android.support.design.widget.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:theme="@style/AppTheme.AppBarOverlay"
+android:padding="0dp"
+tools:context="com.mysampleapp.AnnouncementActivity">
+
+<android.support.v7.widget.Toolbar
+    android:id="@+id/my_announcement_toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="59dp"
+    android:background="@drawable/sermon_green_gradient"
+    android:minHeight="?attr/actionBarSize"
+    android:theme="?attr/actionBarTheme"
+    android:layout_gravity="center_horizontal"
+    android:title="channels" />
+
+<ListView
+    android:id="@+id/announcement_listview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mysampleapp.AnnouncementActivity">
-    <android.support.design.widget.AppBarLayout
-        android:layout_height="wrap_content"
-        android:layout_width="0dp"
-        android:theme="@style/AppTheme.AppBarOverlay"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="8dp">
-
-
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/my_announcement_toolbar"
-            android:layout_width="415dp"
-            android:layout_height="59dp"
-            android:background="@drawable/background"
-            android:elevation="4dp"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            tools:layout_editor_absoluteY="0dp"
-            tools:layout_editor_absoluteX="0dp" />
-
-        <ListView
-            android:id="@+id/announcement_listview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/listview_item_announcement_row"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-
-
-</android.support.constraint.ConstraintLayout>
+    android:layout_below="@id/my_announcement_toolbar"
+    android:choiceMode="multipleChoice"
+    android:divider="@color/nav_drawer_top_background"
+    android:dividerHeight="1dp"
+    android:footerDividersEnabled="true"
+    android:minHeight="0dp"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    tools:layout_editor_absoluteY="49dp" />
+</android.support.design.widget.AppBarLayout>

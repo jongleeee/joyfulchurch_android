@@ -1,6 +1,8 @@
 package com.mysampleapp;
 
 import android.content.Context;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
@@ -16,6 +18,9 @@ import android.widget.ListView;
 import com.mysampleapp.util.Sermon;
 import com.mysampleapp.util.SermonHandler;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -24,6 +29,7 @@ public class SermonActivity extends AppCompatActivity {
 
     ListView listView;
     SermonHandler sermonHandler = new SermonHandler();
+//    MediaPlayer sermonPlay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,18 +51,22 @@ public class SermonActivity extends AppCompatActivity {
         new AsyncSermonActivity().execute();
     }
 
-    public void getSermonInfo(List<Sermon> sermons) {
+    public void getSermonInfo(final List<Sermon> sermons) {
         if (sermons != null) {
             SermonArrayAdapter adapter = new SermonArrayAdapter(this,
                     R.layout.listview_item_row, sermons);
             listView.setAdapter(adapter);
-//            listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
-//                @Override
-//                public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-//                    Intent myintent = new Intent(view.getContext(),SermonPlay.class);
-//                    startActivity(myintent);
-//                }
-//            });
+
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+                    Intent myIntent = new Intent(view.getContext(),SermonPlay.class);
+                    myIntent.putExtra("sermonURL", sermons.get(position).getSermonURL());
+                    myIntent.putExtra("sermonTitle", sermons.get(position).getTitle());
+                    myIntent.putExtra("sermonSeries", sermons.get(position).getSeries());
+                    startActivity(myIntent);
+                }
+            });
         }
     }
 
