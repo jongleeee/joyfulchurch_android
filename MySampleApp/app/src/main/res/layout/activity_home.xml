@@ -141,12 +141,13 @@
         <ImageView
             android:id="@+id/main_logo"
             android:layout_width="wrap_content"
-            android:layout_height="150dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:layout_marginBottom="100dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="60dp"
-            android:layout_marginLeft="54dp"
-            android:layout_marginRight="54dp"
-            app:srcCompat="@drawable/logo_white" />
+            app:srcCompat="@drawable/logo_white"
+             />
 
     </RelativeLayout>
 
