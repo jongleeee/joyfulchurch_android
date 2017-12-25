@@ -42,7 +42,7 @@ public class Sermon {
     }
     public String getMonth() {
         SimpleDateFormat df = new SimpleDateFormat("MMM");
-        return df.format(getDate());
+        return df.format(getDate()).toUpperCase();
     }
 
     public String getYear() {
