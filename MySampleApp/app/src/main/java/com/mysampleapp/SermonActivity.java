@@ -70,18 +70,24 @@ public class SermonActivity extends AppCompatActivity {
         }
     }
 
-    private class AsyncSermonActivity extends AsyncTask<Void, Void, Void> {
+    public void loadSermons(List<Sermon> sermons) {
+        getSermonInfo(sermons);
+    }
+
+    private class AsyncSermonActivity extends AsyncTask<Void, Void, Boolean> {
         List<Sermon> sermons;
 
         @Override
-        protected Void doInBackground(Void... voids) {
+        protected Boolean doInBackground(Void... voids) {
             sermons = sermonHandler.getAllSermon();
-            return null;
+            return sermons.size() > 0;
         }
 
         @Override
-        protected void onPostExecute(Void aVoid) {
-            getSermonInfo(sermons);
+        protected void onPostExecute(Boolean result) {
+            if (result) {
+                loadSermons(sermons);
+            }
         }
     }
 

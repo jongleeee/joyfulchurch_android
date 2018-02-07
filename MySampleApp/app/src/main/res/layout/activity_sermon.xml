@@ -7,18 +7,9 @@
     android:layout_height="match_parent"
     tools:context="com.mysampleapp.SermonActivity">
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_height="wrap_content"
-        android:layout_width="0dp"
-        android:theme="@style/AppTheme.AppBarOverlay"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="8dp">
-
-
-
         <android.support.v7.widget.Toolbar
             android:id="@+id/my_toolbar"
-            android:layout_width="415dp"
+            android:layout_width="match_parent"
             android:layout_height="59dp"
             android:background="@drawable/background"
             android:elevation="4dp"
@@ -30,15 +21,7 @@
         <ListView
             android:id="@+id/SermonListView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/listview_item_row"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
 
 </android.support.constraint.ConstraintLayout>
