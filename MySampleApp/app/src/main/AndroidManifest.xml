@@ -92,6 +92,7 @@
         <activity android:name=".SermonActivity" />
         <activity android:name=".InformationActivity" />
         <activity android:name=".AnnouncementActivity" />
+        <activity android:name=".AnnouncementDetailActivity" />
         <activity android:name=".AddSermonActivity" />
         <activity android:name=".SermonPlay" />
         <activity android:name=".AddAnnouncementActivity" />

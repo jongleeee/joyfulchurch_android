@@ -10,6 +10,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -44,14 +46,31 @@ public class AnnouncementActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.announcement_listview);
 
         List<String> categories = new User(getApplicationContext()).getSubscribedChannels();
-
         new AsyncAnnouncementActivity().execute(categories);
     }
 
-    public void getAnnouncementInfo(List<Announcement> announcements) {
+    public void getAnnouncementInfo(final List<Announcement> announcements) {
         AnnouncementArrayAdapter adapter = new AnnouncementArrayAdapter(this,
                 R.layout.listview_item_announcement_row, announcements);
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+                Intent myIntent = new Intent(view.getContext(), AnnouncementDetailActivity.class);
+                myIntent.putExtra("title", announcements.get(position).getTitle());
+                myIntent.putExtra("month", announcements.get(position).getMonth());
+                myIntent.putExtra("day", announcements.get(position).getDay());
+                myIntent.putExtra("year", announcements.get(position).getYear());
+                myIntent.putExtra("category", announcements.get(position).getCategory());
+                myIntent.putExtra("content", announcements.get(position).getContent());
+                startActivity(myIntent);
+            }
+        });
+    }
+
+    public void loadAnnouncements(List<Announcement> announcements) {
+        getAnnouncementInfo(announcements);
     }
 
     /*
@@ -85,18 +104,20 @@ public class AnnouncementActivity extends AppCompatActivity {
     }
     */
 
-    private class AsyncAnnouncementActivity extends AsyncTask<List<String>, Void, Void> {
+    private class AsyncAnnouncementActivity extends AsyncTask<List<String>, Void, Boolean> {
         List<Announcement> announcements;
 
         @Override
-        protected Void doInBackground(List<String>... categories) {
+        protected Boolean doInBackground(List<String>... categories) {
             announcements = announcementHandler.getAnnouncementsWithChannels(categories[0]);
-            return null;
+            return announcements.size() > 0;
         }
 
         @Override
-        protected void onPostExecute(Void aVoid) {
-            getAnnouncementInfo(announcements);
+        protected void onPostExecute(Boolean result) {
+            if (result) {
+                loadAnnouncements(announcements);
+            }
         }
     }
 }

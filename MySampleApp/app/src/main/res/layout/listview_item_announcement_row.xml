@@ -3,7 +3,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="100dp"
+    android:paddingLeft="10dp"
     android:weightSum="6">
 
     <RelativeLayout
@@ -17,8 +18,7 @@
             android:layout_centerHorizontal="true"
             android:layout_above="@id/aDate"
             android:text="DEC"
-            android:textColor="#4CA214"
-            android:textSize="15dp" />
+            android:textColor="#4CA214" />
 
         <TextView android:id="@+id/aDate"
             android:layout_width="wrap_content"
@@ -27,7 +27,7 @@
             android:layout_centerVertical="true"
             android:text="21"
             android:textColor="#4CA214"
-            android:textSize="35dp" />
+            android:textSize="30dp" />
 
         <TextView android:id="@+id/aYear"
             android:layout_width="wrap_content"
@@ -35,8 +35,7 @@
             android:layout_centerHorizontal="true"
             android:text="2017"
             android:layout_below="@+id/aDate"
-            android:textColor="#4CA214"
-            android:textSize="15dp" />
+            android:textColor="#4CA214" />
 
     </RelativeLayout>
 
@@ -49,8 +48,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:paddingBottom="5dp"
+            android:layout_alignParentTop="true"
             android:layout_above="@+id/txt_announcenment_title"
+            android:layout_marginTop="4dp"
             android:text="교회 소식 (전체소식)"
             />
 
