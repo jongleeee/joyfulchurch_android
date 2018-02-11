@@ -9,13 +9,25 @@
     <string name="InformationHeader">교회 소개</string>
     <string name="WelcomeHeader">환 영 합 니 다 !</string>
     <string name="JoyfulHeader">죠이플 교회</string>
-    <string name="JoyfulAddress">교회주소: 9875 Dublin Canyon Rd.\n Castro Valley CA 94552</string>
-    <string name="JoyfulCall">교회전화: (510)582-1240</string>
-    <string name="JoyfulEmail">이메일: joyfulpastorlee@gmail.com</string>
+    <string name="JoyfulAddress"><b>교회주소:</b> 9875 Dublin Canyon Rd.\n \t\tCastro Valley CA 94552</string>
+    <string name="JoyfulCall"><b>교회전화:</b> (510)582-1240</string>
+    <string name="JoyfulEmail"><b>이메일:</b> joyfulpastorlee@gmail.com</string>
     <string name="Navigate">길찾기</string>
     <string name="Date">Date</string>
     <string name="Title">Title</string>
     <string name="Verse">Verse</string>
+
+    <string name="InformationMoreInformation">
+            1부        9:00 AM\n
+            2부       11:00 AM\n
+            3부        1:15 PM\n
+            주일학교    11:00 AM\n
+            YOUTH     11:00 AM\n
+            E.M.      10:00 AM\n\n
+            Joyful Church는 개신교로는 세계적으로 가장 큰 교단인 미국 남 침례 교단 (Southern Baptist)에 속해 있습니다.\n\n
+            미 남침례 교단은 복음적인 개신교단으로 천로 역정의 저자 \'요한 번연\', 설교자 \'챨스 스펄전\', 현대 선교의 아버지 \'윌리암 케리\', 전도자 \'빌리 그레이엄\', 인권 운동가 \'마틴 루터 킹\', 존경받는 대통령 \'지미 카터\' 등을 배출한 교단입니다.\n\n
+            죠이플 교회는 이상준 목사가 2011년 2월 첫주일에 가정에서 처음 개척 예배를 드리고, 2012년 4월 셋째주일에 창립 예배를 드려 오늘에 이르게 되었습니다.
+    </string>
 
     <string name="correct_password">승인되었습니다.</string>
 

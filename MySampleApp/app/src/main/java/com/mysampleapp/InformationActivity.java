@@ -7,15 +7,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.text.method.ScrollingMovementMethod;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Button;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 
 public class InformationActivity extends AppCompatActivity implements View.OnClickListener{
     Button button;
     ImageView imageView;
+    TextView moreInformationTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +40,9 @@ public class InformationActivity extends AppCompatActivity implements View.OnCli
 
         imageView = (ImageView) findViewById(R.id.imageView);
         imageView.setOnClickListener(InformationActivity.this);
+
+        moreInformationTextView = (TextView) findViewById(R.id.information_more_information);
+        moreInformationTextView.setMovementMethod(new ScrollingMovementMethod());
     }
 
 
