@@ -6,46 +6,21 @@
     android:layout_height="match_parent"
     tools:context="com.mysampleapp.SermonPlay">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appBarLayout2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
-        android:layout_marginBottom="20dp">
-
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/play_toolbar"
-            android:layout_width="415dp"
-            android:layout_height="59dp"
-            android:background="@drawable/background"
-            android:elevation="4dp"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp" />
-
-
-    </android.support.design.widget.AppBarLayout>
-
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="11dp"
-        app:layout_constraintBottom_toTopOf="@+id/sermon_play_month"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout2"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/downarrow" />
 
     <TextView
         android:id="@+id/sermon_play_month"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:text="DEC"
         android:textColor="#4CA214"
         app:layout_constraintEnd_toEndOf="parent"
@@ -78,24 +53,29 @@
         android:id="@+id/play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginBottom="100dp"
         android:background="@android:color/transparent"
         android:text="@string/play"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playbar"
         app:srcCompat="@drawable/play_icon" />
 
     <SeekBar
         android:id="@+id/playbar"
         style="@style/Widget.AppCompat.SeekBar"
-        android:layout_width="411dp"
-        android:layout_height="0dp"
+        android:layout_width="370dp"
+        android:layout_height="18dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
         android:progressTint="@color/dark_content_text"
         android:thumbTint="@color/dark_content_text"
         android:visibility="visible"
-        tools:layout_editor_absoluteY="582dp" />
+        app:layout_constraintBottom_toTopOf="@+id/play"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/currentTime"
@@ -133,15 +113,16 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="0dp"
+        android:layout_width="299dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="29dp"
+        android:layout_marginBottom="50dp"
         android:layout_marginEnd="56dp"
         android:layout_marginStart="56dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/sermon_play_border"
         android:elevation="10dp"
         app:layout_constraintBottom_toTopOf="@+id/playbar"
+        app:layout_constraintDimensionRatio="W,1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sermon_play_year">

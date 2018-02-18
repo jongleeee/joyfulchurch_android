@@ -61,16 +61,6 @@ public class SermonPlay extends AppCompatActivity {
 
         progressBar.setVisibility(View.GONE);
 
-        Toolbar playToolbar = (Toolbar) findViewById(R.id.play_toolbar);
-        setSupportActionBar(playToolbar);
-
-        // Get a support ActionBar corresponding to this toolbar
-        final ActionBar ab = getSupportActionBar();
-        ab.setTitle(Html.fromHtml("<font color='#FFFFFF'>설교 말씀</font>"));
-
-        // Enable the Up button
-        ab.setDisplayHomeAsUpEnabled(true);
-
         this.url = getIntent().getExtras().getString("sermonURL");
         this.title = getIntent().getExtras().getString("sermonTitle");
         this.series = getIntent().getExtras().getString("sermonSeries");
