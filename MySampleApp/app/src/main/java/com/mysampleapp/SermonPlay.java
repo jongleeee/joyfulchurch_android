@@ -83,18 +83,27 @@ public class SermonPlay extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (!audioPlayer.isPlaying()) {
+
+                    if (serviceBound) {
+                        audioPlayer.start();
+                        updateProgreeBarAndTime();
+                    } else {
+                        new AsyncSermonPlay().execute();
+
+                        audioPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener(){
+                            @Override
+                            public void onCompletion(MediaPlayer mp) {
+                                // File has ended !!!
+                                buttonPlay.setImageResource(R.drawable.play_icon);
+                                audioPlayer.reset();
+                                playBar.setProgress(0);
+                                setTime(currentTime, 0);
+                            }
+                        });
+                    }
+
                     buttonPlay.setImageResource(R.drawable.pause_icon);
-                    new AsyncSermonPlay().execute();
-                    audioPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener(){
-                        @Override
-                        public void onCompletion(MediaPlayer mp) {
-                            // File has ended !!!
-                            buttonPlay.setImageResource(R.drawable.play_icon);
-                            audioPlayer.reset();
-                            playBar.setProgress(0);
-                            setTime(currentTime, 0);
-                        }
-                    });
+
                 } else {
                     audioPlayer.pause();
                     mHandler.removeCallbacks(updateTimeTask);
