@@ -40,6 +40,7 @@ public class SermonPlay extends AppCompatActivity {
     boolean serviceBound = false;
     private String title;
     private String series;
+    private Handler mHandler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +77,6 @@ public class SermonPlay extends AppCompatActivity {
             playBar.setMax(audioPlayer.getTotalTime());
             setTime(totalTime, audioPlayer.getTotalTime());
             setTime(currentTime, audioPlayer.getCurrentTime());
-            playCycle();
         }
 
         buttonPlay.setOnClickListener(new View.OnClickListener() {
@@ -96,8 +96,9 @@ public class SermonPlay extends AppCompatActivity {
                         }
                     });
                 } else {
-                    buttonPlay.setImageResource(R.drawable.play_icon);
                     audioPlayer.pause();
+                    mHandler.removeCallbacks(updateTimeTask);
+                    buttonPlay.setImageResource(R.drawable.play_icon);
                 }
             }
         });
@@ -121,6 +122,21 @@ public class SermonPlay extends AppCompatActivity {
 
     }
 
+    public void updateProgreeBarAndTime() {
+        mHandler.postDelayed(updateTimeTask, 100);
+    }
+
+    private Runnable updateTimeTask = new Runnable() {
+        public void run() {
+            if(audioPlayer != null){
+                int mCurrentPosition = audioPlayer.getCurrentPosition() / 1000;
+                progressBar.setProgress(mCurrentPosition);
+                setTime(currentTime, audioPlayer.getCurrentTime());
+            }
+            mHandler.postDelayed(this, 1000);
+        }
+    };
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -138,20 +154,6 @@ public class SermonPlay extends AppCompatActivity {
 
     public void setTime(TextView textView, int time) {
         textView.setText(DateFormat.format("mm:ss", time));
-    }
-
-        public void playCycle() {
-        playBar.setProgress(audioPlayer.getCurrentTime());
-        if (audioPlayer.isPlaying()) {
-            runner = new Runnable() {
-                @Override
-                public void run() {
-                    playCycle();
-                    setTime(currentTime, audioPlayer.getCurrentTime());
-                }
-            };
-            handler.postDelayed(runner, 1000);
-        }
     }
 
     private class AsyncSermonPlay extends AsyncTask<String, Void, Void> {
@@ -175,7 +177,7 @@ public class SermonPlay extends AppCompatActivity {
 //            progressDialog.dismiss();
             progressBar.setVisibility(View.GONE);
             buttonPlay.setVisibility(View.VISIBLE);
-            playCycle();
+            updateProgreeBarAndTime();
         }
     }
     private ServiceConnection serviceConnection = new ServiceConnection() {
