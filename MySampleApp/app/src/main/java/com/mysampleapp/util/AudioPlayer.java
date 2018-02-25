@@ -51,9 +51,13 @@ public class AudioPlayer extends MediaPlayer {
         return this.getDuration();
     }
 
+    public int getTotalTimeInSeconds() { return this.getTotalTime() / 1000; }
+
     public int getCurrentTime() {
         return this.getCurrentPosition();
     }
+
+    public int getCurrentTimeInSeconds() { return this.getCurrentTime() / 1000; }
 
     public void reset() {
         this.seekTo(0);

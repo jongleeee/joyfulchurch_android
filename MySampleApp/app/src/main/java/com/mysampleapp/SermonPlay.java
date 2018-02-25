@@ -4,7 +4,9 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.media.MediaMetadataRetriever;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.IBinder;
@@ -67,17 +69,21 @@ public class SermonPlay extends AppCompatActivity {
         this.series = getIntent().getExtras().getString("sermonSeries");
 
 //        sameSermon = audioPlayer.setUrl(this.url);
-        setTime(totalTime, audioPlayer.getTotalTime());
-        playBar.setMax(audioPlayer.getTotalTime());
 
         if (sameSermon) {
             if (audioPlayer.isPlaying()) {
                 buttonPlay.setImageResource(R.drawable.pause_icon);
             }
-            playBar.setMax(audioPlayer.getTotalTime());
+            playBar.setMax(audioPlayer.getTotalTimeInSeconds());
+            playBar.setProgress(audioPlayer.getCurrentTimeInSeconds());
             setTime(totalTime, audioPlayer.getTotalTime());
             setTime(currentTime, audioPlayer.getCurrentTime());
+        } else {
+            totalTime.setVisibility(View.INVISIBLE);
+            currentTime.setVisibility(View.INVISIBLE);
         }
+
+
 
         buttonPlay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,14 +138,22 @@ public class SermonPlay extends AppCompatActivity {
     }
 
     public void updateProgreeBarAndTime() {
+        if (totalTime.getVisibility() == View.INVISIBLE) {
+            totalTime.setVisibility(View.VISIBLE);
+            setTime(totalTime, audioPlayer.getTotalTime());
+            playBar.setMax(audioPlayer.getTotalTimeInSeconds());
+        }
+        if (currentTime.getVisibility() == View.INVISIBLE) {
+            currentTime.setVisibility(View.VISIBLE);
+            setTime(currentTime, audioPlayer.getCurrentTime());
+        }
         mHandler.postDelayed(updateTimeTask, 100);
     }
 
     private Runnable updateTimeTask = new Runnable() {
         public void run() {
             if(audioPlayer != null){
-                int mCurrentPosition = audioPlayer.getCurrentPosition() / 1000;
-                progressBar.setProgress(mCurrentPosition);
+                playBar.setProgress(audioPlayer.getCurrentTimeInSeconds());
                 setTime(currentTime, audioPlayer.getCurrentTime());
             }
             mHandler.postDelayed(this, 1000);
