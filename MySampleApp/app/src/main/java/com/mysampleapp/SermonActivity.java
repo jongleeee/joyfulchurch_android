@@ -64,6 +64,10 @@ public class SermonActivity extends AppCompatActivity {
                     myIntent.putExtra("sermonURL", sermons.get(position).getSermonURL());
                     myIntent.putExtra("sermonTitle", sermons.get(position).getTitle());
                     myIntent.putExtra("sermonSeries", sermons.get(position).getSeries());
+                    myIntent.putExtra("sermonVerse", sermons.get(position).getVerse());
+                    myIntent.putExtra("sermonMonth", sermons.get(position).getMonth());
+                    myIntent.putExtra("sermonYear", sermons.get(position).getYear());
+                    myIntent.putExtra("sermonDay", sermons.get(position).getDay());
                     startActivity(myIntent);
                 }
             });
