@@ -28,7 +28,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <TextView
-        android:id="@+id/sermon_play_date"
+        android:id="@+id/sermon_play_day"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:text="21"
@@ -46,7 +46,7 @@
         android:textColor="#4CA214"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sermon_play_date" />
+        app:layout_constraintTop_toBottomOf="@+id/sermon_play_day" />
 
 
     <ImageButton
@@ -128,18 +128,18 @@
         app:layout_constraintTop_toBottomOf="@+id/sermon_play_year">
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/sermon_play_series"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginBottom="5dp"
             android:text="창세기 족장 강해 (26)"
             android:textSize="15dp"
-            app:layout_constraintBottom_toTopOf="@+id/textView10"
+            app:layout_constraintBottom_toTopOf="@+id/sermon_play_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/sermon_play_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="마음에 감옥에서 벗어나는 야곱"
@@ -151,14 +151,14 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/sermon_play_verse"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginTop="5dp"
             android:text="창세기 33 : 1-17"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+            app:layout_constraintTop_toBottomOf="@+id/sermon_play_title" />
 
     </android.support.constraint.ConstraintLayout>
 

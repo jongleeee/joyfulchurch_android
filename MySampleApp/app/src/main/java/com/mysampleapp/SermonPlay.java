@@ -8,11 +8,8 @@ import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.IBinder;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.text.Html;
 import android.text.format.DateFormat;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,6 +28,12 @@ public class SermonPlay extends AppCompatActivity {
     private SeekBar playBar;
     private TextView totalTime;
     private TextView currentTime;
+    private TextView sermonSeries;
+    private TextView sermonTitle;
+    private TextView sermonVerse;
+    private TextView sermonMonth;
+    private TextView sermonDay;
+    private TextView sermonYear;
     private Handler handler = new Handler();
     private Runnable runner;
     private AudioPlayer audioPlayer = AudioPlayer.INSTANCE();
@@ -58,13 +61,27 @@ public class SermonPlay extends AppCompatActivity {
         playBar = (SeekBar) findViewById(R.id.playbar);
         totalTime = (TextView) findViewById(R.id.totalTime);
         currentTime = (TextView) findViewById(R.id.currentTime);
+        sermonSeries = (TextView) findViewById(R.id.sermon_play_series);
+        sermonTitle = (TextView) findViewById(R.id.sermon_play_title);
+        sermonVerse = (TextView) findViewById(R.id.sermon_play_verse);
+        sermonMonth = (TextView) findViewById(R.id.sermon_play_month);
+        sermonDay = (TextView) findViewById(R.id.sermon_play_day);
+        sermonYear = (TextView) findViewById(R.id.sermon_play_year);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
+        currentTime.setVisibility(View.INVISIBLE);
+        totalTime.setVisibility(View.INVISIBLE);
         progressBar.setVisibility(View.GONE);
 
         this.url = getIntent().getExtras().getString("sermonURL");
         this.title = getIntent().getExtras().getString("sermonTitle");
+        sermonTitle.setText(this.title);
         this.series = getIntent().getExtras().getString("sermonSeries");
+        sermonSeries.setText(this.series);
+        sermonVerse.setText(getIntent().getExtras().getString("sermonVerse"));
+        sermonMonth.setText(getIntent().getExtras().getString("sermonMonth"));
+        sermonYear.setText(getIntent().getExtras().getString("sermonYear"));
+        sermonDay.setText(getIntent().getExtras().getString("sermonDay"));
 
 //        sameSermon = audioPlayer.setUrl(this.url);
         setTime(totalTime, audioPlayer.getTotalTime());
