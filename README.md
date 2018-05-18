@@ -116,4 +116,10 @@ git checkout master
 git pull origin master
 ```
 
-4. If you ran `git stash`, run `git stash pop` to bring back files
+4. If you ran `git stash`, run `git stash pop` to bring back 
+
+### Adding Changes to Your Last Commit
+1. Amending a Commit Without Changing Its Message
+```
+$ (some_branch) git commit --amend --no-edit
+```
