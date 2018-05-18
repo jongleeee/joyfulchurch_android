@@ -32,8 +32,8 @@ public class InformationActivity extends AppCompatActivity implements View.OnCli
         ActionBar ab = getSupportActionBar();
         ab.setTitle(Html.fromHtml("<font color='#FFFFFF'>교회 소개</font>"));
 
-        // Enable the Up button
-        ab.setDisplayHomeAsUpEnabled(true);
+        //Disable the back button
+        ab.setDisplayHomeAsUpEnabled(false);
 
         button = (Button) findViewById(R.id.button_map);
         button.setOnClickListener(InformationActivity.this);
