@@ -41,10 +41,11 @@ public class SermonActivity extends AppCompatActivity {
 
         // Get a support ActionBar corresponding to this toolbar
         ActionBar ab = getSupportActionBar();
+
         ab.setTitle(Html.fromHtml("<font color='#FFFFFF'>설교 말씀</font>"));
 
-        // Enable the Up button
-        ab.setDisplayHomeAsUpEnabled(true);
+        //Disable the Back button
+        ab.setDisplayHomeAsUpEnabled(false);
 
         listView = (ListView) findViewById(R.id.SermonListView);
         //titles of sermons

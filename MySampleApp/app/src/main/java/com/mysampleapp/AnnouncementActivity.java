@@ -39,8 +39,8 @@ public class AnnouncementActivity extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
 //        ab.setTitle(Html.fromHtml("<font color='#FFFFFF'>교회 소식</font>"));
 
-        // Enable the Up button
-        ab.setDisplayHomeAsUpEnabled(true);
+        //Disable the back button
+        ab.setDisplayHomeAsUpEnabled(false);
 
 
         listView = (ListView) findViewById(R.id.announcement_listview);
