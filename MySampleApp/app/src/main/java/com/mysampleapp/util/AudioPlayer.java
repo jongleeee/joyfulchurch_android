@@ -3,6 +3,9 @@ package com.mysampleapp.util;
 import android.media.MediaPlayer;
 
 import java.io.IOException;
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by minjungkim on 7/18/17.
@@ -35,6 +38,7 @@ public class AudioPlayer extends MediaPlayer {
     public boolean setUrl(String url) {
         if (this.url == null || !this.url.equals(url)) {
             this.url = url;
+            super.reset();
             stop();
             try {
                 this.setDataSource("http://bitly.com/" + url);

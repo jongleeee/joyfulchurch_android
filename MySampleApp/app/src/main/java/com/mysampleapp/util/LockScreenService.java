@@ -173,6 +173,7 @@ public class LockScreenService extends Service implements MediaPlayer.OnCompleti
         sermonOnPlay.reset();
 
         sermonOnPlay.setUrl(this.url);
+        sermonOnPlay.start();
 
         /*
         mediaPlayer = new MediaPlayer();
