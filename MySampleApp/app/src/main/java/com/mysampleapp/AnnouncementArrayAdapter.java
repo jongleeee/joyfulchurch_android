@@ -64,9 +64,33 @@ public class AnnouncementArrayAdapter extends ArrayAdapter<Announcement> {
 
         //set background color for categories
         if(holder.category.getText().toString().equals("교회 소식 (전체 공지)")) {
-            holder.category.getBackground().setColorFilter(Color.argb(255, 80, 168, 215), PorterDuff.Mode.SRC_ATOP);
+            holder.category.getBackground().setColorFilter(Color.argb(255, 33, 140, 204), PorterDuff.Mode.SRC_ATOP);
+        }else if (holder.category.getText().toString().equals("죠이플 창")){
+            holder.category.getBackground().setColorFilter(Color.argb(255, 255, 139, 139), PorterDuff.Mode.SRC_ATOP);
+        }else if (holder.category.getText().toString().equals("카리스마 대학부")){
+            holder.category.getBackground().setColorFilter(Color.argb(255, 174, 227, 129), PorterDuff.Mode.SRC_ATOP);
+        }else if (holder.category.getText().toString().equals("카이로스 청년부")){
+            holder.category.getBackground().setColorFilter(Color.argb(255, 255, 165, 112), PorterDuff.Mode.SRC_ATOP);
+        }else if (holder.category.getText().toString().equals("남성 기도회")){
+            holder.category.getBackground().setColorFilter(Color.argb(255, 204, 110, 132), PorterDuff.Mode.SRC_ATOP);
+        }else if (holder.category.getText().toString().equals("월요 여성 중보기도 모임")){
+            holder.category.getBackground().setColorFilter(Color.argb(255, 207, 163, 245), PorterDuff.Mode.SRC_ATOP);
+        }else if (holder.category.getText().toString().equals("여성 커피브레이크")){
+            holder.category.getBackground().setColorFilter(Color.argb(255, 196, 79, 79), PorterDuff.Mode.SRC_ATOP);
+        }else if (holder.category.getText().toString().equals("교육부")){
+            holder.category.getBackground().setColorFilter(Color.argb(255, 255, 206, 126), PorterDuff.Mode.SRC_ATOP);
+        }else if (holder.category.getText().toString().equals("찬양팀")){
+            holder.category.getBackground().setColorFilter(Color.argb(255, 255, 152, 193), PorterDuff.Mode.SRC_ATOP);
+        }else if (holder.category.getText().toString().equals("여름 선교")){
+            holder.category.getBackground().setColorFilter(Color.argb(255, 255, 187, 53), PorterDuff.Mode.SRC_ATOP);
+        }else if (holder.category.getText().toString().equals("겨울 선교")){
+            holder.category.getBackground().setColorFilter(Color.argb(255, 177, 167, 228), PorterDuff.Mode.SRC_ATOP);
+        }else if (holder.category.getText().toString().equals("목자 모임")){
+            holder.category.getBackground().setColorFilter(Color.argb(255, 182, 204, 235), PorterDuff.Mode.SRC_ATOP);
+        }else if (holder.category.getText().toString().equals("사역부장 모임")){
+            holder.category.getBackground().setColorFilter(Color.argb(255, 179, 150, 173), PorterDuff.Mode.SRC_ATOP);
         }else{
-            holder.category.getBackground().setColorFilter(Color.argb(255, 0, 0, 255), PorterDuff.Mode.SRC_ATOP);
+            holder.category.getBackground().setColorFilter(Color.argb(255, 255, 139, 139), PorterDuff.Mode.SRC_ATOP);
         }
 
         return row;

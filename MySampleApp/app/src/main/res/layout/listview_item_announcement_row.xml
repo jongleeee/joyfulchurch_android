@@ -50,6 +50,7 @@
             android:layout_height="33dp"
             android:layout_marginBottom="10dp"
             android:layout_above="@+id/txt_announcenment_title"
+            android:textColor="@color/white"
             android:background="@drawable/ribbonwhite"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
