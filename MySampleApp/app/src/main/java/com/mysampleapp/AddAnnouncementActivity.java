@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
+import android.graphics.Color;
 
 import com.mysampleapp.util.Announcement;
 import com.mysampleapp.util.AnnouncementHandler;

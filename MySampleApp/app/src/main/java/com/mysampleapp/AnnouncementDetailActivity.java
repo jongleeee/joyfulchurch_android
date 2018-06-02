@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
 import android.widget.TextView;
+import android.graphics.Color;
 
 public class AnnouncementDetailActivity extends AppCompatActivity {
 
@@ -21,6 +22,7 @@ public class AnnouncementDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_announcement);
 
         category = (TextView) findViewById(R.id.activity_detail_category);
+//        category.setBackgroundColor(Color.parseColor("#f44336"));
         title = (TextView) findViewById(R.id.activity_detail_title);
         content = (TextView) findViewById(R.id.activity_detail_content);
         month = (TextView) findViewById(R.id.activity_detail_month);

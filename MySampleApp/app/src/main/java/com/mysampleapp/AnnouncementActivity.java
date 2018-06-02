@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
+import android.graphics.Color;
 import com.mysampleapp.util.Announcement;
 import com.mysampleapp.util.AnnouncementHandler;
 import com.mysampleapp.util.User;
@@ -35,6 +35,7 @@ public class AnnouncementActivity extends AppCompatActivity {
         myToolbar.setTitle("교회 소식");
         setSupportActionBar(myToolbar);
 
+
         // Get a support ActionBar corresponding to this toolbar
         ActionBar ab = getSupportActionBar();
 //        ab.setTitle(Html.fromHtml("<font color='#FFFFFF'>교회 소식</font>"));
@@ -45,7 +46,10 @@ public class AnnouncementActivity extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.announcement_listview);
 
+//        List<String> categories = new User(getApplicationContext()).getSubscribedChannels();
         List<String> categories = new User(getApplicationContext()).getSubscribedChannels();
+        categories.add("죠이플 창");
+
         new AsyncAnnouncementActivity().execute(categories);
     }
 
@@ -67,7 +71,9 @@ public class AnnouncementActivity extends AppCompatActivity {
                 startActivity(myIntent);
             }
         });
+
     }
+
 
     public void loadAnnouncements(List<Announcement> announcements) {
         getAnnouncementInfo(announcements);

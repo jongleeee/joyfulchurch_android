@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.PorterDuff;
 
 import com.mysampleapp.util.Announcement;
 
@@ -44,7 +47,7 @@ public class AnnouncementArrayAdapter extends ArrayAdapter<Announcement> {
             holder.aMonth = (TextView)row.findViewById(R.id.aMonth);
             holder.aDate = (TextView)row.findViewById(R.id.aDate);
             holder.aYear = (TextView)row.findViewById(R.id.aYear);
-
+            holder.category = (TextView)row.findViewById(R.id.txt_announcenment_group);
             row.setTag(holder);
         }
         else {
@@ -57,15 +60,27 @@ public class AnnouncementArrayAdapter extends ArrayAdapter<Announcement> {
         holder.aMonth.setText(announcement.getMonth());
         holder.aDate.setText(announcement.getDay());
         holder.aYear.setText(announcement.getYear());
+        //holder.category.setText(announcement.getCategory());
+
+        //set background color for categories
+        if(holder.category.getText().toString().equals("교회 소식 (전체 공지)")) {
+            holder.category.getBackground().setColorFilter(Color.argb(255, 80, 168, 215), PorterDuff.Mode.SRC_ATOP);
+        }else{
+            holder.category.getBackground().setColorFilter(Color.argb(255, 0, 0, 255), PorterDuff.Mode.SRC_ATOP);
+        }
 
         return row;
     }
 
-    static class AnnouncementHolder {
+
+
+
+     static class AnnouncementHolder {
         //ImageView imgIcon;
         TextView txtTitle;
         TextView aMonth;
         TextView aDate;
         TextView aYear;
+        TextView category;
     }
 }
