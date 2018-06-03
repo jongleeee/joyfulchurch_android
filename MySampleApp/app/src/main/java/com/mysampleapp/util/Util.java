@@ -1,6 +1,6 @@
 package com.mysampleapp.util;
 
-import com.amazonaws.util.StringUtils;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,6 +37,4 @@ public class Util {
         }
         return sb.toString();
     }
-
-
 }
