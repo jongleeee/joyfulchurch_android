@@ -10,7 +10,6 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.format.DateFormat;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
@@ -21,6 +20,7 @@ import android.widget.Toast;
 
 import com.mysampleapp.util.AudioPlayer;
 import com.mysampleapp.util.LockScreenService;
+import com.mysampleapp.util.Util;
 
 public class SermonPlay extends AppCompatActivity {
     private String url;
@@ -83,48 +83,40 @@ public class SermonPlay extends AppCompatActivity {
         sermonYear.setText(getIntent().getExtras().getString("sermonYear"));
         sermonDay.setText(getIntent().getExtras().getString("sermonDay"));
 
-//        sameSermon = audioPlayer.setUrl(this.url);
-        setTime(totalTime, audioPlayer.getTotalTime());
-        playBar.setMax(audioPlayer.getTotalTime());
-
-        if (sameSermon) {
+        // If same sermon, show pause icon.
+        if (this.url.equals(audioPlayer.getUrl())) {
             if (audioPlayer.isPlaying()) {
                 buttonPlay.setImageResource(R.drawable.pause_icon);
             }
-            playBar.setMax(audioPlayer.getTotalTime());
-            setTime(totalTime, audioPlayer.getTotalTime());
-            setTime(currentTime, audioPlayer.getCurrentTime());
+            updateProgreeBarAndTime();
         }
 
         buttonPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!audioPlayer.isPlaying()) {
-
-                    if (serviceBound) {
+                if (url.equals(audioPlayer.getUrl())) {
+                    if (!audioPlayer.isPlaying()) {
                         audioPlayer.start();
                         updateProgreeBarAndTime();
+                        buttonPlay.setImageResource(R.drawable.pause_icon);
                     } else {
-                        new AsyncSermonPlay().execute();
-
-                        audioPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener(){
-                            @Override
-                            public void onCompletion(MediaPlayer mp) {
-                                // File has ended !!!
-                                buttonPlay.setImageResource(R.drawable.play_icon);
-                                audioPlayer.reset();
-                                playBar.setProgress(0);
-                                setTime(currentTime, 0);
-                            }
-                        });
+                        audioPlayer.pause();
+                        mHandler.removeCallbacks(updateTimeTask);
+                        buttonPlay.setImageResource(R.drawable.play_icon);
                     }
-
-                    buttonPlay.setImageResource(R.drawable.pause_icon);
-
                 } else {
-                    audioPlayer.pause();
-                    mHandler.removeCallbacks(updateTimeTask);
-                    buttonPlay.setImageResource(R.drawable.play_icon);
+                    audioPlayer.reset();
+                    audioPlayer.setUrl(url);
+                    new AsyncSermonPlay().execute();
+                    audioPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener(){
+                        @Override
+                        public void onCompletion(MediaPlayer mp) {
+                            // File has ended !!!
+                            buttonPlay.setImageResource(R.drawable.play_icon);
+                            audioPlayer.reset();
+                            playBar.setProgress(0);
+                        }
+                    });
                 }
             }
         });
@@ -135,7 +127,7 @@ public class SermonPlay extends AppCompatActivity {
                 if (b) {
                     audioPlayer.changeTime(progress);
                     playBar.setProgress(audioPlayer.getCurrentTime());
-                    setTime(currentTime, audioPlayer.getCurrentTime());
+                    currentTime.setText(Util.convertMillisecondsToString(audioPlayer.getCurrentTime()));
                 }
             }
 
@@ -157,7 +149,18 @@ public class SermonPlay extends AppCompatActivity {
             if(audioPlayer != null){
                 int mCurrentPosition = audioPlayer.getCurrentPosition() / 1000;
                 progressBar.setProgress(mCurrentPosition);
-                setTime(currentTime, audioPlayer.getCurrentTime());
+                currentTime.setVisibility(View.VISIBLE);
+                currentTime.setText(Util.convertMillisecondsToString(audioPlayer.getCurrentTime()));
+
+                /*
+                 There is a delay in audioPlayer returning total time. So we will just handle here.
+                 Also sometimes, audioPlayer.getTotalTime() returned some random number. So we will
+                 just handle > 100 for now.
+                  */
+                if (totalTime.getVisibility() == View.INVISIBLE && audioPlayer.getTotalTime() > 100) {
+                    totalTime.setVisibility(View.VISIBLE);
+                    totalTime.setText(Util.convertMillisecondsToString(audioPlayer.getTotalTime()));
+                }
             }
             mHandler.postDelayed(this, 1000);
         }
@@ -176,10 +179,6 @@ public class SermonPlay extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
-
-    public void setTime(TextView textView, int time) {
-        textView.setText(DateFormat.format("mm:ss", time));
     }
 
     private class AsyncSermonPlay extends AsyncTask<String, Void, Void> {
@@ -201,6 +200,7 @@ public class SermonPlay extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
 //            progressDialog.dismiss();
+            buttonPlay.setImageResource(R.drawable.pause_icon);
             progressBar.setVisibility(View.GONE);
             buttonPlay.setVisibility(View.VISIBLE);
             updateProgreeBarAndTime();
