@@ -2,6 +2,8 @@ package com.mysampleapp.util;
 
 
 
+import android.graphics.Color;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -36,5 +38,17 @@ public class Util {
             }
         }
         return sb.toString();
+    }
+
+    public static int JFColorGreen() {
+        return Color.rgb(76, 162, 20);
+    }
+
+    public static int JFColorBlue() {
+        return Color.rgb(80,168,215);
+    }
+
+    public static int JFColorBlack() {
+        return Color.BLACK;
     }
 }

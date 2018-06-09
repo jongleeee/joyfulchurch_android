@@ -2,13 +2,17 @@ package com.mysampleapp;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.mysampleapp.util.AudioPlayer;
 import com.mysampleapp.util.Sermon;
+import com.mysampleapp.util.Util;
+
 import java.util.List;
 
 /**
@@ -19,6 +23,7 @@ public class SermonArrayAdapter extends ArrayAdapter<Sermon> {
     Context context;
     int layoutResourceId;
     List<Sermon> data = null;
+    private AudioPlayer audioPlayer = AudioPlayer.INSTANCE();
 
     public SermonArrayAdapter(Context context, int layoutResourceId, List<Sermon> data) {
         super(context, layoutResourceId, data);
@@ -59,6 +64,24 @@ public class SermonArrayAdapter extends ArrayAdapter<Sermon> {
         holder.sermonMonth.setText(sermon.getMonth());
         holder.sermonDate.setText(sermon.getDay());
         holder.sermonYear.setText(sermon.getYear());
+
+
+        if (sermon.getSermonURL().equals(audioPlayer.getUrl())) {
+            holder.txtTitle.setTextColor(Util.JFColorBlue());
+            holder.txtSeries.setTextColor(Util.JFColorBlue());
+            holder.txtVerse.setTextColor(Util.JFColorBlue());
+            holder.sermonDate.setTextColor(Util.JFColorBlue());
+            holder.sermonMonth.setTextColor(Util.JFColorBlue());
+            holder.sermonYear.setTextColor(Util.JFColorBlue());
+        } else {
+            holder.txtTitle.setTextColor(Util.JFColorBlack());
+            holder.txtSeries.setTextColor(Util.JFColorBlack());
+            holder.txtVerse.setTextColor(Util.JFColorBlack());
+            holder.sermonDate.setTextColor(Util.JFColorGreen());
+            holder.sermonMonth.setTextColor(Util.JFColorGreen());
+            holder.sermonYear.setTextColor(Util.JFColorGreen());
+        }
+
 
         return row;
     }
