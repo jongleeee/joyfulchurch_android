@@ -155,9 +155,9 @@ public class SermonPlay extends AppCompatActivity {
                 /*
                  There is a delay in audioPlayer returning total time. So we will just handle here.
                  Also sometimes, audioPlayer.getTotalTime() returned some random number. So we will
-                 just handle > 100 for now.
+                 just handle > 1000 for now.
                   */
-                if (totalTime.getVisibility() == View.INVISIBLE && audioPlayer.getTotalTime() > 100) {
+                if (totalTime.getVisibility() == View.INVISIBLE && audioPlayer.getTotalTime() > 1000) {
                     totalTime.setVisibility(View.VISIBLE);
                     totalTime.setText(Util.convertMillisecondsToString(audioPlayer.getTotalTime()));
                 }

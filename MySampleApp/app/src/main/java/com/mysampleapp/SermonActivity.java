@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.mysampleapp.util.AudioPlayer;
 import com.mysampleapp.util.Sermon;
 import com.mysampleapp.util.SermonHandler;
 
@@ -29,6 +30,8 @@ public class SermonActivity extends AppCompatActivity {
 
     ListView listView;
     SermonHandler sermonHandler = new SermonHandler();
+    List<Sermon> sermons;
+    SermonArrayAdapter adapter;
 //    MediaPlayer sermonPlay;
 
     @Override
@@ -54,7 +57,7 @@ public class SermonActivity extends AppCompatActivity {
 
     public void getSermonInfo(final List<Sermon> sermons) {
         if (sermons != null) {
-            SermonArrayAdapter adapter = new SermonArrayAdapter(this,
+            adapter = new SermonArrayAdapter(this,
                     R.layout.listview_item_row, sermons);
             listView.setAdapter(adapter);
 
@@ -80,7 +83,6 @@ public class SermonActivity extends AppCompatActivity {
     }
 
     private class AsyncSermonActivity extends AsyncTask<Void, Void, Boolean> {
-        List<Sermon> sermons;
 
         @Override
         protected Boolean doInBackground(Void... voids) {
@@ -93,6 +95,14 @@ public class SermonActivity extends AppCompatActivity {
             if (result) {
                 loadSermons(sermons);
             }
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (sermons != null) {
+            adapter.notifyDataSetChanged();
         }
     }
 
