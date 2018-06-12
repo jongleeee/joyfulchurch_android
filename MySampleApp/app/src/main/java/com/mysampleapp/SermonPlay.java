@@ -214,7 +214,7 @@ public class SermonPlay extends AppCompatActivity {
             player = binder.getService();
             serviceBound = true;
 
-            Toast.makeText(SermonPlay.this, "Service Bound", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SermonPlay.this, "Playing sermon", Toast.LENGTH_SHORT).show();
         }
 
         @Override
