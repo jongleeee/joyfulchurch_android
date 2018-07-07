@@ -1,5 +1,6 @@
 package com.mysampleapp.util;
 
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -7,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.session.MediaSessionManager;
@@ -45,6 +47,9 @@ public class LockScreenService extends Service implements MediaPlayer.OnCompleti
 
     public static final String ACTION_PLAY = "com.valdioveliu.valdio.audioplayer.ACTION_PLAY";
     public static final String ACTION_PAUSE = "com.valdioveliu.valdio.audioplayer.ACTION_PAUSE";
+    public static final String SERMON_NOTIFICATION_CHANNEL = "SERMON_NOTIFICATION_CHANNEL";
+    public static final String SERMON_NOTIFICATION_CHANNEL_NAME = "SERMON_NOTIFICATION_CHANNEL_NAME";
+    public static final String SERMON_NOTIFICATION_CHANNEL_DESCRIPTION = "SERMON_NOTIFICATION_CHANNEL_DESCRIPTION";
 
     //MediaSession
     private MediaSessionManager mediaSessionManager;
@@ -330,6 +335,19 @@ public class LockScreenService extends Service implements MediaPlayer.OnCompleti
 
     private void buildNotification(PlaybackStatus playbackStatus) {
 
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        String CHANNEL_ID = "my_channel_01";
+
+        if (android.os.Build.VERSION.SDK_INT >= 26) {
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel mChannel = new NotificationChannel(SERMON_NOTIFICATION_CHANNEL, SERMON_NOTIFICATION_CHANNEL_NAME, importance);
+            mChannel.setDescription(SERMON_NOTIFICATION_CHANNEL_DESCRIPTION);
+            mChannel.enableLights(true);
+            mChannel.enableVibration(false);
+            mChannel.setShowBadge(false);
+            notificationManager.createNotificationChannel(mChannel);
+        }
+
         int notificationAction = R.drawable.pause_icon;//needs to be initialized
         PendingIntent play_pauseAction = null;
 
@@ -367,9 +385,13 @@ public class LockScreenService extends Service implements MediaPlayer.OnCompleti
                 .setContentTitle(this.title)
                 .setContentInfo("이상준 목사")
                 // Add playback actions
-                .addAction(notificationAction, "pause", play_pauseAction);
+                .addAction(notificationAction, "pause", play_pauseAction)
+                .setChannelId(CHANNEL_ID)
+                .setOngoing(true);
 
-        ((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(NOTIFICATION_ID, notificationBuilder.build());
+
+        ((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE))
+                .notify(NOTIFICATION_ID, notificationBuilder.build());
     }
 
     private void removeNotification() {

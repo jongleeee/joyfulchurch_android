@@ -121,13 +121,16 @@ public class SermonPlay extends AppCompatActivity {
             }
         });
 
+        playBar.setEnabled(false);
         playBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
-                if (b) {
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (fromUser) {
                     audioPlayer.changeTime(progress);
                     playBar.setProgress(audioPlayer.getCurrentTime());
-                    currentTime.setText(Util.convertMillisecondsToString(audioPlayer.getCurrentTime()));
+                    currentTime.setText(Util.convertSecondToString(audioPlayer.getCurrentTime()));
+                } else {
+
                 }
             }
 
@@ -147,19 +150,24 @@ public class SermonPlay extends AppCompatActivity {
     private Runnable updateTimeTask = new Runnable() {
         public void run() {
             if(audioPlayer != null){
-                int mCurrentPosition = audioPlayer.getCurrentPosition() / 1000;
-                progressBar.setProgress(mCurrentPosition);
                 currentTime.setVisibility(View.VISIBLE);
-                currentTime.setText(Util.convertMillisecondsToString(audioPlayer.getCurrentTime()));
+                currentTime.setText(Util.convertSecondToString(audioPlayer.getCurrentTime()));
 
                 /*
                  There is a delay in audioPlayer returning total time. So we will just handle here.
                  Also sometimes, audioPlayer.getTotalTime() returned some random number. So we will
                  just handle > 1000 for now.
                   */
-                if (totalTime.getVisibility() == View.INVISIBLE && audioPlayer.getTotalTime() > 1000) {
+                if (totalTime.getVisibility() == View.INVISIBLE && audioPlayer.getTotalTime() > 1) {
                     totalTime.setVisibility(View.VISIBLE);
-                    totalTime.setText(Util.convertMillisecondsToString(audioPlayer.getTotalTime()));
+                    totalTime.setText(Util.convertSecondToString(audioPlayer.getTotalTime()));
+
+                    playBar.setMax(audioPlayer.getTotalTime());
+                    playBar.setEnabled(true);
+                }
+
+                if (playBar.isEnabled()) {
+                    playBar.setProgress(audioPlayer.getCurrentTime());
                 }
             }
             mHandler.postDelayed(this, 1000);

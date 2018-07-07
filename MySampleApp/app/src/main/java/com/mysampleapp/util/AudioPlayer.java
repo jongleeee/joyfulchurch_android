@@ -51,12 +51,14 @@ public class AudioPlayer extends MediaPlayer {
         return true;
     }
 
+    // returns time in second
     public int getTotalTime() {
-        return this.getDuration();
+        return Util.millisecondToSecond(this.getDuration());
     }
 
+    // returns time in second
     public int getCurrentTime() {
-        return this.getCurrentPosition();
+        return Util.millisecondToSecond(this.getCurrentPosition());
     }
 
     public void reset() {
@@ -64,7 +66,8 @@ public class AudioPlayer extends MediaPlayer {
         pause();
     }
 
-    public void changeTime(int time) {
-        this.seekTo(time);
+    // time is in second
+    public void changeTime(int second) {
+        this.seekTo(Util.secondToMillisecond(second));
     }
 }

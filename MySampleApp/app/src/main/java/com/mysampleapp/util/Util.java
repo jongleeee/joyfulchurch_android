@@ -14,12 +14,19 @@ public class Util {
         return Arrays.asList("죠이플 창", "교회 소식 (전체 공지)", "카리스마 대학부", "카이로스 청년부", "남성 기도회", "월요 여성 중보기도 모임", "여성 커피브레이크", "교육부", "찬양팀", "여름 선교", "겨울 선교", "목자 모임", "사역부장 모임");
     }
 
+    public static int secondToMillisecond(int second) {
+        return second * 1000;
+    }
 
-    public static String convertMillisecondsToString(int milliseconds) {
+    public static int millisecondToSecond(int millisecond) {
+        return millisecond / 1000;
+    }
+
+    public static String convertSecondToString(int second) {
         List<Long> timeList = new ArrayList<>();
 
-        int seconds = (milliseconds / 1000) % 60;
-        long minutes = (milliseconds / 1000)  / 60;
+        int seconds = second % 60;
+        long minutes = second / 60;
 
         if (minutes >= 60) {
             long hours = minutes / 60;
