@@ -3,16 +3,23 @@ package com.mysampleapp.util;
 import android.media.MediaPlayer;
 
 import java.io.IOException;
-import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by minjungkim on 7/18/17.
  */
 
 public class AudioPlayer extends MediaPlayer {
-    private String url;
+
+    private String currentSermonURL;
+
+    private int lastTotalTime;
+
+    // lastCurrentPosition is in milliseconds.
+    private int lastCurrentPosition;
+
+    private boolean isReleased = true;
+
+    private boolean isServiceBound;
 
     private AudioPlayer() {
         super();
@@ -31,43 +38,106 @@ public class AudioPlayer extends MediaPlayer {
         return audioPlayer;
     }
 
-    public String getUrl() {
-        return this.url;
+    public String getCurrentSermonURL() {
+        return this.currentSermonURL;
     }
 
-    public boolean setUrl(String url) {
-        if (this.url == null || !this.url.equals(url)) {
-            this.url = url;
+    public void setCurrentSermonURL(String sermonURL) {
+        currentSermonURL = sermonURL;
+    }
+
+    public void playSermon(String sermonURL) {
+        if (!isReleased && sermonURL.equals(currentSermonURL)) {
+            super.start();
+        } else {
+            // start all over again
+            // play with latest current time if available.
+            currentSermonURL = sermonURL;
             super.reset();
-            stop();
             try {
-                this.setDataSource("http://bitly.com/" + url);
-                this.prepareAsync();
+                super.setDataSource("http://bitly.com/" + sermonURL);
+                super.prepareAsync();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            return false;
         }
-        return true;
     }
 
-    // returns time in second
+    public void setIsReleased(boolean isReleased) {
+        this.isReleased = isReleased;
+    }
+
+    public boolean getIsReleased() {
+        return isReleased;
+    }
+
+    public void setIsServiceBound(boolean isServiceBound) {
+        this.isServiceBound = isServiceBound;
+    }
+
+    public boolean getIsServiceBound() {
+        return isServiceBound;
+    }
+
+    @Override
+    public boolean isPlaying() {
+        return !getIsReleased() && super.isPlaying();
+    }
+
+    @Override
+    public void pause() {
+        lastCurrentPosition = this.getCurrentPosition();
+        super.pause();
+    }
+
+    @Override
+    public void release() {
+        lastCurrentPosition = this.getCurrentPosition();
+        lastTotalTime = getTotalTime();
+        super.reset();
+        setIsReleased(true);
+        setIsServiceBound(false);
+        super.release();
+    }
+
+    public boolean isSameSermon(String url) {
+        return this.currentSermonURL != null && this.currentSermonURL.equals(url);
+    }
+
+    // returns time in millisecond
     public int getTotalTime() {
-        return Util.millisecondToSecond(this.getDuration());
+        if (getIsReleased()) {
+            return getLastTotalTime();
+        }
+        return this.getDuration();
     }
 
-    // returns time in second
+    // returns time in millisecond
     public int getCurrentTime() {
-        return Util.millisecondToSecond(this.getCurrentPosition());
+        return this.getCurrentPosition();
+    }
+
+    // returns last current time in millisecond
+    public int getLastCurrentPosition() {
+        return lastCurrentPosition;
+    }
+
+    public void setLastCurrentPosition(int position) {
+        lastCurrentPosition = position;
+    }
+
+    public int getLastTotalTime() {
+        return lastTotalTime;
+    }
+
+    public void setLastTotalTime(int duration) {
+        lastTotalTime = duration;
     }
 
     public void reset() {
+        setLastCurrentPosition(-1);
+        setLastTotalTime(-1);
         this.seekTo(0);
         pause();
-    }
-
-    // time is in second
-    public void changeTime(int second) {
-        this.seekTo(Util.secondToMillisecond(second));
     }
 }
