@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.media.MediaPlayer;
-import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +12,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,27 +20,31 @@ import com.mysampleapp.util.AudioPlayer;
 import com.mysampleapp.util.LockScreenService;
 import com.mysampleapp.util.Util;
 
-public class SermonPlay extends AppCompatActivity {
-    private String url;
-    private ImageButton buttonPlay;
-    private SeekBar playBar;
-    private TextView totalTime;
-    private TextView currentTime;
-    private TextView sermonSeries;
-    private TextView sermonTitle;
-    private TextView sermonVerse;
-    private TextView sermonMonth;
-    private TextView sermonDay;
-    private TextView sermonYear;
-    private Handler handler = new Handler();
-    private Runnable runner;
+public class SermonPlay extends AppCompatActivity implements SermonPlayListener {
+
+    public static final String TAG = "SermonMediaPlayActivity";
+
+    private String currentSermonURL;
+
+
+    private TextView mSermonTitle;
+    private TextView mSermonSeries;
+    private TextView mSermonVerse;
+    private TextView mSermonMonth;
+    private TextView mSermonDay;
+    private TextView mSermonYear;
+
+    private ImageButton mPlayButton;
+    boolean isButtonPlay;
+    private TextView mTotalTime;
+    private TextView mCurrentTime;
+
+    private SeekBar mSeekbarAudio;
+    private boolean mUserIsSeeking = false;
+
     private AudioPlayer audioPlayer = AudioPlayer.INSTANCE();
-    private ProgressBar progressBar;
-    private boolean sameSermon;
     private LockScreenService player;
     boolean serviceBound = false;
-    private String title;
-    private String series;
     private Handler mHandler = new Handler();
 
     @Override
@@ -50,97 +52,157 @@ public class SermonPlay extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sermon_play);
 
+        initializeUI();
+        initializeSermonInformation();
+        initializeSeekbar();
 
+        currentSermonURL = getIntent().getExtras().getString("sermonURL");
 
-//        Intent lockScreenIntent = new Intent(getApplicationContext(), LockScreenService.class);
-//        lockScreenIntent.setAction(LockScreenService.);
-//        startService(lockScreenIntent);
-//        playAudio("https://upload.wikimedia.org/wikipedia/commons/6/6c/Grieg_Lyric_Pieces_Kobold.ogg");
-
-        buttonPlay = (ImageButton) findViewById(R.id.play);
-        playBar = (SeekBar) findViewById(R.id.playbar);
-        totalTime = (TextView) findViewById(R.id.totalTime);
-        currentTime = (TextView) findViewById(R.id.currentTime);
-        sermonSeries = (TextView) findViewById(R.id.sermon_play_series);
-        sermonTitle = (TextView) findViewById(R.id.sermon_play_title);
-        sermonVerse = (TextView) findViewById(R.id.sermon_play_verse);
-        sermonMonth = (TextView) findViewById(R.id.sermon_play_month);
-        sermonDay = (TextView) findViewById(R.id.sermon_play_day);
-        sermonYear = (TextView) findViewById(R.id.sermon_play_year);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
-
-        currentTime.setVisibility(View.INVISIBLE);
-        totalTime.setVisibility(View.INVISIBLE);
-        progressBar.setVisibility(View.GONE);
-
-        this.url = getIntent().getExtras().getString("sermonURL");
-        this.title = getIntent().getExtras().getString("sermonTitle");
-        sermonTitle.setText(this.title);
-        this.series = getIntent().getExtras().getString("sermonSeries");
-        sermonSeries.setText(this.series);
-        sermonVerse.setText(getIntent().getExtras().getString("sermonVerse"));
-        sermonMonth.setText(getIntent().getExtras().getString("sermonMonth"));
-        sermonYear.setText(getIntent().getExtras().getString("sermonYear"));
-        sermonDay.setText(getIntent().getExtras().getString("sermonDay"));
-
-        // If same sermon, show pause icon.
-        if (this.url.equals(audioPlayer.getUrl())) {
-            if (audioPlayer.isPlaying()) {
-                buttonPlay.setImageResource(R.drawable.pause_icon);
-            }
-            updateProgreeBarAndTime();
+        if (audioPlayer.getMediaPlayer() == null) {
+            audioPlayer.initializeMediaPlayer();
         }
 
-        buttonPlay.setOnClickListener(new View.OnClickListener() {
+        audioPlayer.addListener(this);
+    }
+
+    @Override
+    public void sermonReadyToPlay() {
+        //Invoked when the media source is ready for playback.
+        audioPlayer.setIsReleased(false);
+
+        if (audioPlayer.getLastCurrentPosition() > 0) {
+            audioPlayer.seekTo(audioPlayer.getLastCurrentPosition());
+            audioPlayer.setLastCurrentPosition(-1);
+        }
+        audioPlayer.start();
+        updateProgreeBarAndTime();
+    }
+
+    @Override
+    public void sermonFinishedPlaying() {
+        // File has ended !!!
+        mHandler.removeCallbacks(updateTimeTask);
+        setPlayButton();
+        mSeekbarAudio.setProgress(0);
+        // Handle this in audioPlayer.
+        audioPlayer.getMediaPlayer().reset();
+    }
+
+    private void initializeUI() {
+        mSermonTitle = (TextView) findViewById(R.id.sermon_media_play_title);
+        mSermonSeries = (TextView) findViewById(R.id.sermon_media_play_series);
+        mSermonVerse = (TextView) findViewById(R.id.sermon_media_play_verse);
+        mSermonMonth = (TextView) findViewById(R.id.sermon_media_play_month);
+        mSermonDay = (TextView) findViewById(R.id.sermon_media_play_day);
+        mSermonYear = (TextView) findViewById(R.id.sermon_media_play_year);
+
+        mSeekbarAudio = (SeekBar) findViewById(R.id.sermon_media_play_seekbar);
+        mSeekbarAudio.setEnabled(false);
+
+        mCurrentTime = (TextView) findViewById(R.id.sermon_media_play_currentTime);
+        mCurrentTime.setVisibility(View.INVISIBLE);
+        mTotalTime = (TextView) findViewById(R.id.sermon_media_play_totalTime);
+        mTotalTime.setVisibility(View.INVISIBLE);
+        mPlayButton = (ImageButton) findViewById(R.id.sermon_media_play_button);
+        setPlayButton();
+
+        mPlayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (url.equals(audioPlayer.getUrl())) {
-                    if (!audioPlayer.isPlaying()) {
-                        audioPlayer.start();
-                        updateProgreeBarAndTime();
-                        buttonPlay.setImageResource(R.drawable.pause_icon);
-                    } else {
-                        audioPlayer.pause();
-                        mHandler.removeCallbacks(updateTimeTask);
-                        buttonPlay.setImageResource(R.drawable.play_icon);
+                if (isButtonPlay) {
+                    playButtonPressed();
+                } else {
+                    pauseButtonPressed();
+                }
+            }
+        });
+    }
+
+    private void initializeSermonInformation() {
+        mSermonTitle.setText(getIntent().getExtras().getString("sermonTitle"));
+        mSermonSeries.setText(getIntent().getExtras().getString("sermonSeries"));
+        mSermonVerse.setText(getIntent().getExtras().getString("sermonVerse"));
+        mSermonMonth.setText(getIntent().getExtras().getString("sermonMonth"));
+        mSermonYear.setText(getIntent().getExtras().getString("sermonYear"));
+        mSermonDay.setText(getIntent().getExtras().getString("sermonDay"));
+    }
+
+    private void initializeSeekbar() {
+        mSeekbarAudio.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener() {
+                    int userSelectedPosition = 0;
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                        mUserIsSeeking = true;
                     }
-                } else {
-                    audioPlayer.reset();
-                    audioPlayer.setUrl(url);
-                    new AsyncSermonPlay().execute();
-                    audioPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener(){
-                        @Override
-                        public void onCompletion(MediaPlayer mp) {
-                            // File has ended !!!
-                            buttonPlay.setImageResource(R.drawable.play_icon);
-                            audioPlayer.reset();
-                            playBar.setProgress(0);
+
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                        if (fromUser) {
+                            userSelectedPosition = progress;
+                            updateCurrentTimeForUserInteration(progress);
                         }
-                    });
-                }
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+                        mUserIsSeeking = false;
+                        audioPlayer.seekTo(userSelectedPosition);
+                    }
+                });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (audioPlayer.isPlaying() && audioPlayer.isSameSermon(currentSermonURL)) {
+            setPauseButton();
+            updateProgreeBarAndTime();
+        } else {
+            setPlayButton();
+            if (audioPlayer.isSameSermon(currentSermonURL)) {
+                updateTotalTime();
+                updateCurrentTimeWithLastCurrentTime();
             }
-        });
+        }
+    }
 
-        playBar.setEnabled(false);
-        playBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if (fromUser) {
-                    audioPlayer.changeTime(progress);
-                    playBar.setProgress(audioPlayer.getCurrentTime());
-                    currentTime.setText(Util.convertSecondToString(audioPlayer.getCurrentTime()));
-                } else {
+    protected void setPlayButton() {
+        mPlayButton.setImageResource(R.drawable.play_icon);
+        isButtonPlay = true;
+    }
 
-                }
-            }
+    protected void setPauseButton() {
+        mPlayButton.setImageResource(R.drawable.pause_icon);
+        isButtonPlay = false;
+    }
 
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {}
+    protected void updateTotalTime() {
+        mTotalTime.setVisibility(View.VISIBLE);
+        mTotalTime.setText(Util.convertMilliSecondToString(audioPlayer.getTotalTime()));
+        mSeekbarAudio.setMax(audioPlayer.getTotalTime());
+    }
 
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {}
-        });
+    protected void updateCurrentTime() {
+        mCurrentTime.setVisibility(View.VISIBLE);
+        mCurrentTime.setText(Util.convertMilliSecondToString(audioPlayer.getCurrentTime()));
+    }
 
+    protected void updateCurrentTimeForUserInteration(int position) {
+        mCurrentTime.setVisibility(View.VISIBLE);
+        mCurrentTime.setText(Util.convertMilliSecondToString(position));
+    }
+
+    protected void updateCurrentTimeWithLastCurrentTime() {
+        mCurrentTime.setVisibility(View.VISIBLE);
+        mCurrentTime.setText(Util.convertMilliSecondToString(audioPlayer.getLastCurrentPosition()));
+        mSeekbarAudio.setProgress(audioPlayer.getLastCurrentPosition());
+    }
+
+    protected void startPlayingSermon(String url) {
+        // Check the released() case and handle.
+        audioPlayer.playSermon(url);
     }
 
     public void updateProgreeBarAndTime() {
@@ -150,33 +212,48 @@ public class SermonPlay extends AppCompatActivity {
     private Runnable updateTimeTask = new Runnable() {
         public void run() {
             if(audioPlayer != null){
-                currentTime.setVisibility(View.VISIBLE);
-                currentTime.setText(Util.convertSecondToString(audioPlayer.getCurrentTime()));
-
+                updateCurrentTime();
                 /*
                  There is a delay in audioPlayer returning total time. So we will just handle here.
                  Also sometimes, audioPlayer.getTotalTime() returned some random number. So we will
                  just handle > 1000 for now.
                   */
-                if (totalTime.getVisibility() == View.INVISIBLE && audioPlayer.getTotalTime() > 1) {
-                    totalTime.setVisibility(View.VISIBLE);
-                    totalTime.setText(Util.convertSecondToString(audioPlayer.getTotalTime()));
+                if (mTotalTime.getVisibility() == View.INVISIBLE && audioPlayer.getTotalTime() > 1) {
+                    updateTotalTime();
 
-                    playBar.setMax(audioPlayer.getTotalTime());
-                    playBar.setEnabled(true);
+                    mSeekbarAudio.setMax(audioPlayer.getTotalTime());
                 }
 
-                if (playBar.isEnabled()) {
-                    playBar.setProgress(audioPlayer.getCurrentTime());
+                // If total time is visible, that means current audio player is ready and can be played.
+                if (mTotalTime.getVisibility() == View.VISIBLE) {
+                    mSeekbarAudio.setEnabled(true);
+                    mSeekbarAudio.setProgress(audioPlayer.getCurrentTime());
                 }
             }
             mHandler.postDelayed(this, 1000);
         }
     };
 
+
+    protected void playButtonPressed() {
+        setPauseButton();
+        playSermon(currentSermonURL);
+    }
+
+    protected void pauseButtonPressed() {
+        setPlayButton();
+        mHandler.removeCallbacks(updateTimeTask);
+        audioPlayer.pause();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mHandler.removeCallbacks(updateTimeTask);
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         switch (item.getItemId()) {
             case android.R.id.home:
                 // app icon in action bar clicked; go home
@@ -189,61 +266,36 @@ public class SermonPlay extends AppCompatActivity {
         }
     }
 
-    private class AsyncSermonPlay extends AsyncTask<String, Void, Void> {
-
-        @Override
-        protected void onPreExecute() {
-            buttonPlay.setVisibility(View.GONE);
-            progressBar.setVisibility(View.VISIBLE);
-
-        }
-
-        @Override
-        protected Void doInBackground(String... strings) {
-//            audioPlayer.start();
-            playAudio();
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-//            progressDialog.dismiss();
-            buttonPlay.setImageResource(R.drawable.pause_icon);
-            progressBar.setVisibility(View.GONE);
-            buttonPlay.setVisibility(View.VISIBLE);
-            updateProgreeBarAndTime();
-        }
-    }
     private ServiceConnection serviceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             // We've bound to LocalService, cast the IBinder and get LocalService instance
             LockScreenService.LocalBinder binder = (LockScreenService.LocalBinder) service;
             player = binder.getService();
-            serviceBound = true;
+            audioPlayer.setIsServiceBound(true);
 
             Toast.makeText(SermonPlay.this, "Service Bound", Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            serviceBound = false;
+            audioPlayer.setIsServiceBound(false);
         }
     };
 
-    private void playAudio() {
-        //Check is service is active
-        if (!serviceBound) {
-            Intent playerIntent = new Intent(this, LockScreenService.class);
-//            playerIntent.putExtra("media", media);
-            playerIntent.putExtra("sermonTitle", this.title);
-            playerIntent.putExtra("sermonSeries", this.series);
-            playerIntent.putExtra("sermonURL", this.url);
-            startService(playerIntent);
-            bindService(playerIntent, serviceConnection, Context.BIND_AUTO_CREATE);
+    private void playSermon(String URL) {
+        if (audioPlayer.getIsReleased()) {
+            try {
+                unbindService(serviceConnection);
+            } catch (IllegalArgumentException e) {
+            }
+            Intent sermonPlayIntent = new Intent(this, LockScreenService.class);
+            sermonPlayIntent.putExtra("sermonURL", URL);
+            startService(sermonPlayIntent);
+            bindService(sermonPlayIntent, serviceConnection, Context.BIND_AUTO_CREATE);
         } else {
-            //Service is active
-            //Send media with BroadcastReceiver
+            audioPlayer.playSermon(currentSermonURL);
+            updateProgreeBarAndTime();
         }
     }
 
@@ -256,16 +308,16 @@ public class SermonPlay extends AppCompatActivity {
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        serviceBound = savedInstanceState.getBoolean("ServiceState");
+        audioPlayer.setIsServiceBound(savedInstanceState.getBoolean("ServiceState"));
     }
 
-//    @Override
-//    protected void onDestroy() {
-//        super.onDestroy();
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
 //        if (serviceBound) {
 //            unbindService(serviceConnection);
 //            //service is active
 //            player.stopSelf();
 //        }
-//    }
+    }
 }

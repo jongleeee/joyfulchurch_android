@@ -2,7 +2,6 @@ package com.mysampleapp;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,7 +65,7 @@ public class SermonArrayAdapter extends ArrayAdapter<Sermon> {
         holder.sermonYear.setText(sermon.getYear());
 
 
-        if (sermon.getSermonURL().equals(audioPlayer.getUrl())) {
+        if (sermon.getSermonURL().equals(audioPlayer.getCurrentSermonURL())) {
             holder.txtTitle.setTextColor(Util.JFColorBlue());
             holder.txtSeries.setTextColor(Util.JFColorBlue());
             holder.txtVerse.setTextColor(Util.JFColorBlue());

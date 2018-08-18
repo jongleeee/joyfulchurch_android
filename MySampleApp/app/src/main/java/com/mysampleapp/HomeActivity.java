@@ -10,6 +10,8 @@ import android.widget.RelativeLayout;
 
 import com.mysampleapp.util.Announcement;
 
+import java.lang.annotation.Inherited;
+
 public class HomeActivity extends AppCompatActivity {
 
     ConstraintLayout SermonHeader;
@@ -48,5 +50,13 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 
+    @Override
+    public void finish() {
+        super.finish();
+    }
 }

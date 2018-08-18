@@ -33,7 +33,7 @@ import static android.support.v4.app.NotificationCompat.VISIBILITY_PUBLIC;
  */
 
 public class LockScreenService extends Service implements MediaPlayer.OnCompletionListener,
-        MediaPlayer.OnPreparedListener, MediaPlayer.OnErrorListener, MediaPlayer.OnSeekCompleteListener,
+        MediaPlayer.OnErrorListener, MediaPlayer.OnSeekCompleteListener,
         MediaPlayer.OnInfoListener, MediaPlayer.OnBufferingUpdateListener,
         AudioManager.OnAudioFocusChangeListener {
 
@@ -44,6 +44,8 @@ public class LockScreenService extends Service implements MediaPlayer.OnCompleti
     private String series;
     private AudioManager audioManager;
     private MediaPlayer mediaPlayer;
+
+    private boolean wasStoppedForShortPeriod;
 
     public static final String ACTION_PLAY = "com.valdioveliu.valdio.audioplayer.ACTION_PLAY";
     public static final String ACTION_PAUSE = "com.valdioveliu.valdio.audioplayer.ACTION_PAUSE";
@@ -109,11 +111,11 @@ public class LockScreenService extends Service implements MediaPlayer.OnCompleti
         return false;
     }
 
-    @Override
-    public void onPrepared(MediaPlayer audioPlayer) {
-        //Invoked when the media source is ready for playback.
-        playMedia();
-    }
+//    @Override
+//    public void onPrepared(MediaPlayer audioPlayer) {
+//        //Invoked when the media source is ready for playback.
+//        playMedia();
+//    }
 
     @Override
     public void onSeekComplete(MediaPlayer audioPlayer) {
@@ -127,12 +129,18 @@ public class LockScreenService extends Service implements MediaPlayer.OnCompleti
             case AudioManager.AUDIOFOCUS_GAIN:
                 // resume playback
 //                if (mediaPlayer == null) initMediaPlayer();
-                if (!sermonOnPlay.isPlaying()) sermonOnPlay.start();
+                if (!sermonOnPlay.getIsReleased() && wasStoppedForShortPeriod) {
+                    sermonOnPlay.start();
+                    wasStoppedForShortPeriod = false;
+                }
 //                mediaPlayer.setVolume(1.0f, 1.0f);
                 break;
             case AudioManager.AUDIOFOCUS_LOSS:
                 // Lost focus for an unbounded amount of time: stop playback and release media player
-                if (sermonOnPlay.isPlaying()) sermonOnPlay.stop();
+                if (sermonOnPlay.isPlaying()) {
+                    sermonOnPlay.pause();
+                    sermonOnPlay.release();
+                }
 //                mediaPlayer.release();
 //                mediaPlayer = null;
                 break;
@@ -140,13 +148,16 @@ public class LockScreenService extends Service implements MediaPlayer.OnCompleti
                 // Lost focus for a short time, but we have to stop
                 // playback. We don't release the media player because playback
                 // is likely to resume
-                if (sermonOnPlay.isPlaying()) sermonOnPlay.pause();
+                if (sermonOnPlay.isPlaying()) {
+                    sermonOnPlay.pause();
+                    wasStoppedForShortPeriod = true;
+                }
                 break;
-//            case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK:
-//                // Lost focus for a short time, but it's ok to keep playing
-//                // at an attenuated level
-//                if (sermonOnPlay.isPlaying()) sermonOnPlay.setVolume(0.1f, 0.1f);
-//                break;
+            case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK:
+                // Lost focus for a short time, but it's ok to keep playing
+                // at an attenuated level
+                if (sermonOnPlay.isPlaying()) sermonOnPlay.getMediaPlayer().setVolume(0.1f, 0.1f);
+                break;
         }
     }
 
@@ -168,40 +179,17 @@ public class LockScreenService extends Service implements MediaPlayer.OnCompleti
 
     private void initMediaPlayer() {
 
-        sermonOnPlay.setOnCompletionListener(this);
-        sermonOnPlay.setOnErrorListener(this);
-        sermonOnPlay.setOnPreparedListener(this);
-        sermonOnPlay.setOnBufferingUpdateListener(this);
-        sermonOnPlay.setOnSeekCompleteListener(this);
-        sermonOnPlay.setOnInfoListener(this);
+//        sermonOnPlay.setOnCompletionListener(this);
+        sermonOnPlay.getMediaPlayer().setOnErrorListener(this);
+//        sermonOnPlay.setOnPreparedListener(this);
+        sermonOnPlay.getMediaPlayer().setOnBufferingUpdateListener(this);
+        sermonOnPlay.getMediaPlayer().setOnSeekCompleteListener(this);
+        sermonOnPlay.getMediaPlayer().setOnInfoListener(this);
 
-        sermonOnPlay.reset();
+//        sermonOnPlay.setCurrentSermonURL(this.url);
+//        sermonOnPlay.start();
 
-        sermonOnPlay.setUrl(this.url);
-        sermonOnPlay.start();
-
-        /*
-        mediaPlayer = new MediaPlayer();
-        //Set up MediaPlayer event listeners
-        mediaPlayer.setOnCompletionListener(this);
-        mediaPlayer.setOnErrorListener(this);
-        mediaPlayer.setOnPreparedListener(this);
-        mediaPlayer.setOnBufferingUpdateListener(this);
-        mediaPlayer.setOnSeekCompleteListener(this);
-        mediaPlayer.setOnInfoListener(this);
-        //Reset so that the MediaPlayer is not pointing to another data source
-        mediaPlayer.reset();
-
-        mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-        try {
-            // Set the data source to the mediaFile location
-            mediaPlayer.setDataSource("http://bitly.com/2pihFE8");
-        } catch (IOException e) {
-            e.printStackTrace();
-            stopSelf();
-        }
-        mediaPlayer.prepareAsync();
-        */
+        sermonOnPlay.playSermon(this.url);
     }
 
     private void playMedia() {
@@ -252,11 +240,16 @@ public class LockScreenService extends Service implements MediaPlayer.OnCompleti
         if (mediaSessionManager == null) {
             try {
                 initMediaSession();
-                initMediaPlayer();
+
             } catch (RemoteException e) {
                 e.printStackTrace();
                 stopSelf();
             }
+
+        }
+
+        if (sermonOnPlay.getIsReleased()) {
+            initMediaPlayer();
             buildNotification(PlaybackStatus.PLAYING);
         }
 
@@ -268,9 +261,10 @@ public class LockScreenService extends Service implements MediaPlayer.OnCompleti
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (mediaPlayer != null) {
+        if (sermonOnPlay != null) {
             stopMedia();
-            mediaPlayer.release();
+            sermonOnPlay.release();
+            sermonOnPlay.setIsServiceBound(false);
         }
         removeAudioFocus();
     }

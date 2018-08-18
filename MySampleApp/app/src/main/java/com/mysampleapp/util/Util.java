@@ -47,6 +47,32 @@ public class Util {
         return sb.toString();
     }
 
+    public static String convertMilliSecondToString(int millisecond) {
+        List<Long> timeList = new ArrayList<>();
+
+        int second = millisecond / 1000;
+        int seconds = second % 60;
+        long minutes = second / 60;
+
+        if (minutes >= 60) {
+            long hours = minutes / 60;
+            minutes = minutes % 60;
+            timeList.add(hours);
+        }
+        timeList.add(minutes);
+        timeList.add(new Long(seconds));
+
+        StringBuilder sb = new StringBuilder();
+        String separator = ":";
+        for (int i = 0; i < timeList.size(); i++) {
+            sb.append(String.format("%02d", timeList.get(i)));
+            if (i != timeList.size() - 1) {
+                sb.append(separator);
+            }
+        }
+        return sb.toString();
+    }
+
     public static int JFColorGreen() {
         return Color.rgb(76, 162, 20);
     }

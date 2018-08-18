@@ -2,17 +2,30 @@ package com.mysampleapp.util;
 
 import android.media.MediaPlayer;
 
+import com.mysampleapp.SermonPlayListener;
+
 import java.io.IOException;
-import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by minjungkim on 7/18/17.
  */
 
-public class AudioPlayer extends MediaPlayer {
-    private String url;
+public class AudioPlayer {
+
+    private String currentSermonURL;
+
+    private int lastTotalTime;
+
+    // lastCurrentPosition is in milliseconds.
+    private int lastCurrentPosition = -1;
+
+    private boolean isReleased = true;
+
+    private boolean isServiceBound;
+
+    private MediaPlayer mediaPlayer;
+
+    private SermonPlayListener sermonPlayListener;
 
     private AudioPlayer() {
         super();
@@ -31,43 +44,146 @@ public class AudioPlayer extends MediaPlayer {
         return audioPlayer;
     }
 
-    public String getUrl() {
-        return this.url;
+    public void addListener(SermonPlayListener listener) {
+        sermonPlayListener = listener;
     }
 
-    public boolean setUrl(String url) {
-        if (this.url == null || !this.url.equals(url)) {
-            this.url = url;
-            super.reset();
-            stop();
+    public String getCurrentSermonURL() {
+        return this.currentSermonURL;
+    }
+
+    public void setCurrentSermonURL(String sermonURL) {
+        currentSermonURL = sermonURL;
+    }
+
+    public void initializeMediaPlayer() {
+        mediaPlayer = new MediaPlayer();
+
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener(){
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sermonPlayListener.sermonFinishedPlaying();
+            }
+        });
+//
+        mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mediaPlayer) {
+                sermonPlayListener.sermonReadyToPlay();
+            }
+        });
+    }
+
+    public MediaPlayer getMediaPlayer() {
+        return mediaPlayer;
+    }
+
+    public void playSermon(String sermonURL) {
+        if (!isReleased && sermonURL.equals(currentSermonURL)) {
+            mediaPlayer.start();
+        } else {
+            // start all over again
+            // play with latest current time if available.
+            setLastTotalTime(-1);
+            currentSermonURL = sermonURL;
+            if (!getIsReleased()) {
+                reset();
+                release();
+            }
+            initializeMediaPlayer();
+            mediaPlayer.reset();
             try {
-                this.setDataSource("http://bitly.com/" + url);
-                this.prepareAsync();
+                mediaPlayer.setDataSource("http://bitly.com/" + sermonURL);
+                mediaPlayer.prepareAsync();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            return false;
         }
-        return true;
     }
 
-    // returns time in second
+    public void setIsReleased(boolean isReleased) {
+        this.isReleased = isReleased;
+    }
+
+    public boolean getIsReleased() {
+        return isReleased;
+    }
+
+    public void setIsServiceBound(boolean isServiceBound) {
+        this.isServiceBound = isServiceBound;
+    }
+
+    public boolean getIsServiceBound() {
+        return isServiceBound;
+    }
+
+    public boolean isPlaying() {
+        return !getIsReleased() && mediaPlayer.isPlaying();
+    }
+
+    public void pause() {
+        lastCurrentPosition = mediaPlayer.getCurrentPosition();
+        mediaPlayer.pause();
+    }
+
+    public void release() {
+        lastCurrentPosition = mediaPlayer.getCurrentPosition();
+        lastTotalTime = getTotalTime();
+        setIsReleased(true);
+        setIsServiceBound(false);
+        mediaPlayer.release();
+    }
+
+    public boolean isSameSermon(String url) {
+        return this.currentSermonURL != null && this.currentSermonURL.equals(url);
+    }
+
+    // returns time in millisecond
     public int getTotalTime() {
-        return Util.millisecondToSecond(this.getDuration());
+        if (getIsReleased()) {
+            return getLastTotalTime();
+        }
+        return mediaPlayer.getDuration();
     }
 
-    // returns time in second
+    // returns time in millisecond
     public int getCurrentTime() {
-        return Util.millisecondToSecond(this.getCurrentPosition());
+        return mediaPlayer.getCurrentPosition();
+    }
+
+    // returns last current time in millisecond
+    public int getLastCurrentPosition() {
+        return lastCurrentPosition;
+    }
+
+    public void setLastCurrentPosition(int position) {
+        lastCurrentPosition = position;
+    }
+
+    public int getLastTotalTime() {
+        return lastTotalTime;
+    }
+
+    public void setLastTotalTime(int duration) {
+        lastTotalTime = duration;
     }
 
     public void reset() {
-        this.seekTo(0);
+        setLastCurrentPosition(-1);
+        setLastTotalTime(-1);
+        mediaPlayer.seekTo(0);
         pause();
     }
 
-    // time is in second
-    public void changeTime(int second) {
-        this.seekTo(Util.secondToMillisecond(second));
+    public void seekTo(int duration) {
+        mediaPlayer.seekTo(duration);
+    }
+
+    public void start() {
+        mediaPlayer.start();
+    }
+
+    public void stop() {
+        mediaPlayer.stop();
     }
 }
