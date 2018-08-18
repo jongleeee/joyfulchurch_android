@@ -45,6 +45,8 @@ public class LockScreenService extends Service implements MediaPlayer.OnCompleti
     private AudioManager audioManager;
     private MediaPlayer mediaPlayer;
 
+    private boolean wasStoppedForShortPeriod;
+
     public static final String ACTION_PLAY = "com.valdioveliu.valdio.audioplayer.ACTION_PLAY";
     public static final String ACTION_PAUSE = "com.valdioveliu.valdio.audioplayer.ACTION_PAUSE";
     public static final String SERMON_NOTIFICATION_CHANNEL = "SERMON_NOTIFICATION_CHANNEL";
@@ -127,7 +129,10 @@ public class LockScreenService extends Service implements MediaPlayer.OnCompleti
             case AudioManager.AUDIOFOCUS_GAIN:
                 // resume playback
 //                if (mediaPlayer == null) initMediaPlayer();
-                if (!sermonOnPlay.isPlaying()) sermonOnPlay.start();
+                if (!sermonOnPlay.getIsReleased() && wasStoppedForShortPeriod) {
+                    sermonOnPlay.start();
+                    wasStoppedForShortPeriod = false;
+                }
 //                mediaPlayer.setVolume(1.0f, 1.0f);
                 break;
             case AudioManager.AUDIOFOCUS_LOSS:
@@ -143,13 +148,16 @@ public class LockScreenService extends Service implements MediaPlayer.OnCompleti
                 // Lost focus for a short time, but we have to stop
                 // playback. We don't release the media player because playback
                 // is likely to resume
-                if (sermonOnPlay.isPlaying()) sermonOnPlay.pause();
+                if (sermonOnPlay.isPlaying()) {
+                    sermonOnPlay.pause();
+                    wasStoppedForShortPeriod = true;
+                }
                 break;
-//            case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK:
-//                // Lost focus for a short time, but it's ok to keep playing
-//                // at an attenuated level
-//                if (sermonOnPlay.isPlaying()) sermonOnPlay.setVolume(0.1f, 0.1f);
-//                break;
+            case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK:
+                // Lost focus for a short time, but it's ok to keep playing
+                // at an attenuated level
+                if (sermonOnPlay.isPlaying()) sermonOnPlay.getMediaPlayer().setVolume(0.1f, 0.1f);
+                break;
         }
     }
 
@@ -172,11 +180,12 @@ public class LockScreenService extends Service implements MediaPlayer.OnCompleti
     private void initMediaPlayer() {
 
 //        sermonOnPlay.setOnCompletionListener(this);
-        sermonOnPlay.setOnErrorListener(this);
+
+        sermonOnPlay.getMediaPlayer().setOnErrorListener(this);
 //        sermonOnPlay.setOnPreparedListener(this);
-        sermonOnPlay.setOnBufferingUpdateListener(this);
-        sermonOnPlay.setOnSeekCompleteListener(this);
-        sermonOnPlay.setOnInfoListener(this);
+        sermonOnPlay.getMediaPlayer().setOnBufferingUpdateListener(this);
+        sermonOnPlay.getMediaPlayer().setOnSeekCompleteListener(this);
+        sermonOnPlay.getMediaPlayer().setOnInfoListener(this);
 
 //        sermonOnPlay.setCurrentSermonURL(this.url);
 //        sermonOnPlay.start();

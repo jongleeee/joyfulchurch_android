@@ -2,24 +2,30 @@ package com.mysampleapp.util;
 
 import android.media.MediaPlayer;
 
+import com.mysampleapp.SermonPlayListener;
+
 import java.io.IOException;
 
 /**
  * Created by minjungkim on 7/18/17.
  */
 
-public class AudioPlayer extends MediaPlayer {
+public class AudioPlayer {
 
     private String currentSermonURL;
 
     private int lastTotalTime;
 
     // lastCurrentPosition is in milliseconds.
-    private int lastCurrentPosition;
+    private int lastCurrentPosition = -1;
 
     private boolean isReleased = true;
 
     private boolean isServiceBound;
+
+    private MediaPlayer mediaPlayer;
+
+    private SermonPlayListener sermonPlayListener;
 
     private AudioPlayer() {
         super();
@@ -38,6 +44,10 @@ public class AudioPlayer extends MediaPlayer {
         return audioPlayer;
     }
 
+    public void addListener(SermonPlayListener listener) {
+        sermonPlayListener = listener;
+    }
+
     public String getCurrentSermonURL() {
         return this.currentSermonURL;
     }
@@ -46,17 +56,46 @@ public class AudioPlayer extends MediaPlayer {
         currentSermonURL = sermonURL;
     }
 
+
+    public void initializeMediaPlayer() {
+        mediaPlayer = new MediaPlayer();
+
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener(){
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sermonPlayListener.sermonFinishedPlaying();
+            }
+        });
+//
+        mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mediaPlayer) {
+                sermonPlayListener.sermonReadyToPlay();
+            }
+        });
+    }
+
+    public MediaPlayer getMediaPlayer() {
+        return mediaPlayer;
+    }
+
     public void playSermon(String sermonURL) {
         if (!isReleased && sermonURL.equals(currentSermonURL)) {
-            super.start();
+            mediaPlayer.start();
         } else {
             // start all over again
             // play with latest current time if available.
+            setLastTotalTime(-1);
             currentSermonURL = sermonURL;
-            super.reset();
+            if (!getIsReleased()) {
+                reset();
+                release();
+            }
+            initializeMediaPlayer();
+            mediaPlayer.reset();
             try {
-                super.setDataSource("http://bitly.com/" + sermonURL);
-                super.prepareAsync();
+                mediaPlayer.setDataSource("http://bitly.com/" + sermonURL);
+                mediaPlayer.prepareAsync();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -79,25 +118,21 @@ public class AudioPlayer extends MediaPlayer {
         return isServiceBound;
     }
 
-    @Override
     public boolean isPlaying() {
-        return !getIsReleased() && super.isPlaying();
+        return !getIsReleased() && mediaPlayer.isPlaying();
     }
 
-    @Override
     public void pause() {
-        lastCurrentPosition = this.getCurrentPosition();
-        super.pause();
+        lastCurrentPosition = mediaPlayer.getCurrentPosition();
+        mediaPlayer.pause();
     }
 
-    @Override
     public void release() {
-        lastCurrentPosition = this.getCurrentPosition();
+        lastCurrentPosition = mediaPlayer.getCurrentPosition();
         lastTotalTime = getTotalTime();
-        super.reset();
         setIsReleased(true);
         setIsServiceBound(false);
-        super.release();
+        mediaPlayer.release();
     }
 
     public boolean isSameSermon(String url) {
@@ -109,12 +144,12 @@ public class AudioPlayer extends MediaPlayer {
         if (getIsReleased()) {
             return getLastTotalTime();
         }
-        return this.getDuration();
+        return mediaPlayer.getDuration();
     }
 
     // returns time in millisecond
     public int getCurrentTime() {
-        return this.getCurrentPosition();
+        return mediaPlayer.getCurrentPosition();
     }
 
     // returns last current time in millisecond
@@ -137,7 +172,19 @@ public class AudioPlayer extends MediaPlayer {
     public void reset() {
         setLastCurrentPosition(-1);
         setLastTotalTime(-1);
-        this.seekTo(0);
+        mediaPlayer.seekTo(0);
         pause();
+    }
+
+    public void seekTo(int duration) {
+        mediaPlayer.seekTo(duration);
+    }
+
+    public void start() {
+        mediaPlayer.start();
+    }
+
+    public void stop() {
+        mediaPlayer.stop();
     }
 }
