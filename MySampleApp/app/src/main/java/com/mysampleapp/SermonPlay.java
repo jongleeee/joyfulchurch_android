@@ -20,7 +20,7 @@ import com.mysampleapp.util.AudioPlayer;
 import com.mysampleapp.util.LockScreenService;
 import com.mysampleapp.util.Util;
 
-public class SermonPlay extends AppCompatActivity {
+public class SermonPlay extends AppCompatActivity implements SermonPlayListener {
 
     public static final String TAG = "SermonMediaPlayActivity";
 
@@ -58,32 +58,34 @@ public class SermonPlay extends AppCompatActivity {
 
         currentSermonURL = getIntent().getExtras().getString("sermonURL");
 
-        audioPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener(){
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                // File has ended !!!
-                mHandler.removeCallbacks(updateTimeTask);
-                setPlayButton();
-                mSeekbarAudio.setProgress(0);
-                // Handle this in audioPlayer.
-                audioPlayer.reset();
-            }
-        });
+        if (audioPlayer.getMediaPlayer() == null) {
+            audioPlayer.initializeMediaPlayer();
+        }
 
-        audioPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mediaPlayer) {
-                //Invoked when the media source is ready for playback.
-                audioPlayer.setIsReleased(false);
+        audioPlayer.addListener(this);
+    }
 
-                if (audioPlayer.getLastCurrentPosition() >= 0) {
-                    audioPlayer.seekTo(audioPlayer.getLastCurrentPosition());
-                    audioPlayer.setLastCurrentPosition(-1);
-                }
-                audioPlayer.start();
-                updateProgreeBarAndTime();
-            }
-        });
+    @Override
+    public void sermonReadyToPlay() {
+        //Invoked when the media source is ready for playback.
+        audioPlayer.setIsReleased(false);
+
+        if (audioPlayer.getLastCurrentPosition() > 0) {
+            audioPlayer.seekTo(audioPlayer.getLastCurrentPosition());
+            audioPlayer.setLastCurrentPosition(-1);
+        }
+        audioPlayer.start();
+        updateProgreeBarAndTime();
+    }
+
+    @Override
+    public void sermonFinishedPlaying() {
+        // File has ended !!!
+        mHandler.removeCallbacks(updateTimeTask);
+        setPlayButton();
+        mSeekbarAudio.setProgress(0);
+        // Handle this in audioPlayer.
+        audioPlayer.getMediaPlayer().reset();
     }
 
     private void initializeUI() {
@@ -282,7 +284,7 @@ public class SermonPlay extends AppCompatActivity {
     };
 
     private void playSermon(String URL) {
-        if (!audioPlayer.getIsServiceBound()) {
+        if (audioPlayer.getIsReleased()) {
             try {
                 unbindService(serviceConnection);
             } catch (IllegalArgumentException e) {
