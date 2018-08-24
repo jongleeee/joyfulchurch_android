@@ -1,5 +1,6 @@
 package com.mysampleapp;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -13,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.mysampleapp.util.Announcement;
@@ -42,12 +44,27 @@ public class AnnouncementActivity extends AppCompatActivity {
         //Disable the back button
         ab.setDisplayHomeAsUpEnabled(false);
 
-
         listView = (ListView) findViewById(R.id.announcement_listview);
 
         List<String> categories = new User(getApplicationContext()).getSubscribedChannels();
+
+        //need to remove below code
+        categories.add("죠이플 창");
+
         new AsyncAnnouncementActivity().execute(categories);
+
+        Button subscribebtn = (Button)findViewById(R.id.subscribe);
+
+        subscribebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Need to change HoemActivity
+                startActivity(new Intent(AnnouncementActivity.this, SubscribeActivity.class));
+            }
+        });
     }
+
+
 
     public void getAnnouncementInfo(final List<Announcement> announcements) {
         AnnouncementArrayAdapter adapter = new AnnouncementArrayAdapter(this,

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/AppTheme.AppBarOverlay"
+    android:padding="0dp"
+    tools:context="com.mysampleapp.SubscribeActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/subscribe_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:background="@drawable/sermon_green_gradient"
+        android:layout_gravity="center_horizontal"
+        android:title="channels"
+        app:titleTextAppearance="@style/Toolbar.TitleText"
+        />
+
+    <!-- Below code is for toolbar error-->
+    <!--android:minHeight="?attr/actionBarSize"-->
+    <!--android:theme="?attr/actionBarTheme"-->
+
+    <Button
+        android:id="@+id/subscribe"
+        android:layout_width="wrap_content"
+        android:layout_height="61dp"
+        android:layout_alignParentRight="true"
+        android:background="@null"
+        android:textAllCaps="false"
+        android:text="Save"
+        android:textSize="20dp"/>
+
+    <ListView
+        android:id="@+id/subscribe_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/subscribe_toolbar"
+        android:layout_marginLeft="10dp"
+        android:choiceMode="multipleChoice"
+        android:divider="@color/nav_drawer_top_background"
+        android:dividerHeight="1dp"
+        android:footerDividersEnabled="true"
+         />
+</RelativeLayout>

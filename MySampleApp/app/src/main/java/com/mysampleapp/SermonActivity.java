@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.mysampleapp.util.AudioPlayer;
 import com.mysampleapp.util.Sermon;
