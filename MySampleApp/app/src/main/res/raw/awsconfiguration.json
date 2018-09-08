@@ -1,0 +1,40 @@
+{
+    "UserAgent": "MobileHub/1.0",
+    "Version": "1.0",
+    "CredentialsProvider": {
+        "CognitoIdentity": {
+            "Default": {
+                "PoolId": "us-west-2:791da0ce-1ecc-4c1d-a427-eafa0d6c4d6f",
+                "Region": "us-west-2"
+            }
+        }
+    },
+    "IdentityManager": {
+        "Default": {}
+    },
+    "CognitoUserPool": {
+        "Default": {
+            "PoolId": "us-west-2_SDOpd56WN",
+            "AppClientId": "4uvof73eivpevcsbdr4avbscn6",
+            "AppClientSecret": "1k2pfq9ce8dmpj3pf1b70fqih810dbtq9aqncc36absq0gps9k42",
+            "Region": "us-west-2"
+        }
+    },
+    "S3TransferUtility": {
+        "Default": {
+            "Bucket": "joyfulchurch-userfiles-mobilehub-687604833",
+            "Region": "us-west-1"
+        }
+    },
+    "DynamoDBObjectMapper": {
+        "Default": {
+            "Region": "us-west-1"
+        }
+    },
+    "UserFileManager": {
+        "Default": {
+            "Bucket": "joyfulchurch-userfiles-mobilehub-687604833",
+            "Region": "us-west-1"
+        }
+    }
+}

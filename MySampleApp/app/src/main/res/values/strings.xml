@@ -156,6 +156,19 @@
     <string name="feature_nosql_database_description">The Sample App demonstrates how to access your configured Amazon DynamoDB NoSQL database tables. Select your table, insert sample data, and perform queries by choosing from a list of examples. Hold down an item in query results to update or delete the item. When you\'re done with the demo, you can remove the sample data from your table.</string>
     <string name="feature_nosql_database_powered_by">Powered by Amazon DynamoDB</string>
 
+    <string name="google_cloud_messaging_package">com.mysampleapp</string>
+    <string name="push_enable_choice_text">Receive Push Notifications</string>
+    <string name="push_demo_title">Push Notification</string>
+    <string name="push_demo_progress_dialog_title">Please wait &#8230;</string>
+    <string name="push_demo_wait_message_register">Registering device for push notification.</string>
+    <string name="push_demo_wait_message_update_notification">Updating push notification status.</string>
+    <string name="push_demo_wait_message_update_subscription">Updating subscription status.</string>
+    <string name="push_demo_error_message_register">Failed to register device due to \'%s\'.</string>
+    <string name="push_demo_error_message_update_notification">Failed to update notification status due to \'%s\'.</string>
+    <string name="push_demo_error_message_update_subscription">Failed to update subscription due to \'%s\'.</string>
+    <string name="push_demo_error_message_google_play_services_unavailable">Push Notifications are disabled because Google Play Services are unavailable on the device.</string>
+    <string name="push_demo_confirm_message_unsubscribe">Do you want to unsubscribe from \'%s\'.</string>
+
     <string name="main_fragment_title_nosql_database">NoSQL Database</string>
     <string name="feature_nosql_database_demo_button">Demo NoSQL Database</string>
 
