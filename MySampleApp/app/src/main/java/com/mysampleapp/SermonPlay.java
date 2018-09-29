@@ -85,7 +85,9 @@ public class SermonPlay extends AppCompatActivity implements SermonPlayListener 
         setPlayButton();
         mSeekbarAudio.setProgress(0);
         // Handle this in audioPlayer.
-        audioPlayer.getMediaPlayer().reset();
+        audioPlayer.seekTo(0);
+        mCurrentTime.setVisibility(View.INVISIBLE);
+        mTotalTime.setVisibility(View.INVISIBLE);
     }
 
     private void initializeUI() {
@@ -274,7 +276,7 @@ public class SermonPlay extends AppCompatActivity implements SermonPlayListener 
             player = binder.getService();
             audioPlayer.setIsServiceBound(true);
 
-            Toast.makeText(SermonPlay.this, "Service Bound", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SermonPlay.this, "Playing Sermon", Toast.LENGTH_SHORT).show();
         }
 
         @Override
