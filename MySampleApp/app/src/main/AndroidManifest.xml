@@ -94,8 +94,8 @@
         <activity android:name=".AnnouncementDetailActivity" />
         <activity android:name=".AddSermonActivity" />
         <activity android:name=".SermonPlay" />
+        <activity android:name=".SubscribeActivity"></activity>
         <activity android:name=".AddAnnouncementActivity" />
-        <activity android:name=".AnnouncementSettingActivity"></activity>
 
         <!-- BEGIN - PUSH NOTIFICATIONS WITH GOOGLE CLOUD MESSAGING (GCM) -->
 

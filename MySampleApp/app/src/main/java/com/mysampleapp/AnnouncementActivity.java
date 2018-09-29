@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.mysampleapp.util.Announcement;
@@ -25,6 +26,8 @@ import java.util.List;
 public class AnnouncementActivity extends AppCompatActivity {
     ListView listView;
     AnnouncementHandler announcementHandler = new AnnouncementHandler();
+    private User user = User.INSTANCE();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +47,25 @@ public class AnnouncementActivity extends AppCompatActivity {
 
 
         listView = (ListView) findViewById(R.id.announcement_listview);
+        Button subscribebtn = (Button)findViewById(R.id.subscribe);
+        subscribebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Need to change HoemActivity
+                startActivity(new Intent(AnnouncementActivity.this, SubscribeActivity.class));
+            }
+        });
 
-        List<String> categories = new User(getApplicationContext()).getSubscribedChannels();
+        if (user.setupRequired(getApplicationContext())) {
+            startActivity(new Intent(AnnouncementActivity.this, SubscribeActivity.class));
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        List<String> categories = user.getSubscribedChannels(getApplicationContext());
         new AsyncAnnouncementActivity().execute(categories);
     }
 

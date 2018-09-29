@@ -51,6 +51,7 @@
             android:layout_alignParentTop="true"
             android:layout_above="@+id/txt_announcenment_title"
             android:layout_marginTop="4dp"
+            android:layout_marginRight="10dp"
             android:text="교회 소식 (전체소식)"
             />
 

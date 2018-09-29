@@ -40,6 +40,7 @@ public class AnnouncementArrayAdapter extends ArrayAdapter<Announcement> {
 
             holder = new AnnouncementHolder();
             //holder.imgIcon = (ImageView)row.findViewById(R.id.imgIcon);
+            holder.groupTitle = (TextView)row.findViewById(R.id.txt_announcenment_group);
             holder.txtTitle = (TextView)row.findViewById(R.id.txt_announcenment_title);
             holder.aMonth = (TextView)row.findViewById(R.id.aMonth);
             holder.aDate = (TextView)row.findViewById(R.id.aDate);
@@ -52,6 +53,7 @@ public class AnnouncementArrayAdapter extends ArrayAdapter<Announcement> {
         }
 
         Announcement announcement = data.get(position);
+        holder.groupTitle.setText(announcement.getCategory());
         holder.txtTitle.setText(announcement.getTitle());
         //holder.imgIcon.setImageResource(weather.icon);
         holder.aMonth.setText(announcement.getMonth());
@@ -63,6 +65,7 @@ public class AnnouncementArrayAdapter extends ArrayAdapter<Announcement> {
 
     static class AnnouncementHolder {
         //ImageView imgIcon;
+        TextView groupTitle;
         TextView txtTitle;
         TextView aMonth;
         TextView aDate;

@@ -12,12 +12,16 @@ import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 
 import com.amazonaws.mobile.AWSMobileClient;
+import com.amazonaws.mobile.auth.core.IdentityManager;
+import com.amazonaws.mobile.config.AWSConfiguration;
+import com.amazonaws.mobilehelper.auth.signin.CognitoUserPoolsSignInProvider;
 
 /**
  * Application class responsible for initializing singletons and other common components.
  */
 public class Application extends MultiDexApplication {
     private static final String LOG_TAG = Application.class.getSimpleName();
+    public static AWSConfiguration awsConfiguration;
 
     @Override
     public void onCreate() {
@@ -31,5 +35,11 @@ public class Application extends MultiDexApplication {
         AWSMobileClient.initializeMobileClientIfNecessary(getApplicationContext());
 
         // ...Put any application-specific initialization logic here...
+        awsConfiguration = new AWSConfiguration(this);
+
+        if (IdentityManager.getDefaultIdentityManager() == null) {
+            final IdentityManager identityManager = new IdentityManager(getApplicationContext(), awsConfiguration);
+            IdentityManager.setDefaultIdentityManager(identityManager);
+        }
     }
 }

@@ -1,42 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<android.support.design.widget.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-    <!--xmlns:tools="http://schemas.android.com/tools"-->
-
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--tools:context="com.mysampleapp.AnnouncementActivity">-->
-
-    <!--<android.support.design.widget.AppBarLayout-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_width="0dp"-->
-        <!--android:theme="@style/AppTheme.AppBarOverlay"-->
-        <!--tools:layout_editor_absoluteY="0dp"-->
-        <!--tools:layout_editor_absoluteX="8dp">-->
-
-
-        <!--<android.support.v7.widget.Toolbar-->
-            <!--android:id="@+id/my_announcement_toolbar"-->
-            <!--android:layout_width="415dp"-->
-            <!--android:layout_height="59dp"-->
-            <!--android:background="@drawable/sermon_green_gradient"-->
-            <!--android:elevation="4dp"-->
-            <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
-            <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
-            <!--tools:layout_editor_absoluteX="0dp"-->
-            <!--tools:layout_editor_absoluteY="0dp" />-->
-
-        <!--<ListView-->
-            <!--android:id="@+id/announcement_listview"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent" />-->
-
-    <!--</android.support.design.widget.AppBarLayout>-->
-
-
-<!--</android.support.design.widget.AppBarLayout>-->
-
-<android.support.design.widget.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
@@ -51,10 +14,22 @@ tools:context="com.mysampleapp.AnnouncementActivity">
     android:layout_width="match_parent"
     android:layout_height="59dp"
     android:background="@drawable/sermon_green_gradient"
-    android:minHeight="?attr/actionBarSize"
-    android:theme="?attr/actionBarTheme"
     android:layout_gravity="center_horizontal"
     android:title="channels" />
+
+    <!-- Below code is for toolbar error-->
+    <!--android:minHeight="?attr/actionBarSize"-->
+    <!--android:theme="?attr/actionBarTheme"-->
+    <Button
+        android:id="@+id/subscribe"
+        android:layout_width="wrap_content"
+        android:layout_height="61dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:background="@null"
+        android:textAllCaps="false"
+        android:text="Subscribe"
+        android:textSize="20dp"/>
 
 <ListView
     android:id="@+id/announcement_listview"
@@ -69,4 +44,4 @@ tools:context="com.mysampleapp.AnnouncementActivity">
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
     tools:layout_editor_absoluteY="49dp" />
-</android.support.design.widget.AppBarLayout>
+</RelativeLayout>
