@@ -19,6 +19,7 @@
             android:layout_centerHorizontal="true"
             android:layout_above="@id/sermonDate"
             android:textColor="#4CA214"
+            android:fontFamily="@font/jung_regular"
             android:text="DEC"/>
 
         <TextView android:id="@+id/sermonDate"
@@ -28,6 +29,7 @@
             android:layout_centerVertical="true"
             android:textSize="30dp"
             android:textColor="#4CA214"
+            android:fontFamily="@font/jung_regular"
             android:text="09"/>
 
         <TextView android:id="@+id/sermonYear"
@@ -36,6 +38,7 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/sermonDate"
             android:textColor="#4CA214"
+            android:fontFamily="@font/jung_regular"
             android:text="2017"/>
 
     </RelativeLayout>
@@ -53,6 +56,7 @@
             android:layout_marginBottom="3dp"
             android:textSize="15dp"
             android:text="로마서 강해 (5)"
+            android:fontFamily="@font/jung_regular"
             android:autoSizeTextType="uniform"
              />
 
@@ -64,6 +68,7 @@
             android:layout_centerVertical="true"
             android:paddingRight="10dp"
             android:text="이름을 바꿔주시는 하나님"
+            android:fontFamily="@font/jung_regular"
             android:maxLines="1"
             android:gravity="center"
             android:textStyle="bold"
@@ -76,6 +81,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="3dp"
             android:text="로마서 7:10 - 12"
+            android:fontFamily="@font/jung_regular"
             android:textSize="15dp"
             android:autoSizeTextType="uniform"
             />

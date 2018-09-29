@@ -23,6 +23,7 @@
         android:layout_marginTop="10dp"
         android:text="DEC"
         android:textColor="#4CA214"
+        android:fontFamily="@font/jung_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
@@ -34,6 +35,7 @@
         android:text="21"
         android:textColor="#4CA214"
         android:textSize="30dp"
+        android:fontFamily="@font/jung_regular"
         app:layout_constraintTop_toBottomOf="@+id/sermon_media_play_month"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -44,6 +46,7 @@
         android:layout_height="wrap_content"
         android:text="2017"
         android:textColor="#4CA214"
+        android:fontFamily="@font/jung_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sermon_media_play_day" />
@@ -84,6 +87,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:text="00:00"
+        android:textColor="@color/black"
+        android:fontFamily="@font/jung_regular"
         app:layout_constraintStart_toStartOf="@+id/sermon_media_play_seekbar"
         app:layout_constraintTop_toBottomOf="@+id/sermon_media_play_seekbar" />
 
@@ -94,6 +99,8 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="00:00"
+        android:textColor="@color/black"
+        android:fontFamily="@font/jung_regular"
         app:layout_constraintTop_toBottomOf="@+id/sermon_media_play_seekbar"
         app:layout_constraintEnd_toEndOf="@+id/sermon_media_play_seekbar"
          />
@@ -134,6 +141,8 @@
             android:layout_marginBottom="5dp"
             android:text="창세기 족장 강해 (26)"
             android:textSize="15dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/jung_regular"
             app:layout_constraintBottom_toTopOf="@+id/sermon_media_play_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -142,9 +151,11 @@
             android:id="@+id/sermon_media_play_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/jung_regular"
             android:text="마음에 감옥에서 벗어나는 야곱"
             android:textSize="18dp"
             android:textStyle="bold"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -156,6 +167,8 @@
             android:layout_height="0dp"
             android:layout_marginTop="5dp"
             android:text="창세기 33 : 1-17"
+            android:textColor="@color/black"
+            android:fontFamily="@font/jung_regular"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sermon_media_play_title" />

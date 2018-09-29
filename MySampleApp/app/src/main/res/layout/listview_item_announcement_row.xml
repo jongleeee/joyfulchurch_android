@@ -18,6 +18,7 @@
             android:layout_centerHorizontal="true"
             android:layout_above="@id/aDate"
             android:text="DEC"
+            android:fontFamily="@font/jung_regular"
             android:textColor="#4CA214" />
 
         <TextView android:id="@+id/aDate"
@@ -26,6 +27,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="21"
+            android:fontFamily="@font/jung_regular"
             android:textColor="#4CA214"
             android:textSize="30dp" />
 
@@ -34,6 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:text="2017"
+            android:fontFamily="@font/jung_regular"
             android:layout_below="@+id/aDate"
             android:textColor="#4CA214" />
 
@@ -52,6 +55,9 @@
             android:layout_above="@+id/txt_announcenment_title"
             android:layout_marginTop="4dp"
             android:layout_marginRight="10dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/jung_regular"
+            android:textSize="18sp"
             android:text="교회 소식 (전체소식)"
             />
 
@@ -62,8 +68,11 @@
             android:layout_centerVertical="true"
             android:text="중국 선교"
             android:textStyle="bold"
+            android:textColor="@color/black"
+            android:fontFamily="@font/jung_regular"
             android:autoSizeTextType="uniform"
-            android:autoSizeMinTextSize="16dp"
+            android:maxLines="1"
+            android:textSize="10sp"
             android:gravity="center"
             />
 
