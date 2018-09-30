@@ -12,7 +12,7 @@ import android.graphics.Color;
 
 import com.amazonaws.mobilehelper.config.AWSMobileHelperConfiguration;
 import com.amazonaws.regions.Regions;
-import com.mysampleapp.R;
+import com.joyfulchurch.R;
 
 /**
  * This class defines constants for the developer's resource

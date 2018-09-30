@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:theme="@style/AppTheme.AppBarOverlay"
     android:padding="0dp"
-    tools:context="com.mysampleapp.SubscribeActivity">
+    tools:context="com.joyfulchurch.SubscribeActivity">
     <android.support.v7.widget.Toolbar
         android:id="@+id/subscribe_toolbar"
         android:layout_width="match_parent"

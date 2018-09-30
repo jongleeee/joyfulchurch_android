@@ -13,7 +13,7 @@ android {
     buildToolsVersion '27.0.3'
 
     defaultConfig {
-        applicationId "com.amazon.mysampleapp"
+        applicationId "com.joyfulchurch"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1

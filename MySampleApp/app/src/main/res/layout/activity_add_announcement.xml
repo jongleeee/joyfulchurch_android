@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context="com.mysampleapp.AddSermonActivity">
+    tools:context="com.joyfulchurch.AddSermonActivity">
 
     <EditText
         android:id="@+id/add_announcement_title"
