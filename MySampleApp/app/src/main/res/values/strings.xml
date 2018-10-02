@@ -158,7 +158,7 @@
 
     <string name="google_cloud_messaging_package">com.mysampleapp</string>
     <string name="push_enable_choice_text">Receive Push Notifications</string>
-    <string name="push_demo_title">Push Notification</string>
+    <string name="push_demo_title">Joyful Church</string>
     <string name="push_demo_progress_dialog_title">Please wait &#8230;</string>
     <string name="push_demo_wait_message_register">Registering device for push notification.</string>
     <string name="push_demo_wait_message_update_notification">Updating push notification status.</string>
