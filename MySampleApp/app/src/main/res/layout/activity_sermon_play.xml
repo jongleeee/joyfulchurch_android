@@ -10,7 +10,7 @@
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="11dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -44,41 +44,85 @@
         android:id="@+id/sermon_media_play_year"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:text="2017"
         android:textColor="#4CA214"
         android:fontFamily="@font/jung_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sermon_media_play_day" />
+        app:layout_constraintTop_toBottomOf="@+id/sermon_media_play_day"
+        />
 
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/sermon_play_border"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/sermon_media_play_seekbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sermon_media_play_year">
 
-    <ImageButton
-        android:id="@+id/sermon_media_play_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
-        android:background="@android:color/transparent"
-        android:text="@string/play"
-        app:layout_constraintBottom_toTopOf="@+id/progressBar"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/play_icon" />
+        <TextView
+            android:id="@+id/sermon_media_play_series"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/jung_regular"
+            android:text="창세기 족장 강해 (26)"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toTopOf="@+id/sermon_media_play_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/sermon_media_play_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jung_regular"
+            android:text="마음에 감옥에서 벗어나는 야곱"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sermon_media_play_verse"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/jung_regular"
+            android:text="창세기 33 : 1-17"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sermon_media_play_title" />
+
+    </android.support.constraint.ConstraintLayout>
 
     <SeekBar
         android:id="@+id/sermon_media_play_seekbar"
         style="@style/Widget.AppCompat.SeekBar"
         android:layout_width="370dp"
         android:layout_height="18dp"
-        android:layout_marginBottom="12dp"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
         android:progressTint="@color/dark_content_text"
         android:thumbTint="@color/dark_content_text"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/sermon_media_play_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/sermon_media_play_button"/>
 
     <TextView
         android:id="@+id/sermon_media_play_currentTime"
@@ -103,77 +147,21 @@
         android:fontFamily="@font/jung_regular"
         app:layout_constraintTop_toBottomOf="@+id/sermon_media_play_seekbar"
         app:layout_constraintEnd_toEndOf="@+id/sermon_media_play_seekbar"
-         />
+        />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="42dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="84dp"
-        android:layout_marginTop="462dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+    <ImageButton
+        android:id="@+id/sermon_media_play_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="70dp"
+        android:background="@android:color/transparent"
+        android:text="@string/play"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="299dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="50dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/sermon_play_border"
-        android:elevation="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/sermon_media_play_seekbar"
-        app:layout_constraintDimensionRatio="W,1:1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sermon_media_play_year">
-
-        <TextView
-            android:id="@+id/sermon_media_play_series"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginBottom="5dp"
-            android:text="창세기 족장 강해 (26)"
-            android:textSize="15dp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/jung_regular"
-            app:layout_constraintBottom_toTopOf="@+id/sermon_media_play_title"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/sermon_media_play_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/jung_regular"
-            android:text="마음에 감옥에서 벗어나는 야곱"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/sermon_media_play_verse"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginTop="5dp"
-            android:text="창세기 33 : 1-17"
-            android:textColor="@color/black"
-            android:fontFamily="@font/jung_regular"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sermon_media_play_title" />
-
-    </android.support.constraint.ConstraintLayout>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/play_icon" />
 
 
 </android.support.constraint.ConstraintLayout>
